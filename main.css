@@ -1,6 +1,15 @@
 html,
 body {
-  background-color: #bfb8ac; }
+  background-color: #d4cec2; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #534f4f; }
+
+p {
+  color: #6c6868; }
+
+.inline {
+  display: inline; }
 
 .card {
   border-width: 0px; }
@@ -15,6 +24,9 @@ body {
   margin-bottom: 50px; }
   .topdiv .card {
     background-color: transparent; }
+
+hr {
+  border-color: #b9b4a9; }
 
 .bottomdiv {
   text-align: center;
