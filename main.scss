@@ -1,6 +1,8 @@
 html,
 body {
-    background-color: #d4cec2;
+	background-color: #f2f2f2;
+	letter-spacing: 0.07em;
+	line-height: 1.8em;
 }
 
 
@@ -14,38 +16,49 @@ p {
 	display: inline;
 }
 
-.card {
-    border-width: 0px;
-}
-
-.cards .card{
-    box-shadow: 0 0 20px rgba(#000, 0.1);
-    
+.cards {
+	padding-top: 24px;
+	.card {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		transition: box-shadow 0.5s;
+		
+		&:hover {
+			box-shadow: 0 0 10px rgba(#000, 0.15);
+		}
+	}
 }
 
 .topdiv {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px 0;
-    margin-bottom: 50px;
-    .card {
-        background-color: transparent;
-    }
+	background-color: #f2f2f2;
+	width: 100%;
+	padding: 20px 0 0 0;
+	.card {
+		background-color: transparent;
+		border-width: 0px;
+	}
+	.topIcon{
+		width:50px;
+		height:50px;
+	}
 }
 hr{
-	border-color: #b9b4a9
+	border-style: none;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-color: rgba(0, 0, 0, 0.1);
 }
 
 .bottomdiv{
-    text-align: center;
-    padding:20px 0;
+	text-align: center;
+	padding:20px 0;
 }
 
 .card-btn{
-    display: inline-block;
-    width:100%;
-    text-align: center;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    padding:20px;
+	background-color: #313131;
+	display: inline-block;
+	width:100%;
+	text-align: center;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	padding:20px;
 }
