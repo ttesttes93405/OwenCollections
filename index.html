@@ -1,117 +1,80 @@
 <!DOCTYPE html>
 <html lang="zh-TW" prefix="og:http://ogp.me/ns#">
-	<head>
+    <head>
 
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Owen Sun</title>
-		<link rel="Shortcut Icon" type="image/x-icon" href="pic/Owen%20Icon.png" />
+        <title>Owen Sun</title>
+        <link rel="Shortcut Icon" type="image/x-icon" href="pic/Owen%20Icon.png" />
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
-		<link href="main.css" rel="stylesheet" type="text/css">
-		<script src="vue.min.js"></script>
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <script src="js/vue.min.js"></script>
 
-	</head>
+    </head>
 
-	<body>
+    <body>
 
-		<div id="Me">
-			<div class="container">
-			
-				<div class="topdiv">
-					<div class="card mb-4 mt-4">
-						<div class="card-body">
-							<h2 class="card-title">孫宇</h2>
-							<h4 class="card-subtitle text-muted mb-4">Owen Sun</h4>
-							<p class="card-text">
-								一路自學程式語言，喜歡美術與設計，並且持續精進其他面向。<br> 想朝著遊戲設計努力，做出精緻有趣、使人喜愛的作品。
-							</p>
-							<p class="card-text">
-								<img src="pic/Mail.svg" class="topIcon" />
-								ttesttes93405@gmail.com
-							</p>
-						</div>
-					</div>
-				</div>
-								
-				<hr/>
+        <div id="app">
 
-				<div class="row cards">
+            <div class="topdiv">
+                <div class="container">
+                    <div class="author">
+                        <div class="author-picture">
+                            <img v-bind:src="author.picture" />
+                        </div>
+                        <h1 class="author-title font-color-g-dark1">{{author.title}}</h1>
+                        <h2 class="author-subtitle font-color-g-dark2">{{author.subtitle}}</h2>
+                        <p class="author-content font-color-g-dark2">{{author.content}}</p>
+                        <div calss="info">
+                            <div class="info-item" v-for="itemAuthorInfo in author.info">
+                                <img class="info-item-img" v-bind:src="itemAuthorInfo.picture" />
+                                <p class="info-item-p font-color-g-dark2">{{itemAuthorInfo.content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-					<div class="col-lg-4 mb-4">
-						<div class="card">
-							<div class="card-img-top embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0"></iframe>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">DROOM 夢門</h4>
-								<h6 class="card-subtitle text-muted mb-4">2016/5 -</h6>
-								<div class="card-text">
-									<p>與另一伙伴一同製作的畢業製作作品，現由自己繼續開發。</p>
-									<p>在作品中將關卡物件模組化，讓新關卡能更快的被組合製作出來，增加效率並減少人為錯誤發生。</p>
-									<p>協調整體風格，透過調色讓畫面看起來更加協調。</p>
-									<p>設計UI流程、調整關卡配置、思考劇情，並著重在一些小細節如：樹的搖曳、按兔子會有回饋等。</p>
-								</div>
-							</div>
-							<a href="https://play.google.com/store/apps/details?id=com.YY.Droom" target="_blank">
-								<div class="btn btn-dark card-btn">前往下載
-								</div>
-							</a>
-						</div>
-					</div>
+            <div class="container">
+                <div class="row cards">
 
-					<div class="col-lg-4 mb-4">
-						<div class="card">
-							<div class="card-img-top embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0"></iframe>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">BEAN</h4>
-								<h6 class="card-subtitle text-muted mb-4">2015/9 - 2016/1</h6>
-								<div class="card-text">
-									<p>一人製作的手機益智遊戲，程式、企劃、美術、打雜、買便當一手掌握。</p>
-									<p>設計來讓人等公車、坐在廁所的時光都可以輕易進入遊戲遊玩，並且隨時可以離開。</p>
-									<p>為了配合這樣的情境，在設計時特別使用單手就可以操作的操作手勢，你可以很輕易的用單指完成遊戲中的所有動作。</p>
-								</div>
-							</div>
-						</div>
-					</div>
+                    <div class="col-lg-4 mb-6" v-for="(item,index) in collections">
+                        <div class="card">
+                            <div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
+                                <iframe class="embed-responsive-item" v-bind:src="item.video"></iframe>
+                            </div>
+                            <img class="card-img-top" v-bind:src="item.picture"  v-if="item.picture!=''"/>
+                            <div class="card-body">
+                                <h1 class="card-title">{{item.title}}</h1>
+                                <h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
+                                <div class="card-text font-color-g-dark2">
+                                    <p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
+                                </div>
+                            </div>
+                            <a v-bind:href="itemLink.link" target="_blank" v-for="itemLink in item.links">
+                                <div class="card-btn">{{itemLink.title}}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-					<div class="col-lg-4 mb-4">
-						<div class="card">
-							<img class="card-img-top" src="pic/LiteraryDessert.png">
-							<div class="card-body">
-								<h4 class="card-title">點心故事 Literary Dessert</h4>
-								<h6 class="card-subtitle text-muted mb-4">2016/7 - 2016/8</h6>
-								<div class="card-text">
-									<p>這個網站可以讓你搜尋故事、隨機抽選故事，以及將喜歡的故事加入收藏。</p>
-									<p>除了基本的HTML結構外，CSS部分使用了SASS增快效率。</p>
-									<p>JavaScript部分使用Vue.js、JQuery，幫助製作更多複雜功能，如：ajax讀取json檔案，以讀取故事內容及其他屬性。
-								</div>
-							</div>
-							<a href="https://ttesttes93405.github.io/LiteraryDessert/index.html" target="_blank">
-								<div class="btn btn-dark card-btn">前往網站
-								</div>
-							</a>
-						</div>
-					</div>
-
-				</div>
-
-				<hr/>
-
-				<div class="bottomdiv">
-					<p>創作不會停止</p>
-				</div>
-
-			</div>
-		</div>
+                </div>
 
 
-	</body>
+                <div class="bottomdiv">
+                    <p class="font-color-g-dark3">往未來邁進</p>
+                </div>
+
+            </div>
+        </div>
+
+
+    </body>
+    <script src="js/main.js"></script>
 
 </html>

@@ -1,0 +1,41 @@
+$background-color:#f2f2f2;
+
+
+$font-g-dark1: #534f4f;
+$font-g-dark2: #6c6868;
+$font-g-dark3: #888888;
+
+$font-g-light1: #ffffff;
+$font-g-light2: #f0f0f0;
+$font-g-light3: #d9d9d9;
+
+$font-m-dark1: #4999e8;
+$font-m-light1: #66a7e6;
+
+
+
+.font-color-g-dark{
+    &1{ color: $font-g-dark1; }
+    &2{ color: $font-g-dark2; }
+    &3{ color: $font-g-dark3; }
+}
+.font-color-g-light{
+    &1{ color: $font-g-light1; }
+    &2{ color: $font-g-light2; }
+    &3{ color: $font-g-light3; }
+}
+
+html, body{
+    background-color: $background-color;
+    color: $font-g-dark1;
+}
+
+.card-btn{
+    color: $font-m-dark1;
+    background-color: transparent;
+    
+    &:hover{
+        color: $font-g-light1;
+        background-color: $font-m-light1;
+    }
+}
