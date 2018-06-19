@@ -46,12 +46,12 @@
                     <div class="col-lg-4 mb-6" v-for="(item,index) in collections">
                         <div class="card">
                             <div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
-                                <iframe class="embed-responsive-item" v-bind:src="item.video"></iframe>
+                                <iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
                             </div>
                             <img class="card-img-top" v-bind:src="item.picture"  v-if="item.picture!=''"/>
                             <div class="card-body">
                                 <h1 class="card-title">{{item.title}}</h1>
-                                <h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
+                                <h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
                                 <div class="card-text font-color-g-dark2">
                                     <p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
                                 </div>
