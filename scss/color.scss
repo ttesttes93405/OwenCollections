@@ -1,17 +1,28 @@
-$background-color:#f2f2f2;
+
+$background-color:#f2f2f2;	//背景色
 
 
-$font-g-dark1: #534f4f;
+$font-g-dark1: #534f4f;		//文字深色(灰階)
 $font-g-dark2: #6c6868;
 $font-g-dark3: #888888;
 
-$font-g-light1: #ffffff;
-$font-g-light2: #f0f0f0;
+$font-g-light1: #ebebeb;	//文字淺色(灰階)
+$font-g-light2: #e0e0e0;
 $font-g-light3: #d9d9d9;
 
-$font-m-dark1: #4999e8;
-$font-m-light1: #66a7e6;
+$font-m-dark1: #4999e8;		//文字深色(主色)
+$font-m-light1: #66a7e6;	//文字淺色(主色)
 
+
+$fill-g-dark1: #534f4f;		//填充深色(灰階)
+$fill-g-dark2: #6c6868;
+$fill-g-dark3: #888888;
+
+$fill-g-light1: #ebebeb;	//填充淺色(灰階)
+$fill-g-light2: #e0e0e0;
+$fill-g-light3: #d9d9d9;
+
+$fill-m-dark1: #4999e8;		//填充深色(主色)
 
 
 .font-color-g-dark{
@@ -39,3 +50,5 @@ html, body{
         background-color: $font-m-light1;
     }
 }
+
+
