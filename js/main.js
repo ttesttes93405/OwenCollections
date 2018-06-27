@@ -121,6 +121,12 @@ var vm = new Vue({
 				year: "2018",
 				month: "1",
 				content: "受GooglePlay邀請，在2018台北電玩展GooglePlay 築夢台灣專區展示「DROOM夢門」。",
+				marginBottom:"30px"
+			},{
+				title: "參加 2018 Kuso Game Jam",
+				year: "2018",
+				month: "4",
+				content: "參加 2018 Kuso Game Jam ，於兩天的時間內做出「The Hole」網頁版。",
 				marginBottom:"200px"
 			}
 

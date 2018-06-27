@@ -23,17 +23,25 @@ body {
 		margin-bottom: 60px;
 
 		$page-item-line: 1px $fill-g-light1 solid;	
+		$page-radius: 8px;
 		.page-item{
 			padding: 10px 0;
 			cursor: pointer;
 			display: inline-block;
-			border-radius: 5px 5px 0 0;
+			border: rgba($fill-g-dark1, 0.3) 1px solid;
 			width: 50vw;
 			max-width: 300px;
 			text-align: center;
+			border-left-style: none;
 
-			border-style: none;			
-			border-bottom: $page-item-line;
+			&:first-child{
+				border-left-style: solid;
+				border-radius: $page-radius 0 0 $page-radius;
+			}
+
+			&:last-child{
+				border-radius: 0 $page-radius $page-radius 0;
+			}
 
 			&:hover{
 				background-color: rgba($fill-g-light1,0.5);
@@ -42,13 +50,12 @@ body {
 		}
 
 		.page-select{
-			border-top: $page-item-line;
-			border-left: $page-item-line;
-			border-right: $page-item-line;
-			border-bottom: none;
+
+			background-color: rgba($fill-g-dark1, 0.8);
+			color: $font-g-light1;
 
 			&:hover{
-				background-color: rgba($fill-g-light1,0.1);
+				background-color: rgba($fill-g-dark1, 0.7);
 			}
 		}
 	}
@@ -80,6 +87,7 @@ body {
 		&-title{
 			font-size: 20px;
 			margin-bottom: 4px;
+			line-height: 1.8rem;
 		}
 		&-subtitle{
 			display: inline-block;
@@ -222,6 +230,7 @@ body {
 					&-title{
 						font-size: 20px;
 						margin-bottom: 12px;
+						line-height: 1.8rem;
 					}
 					&-text{
 						line-height: 1.5rem;
@@ -253,7 +262,7 @@ body {
 
 		&-picture{
 			$picture-size: 150px;
-			
+
 			border-radius: 100%;
 			overflow: hidden;
 			margin: 20px;
@@ -267,11 +276,11 @@ body {
 				img{
 					width: $picture-size;
 					height: $picture-size;
-					
+
 				}
 				transition:  margin-top 0.4s;
 			}
-			
+
 			&-content-egg{
 				margin-top: -$picture-size;
 			}
