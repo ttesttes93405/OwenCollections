@@ -75,59 +75,66 @@ var vm = new Vue({
 				video: "",
 				subtitle: "2017/8 - ",
 				type: "Event",
-				content: "從2017年8月開始，於傳奇任職企劃。\n主要負責系統與介面，規劃功能、撰寫相關文件。",
+				content: "從2017年8月開始，於傳奇任職企劃。\n參與以Unity開發的手遊專案，主要負責系統與介面，規劃功能、撰寫相關文件並與程式溝通。",
 				links: []
 			}
 		],
 		timeEvents: [
 			{
-				title: "出生",
-				year: "1994",
-				month: "10",
-				content: "對我來說意義重大的時刻。",
-				marginBottom:"200px"
+				year:"1994",
+				data:[{
+					title: "出生",
+					month: "10月",
+					content: "對我來說意義重大的時刻。",
+					marginSpace:"200px"
+				}]
 			},{
-				title: "BEAN",
 				year: "2015",
-				month: "9",
-				content: "一人製作的手機益智遊戲，第一次學習Unity3D所製作的遊戲。",
-				marginBottom:"80px"
+				data:[{
+					title: "BEAN",
+					month: "9月",
+					content: "一人製作的手機益智遊戲，第一次學習Unity3D所製作的遊戲。",
+					marginSpace:"80px"
+				}]
 			},{
-				title: "DROOM 夢門",
 				year: "2016",
-				month: "5",
-				content: "與另一伙伴一同製作的畢業製作作品，畢業後現由自己繼續開發。",
-				marginBottom:"20px"
+				data:[{
+					title: "DROOM 夢門",
+					month: "5月",
+					content: "與另一伙伴一同製作的畢業製作作品，畢業後現由自己繼續開發。",
+					marginSpace:"20px"
+				},{
+					title: "點心故事 Literary Dessert",
+					month: "7月",
+					content: "閒暇時所寫的極短故事，初學網頁後為這些故事做了瀏覽的網站。",
+					marginSpace:"100px"
+				}]
 			},{
-				title: "點心故事 Literary Dessert",
-				year: "2016",
-				month: "7",
-				content: "閒暇時所寫的極短故事，初學網頁後為這些故事做了瀏覽的網站。",
-				marginBottom:"100px"
-			},{
-				title: "夢門DROOM獲「放視大賞-行動遊戲創作組-銀賞」",
 				year: "2017",
-				month: "5",
-				content: "於「放視大賞」獲得「遊戲類-行動遊戲創作組-銀賞」、「獨立遊戲精神獎」、「廠商特別獎-艾鳴遊戲-最佳遊戲獎」、「廠商特別獎-唯晶數位-遊戲創意獎」。",
-				marginBottom:"30px"
+				data:[{
+					title: "夢門DROOM獲「放視大賞-行動遊戲創作組-銀賞」",
+					month: "5月",
+					content: "於「放視大賞」獲得「遊戲類-行動遊戲創作組-銀賞」、「獨立遊戲精神獎」、「廠商特別獎-艾鳴遊戲-最佳遊戲獎」、「廠商特別獎-唯晶數位-遊戲創意獎」。",
+					marginSpace:"30px"
+				},{
+					title: "開始企劃一職(傳奇網路遊戲)",
+					month: "8月",
+					content: "從2017年8月開始，於傳奇任職企劃。",
+					marginSpace:"50px"
+				}]
 			},{
-				title: "開始企劃一職(傳奇網路遊戲)",
-				year: "2017",
-				month: "8",
-				content: "從2017年8月開始，於傳奇任職企劃。",
-				marginBottom:"50px"
-			},{
-				title: "參加 2018台北電玩展 GooglePlay 築夢台灣專區",
 				year: "2018",
-				month: "1",
-				content: "受GooglePlay邀請，在2018台北電玩展GooglePlay 築夢台灣專區展示「DROOM夢門」。",
-				marginBottom:"30px"
-			},{
-				title: "參加 2018 Kuso Game Jam",
-				year: "2018",
-				month: "4",
-				content: "參加 2018 Kuso Game Jam ，於兩天的時間內做出「The Hole」網頁版。",
-				marginBottom:"200px"
+				data:[{
+					title: "參加 2018台北電玩展 GooglePlay 築夢台灣專區",
+					month: "1月",
+					content: "受GooglePlay邀請，在2018台北電玩展GooglePlay 築夢台灣專區展示「DROOM夢門」。",
+					marginSpace:"30px"
+				},{
+					title: "參加 2018 Kuso Game Jam",
+					month: "4月",
+					content: "參加 2018 Kuso Game Jam ，於兩天的時間內做出「The Hole」網頁版。",
+					marginSpace:"200px"
+				}]
 			}
 
 		],
@@ -139,7 +146,7 @@ var vm = new Vue({
 			false	//頭貼切換
 		],
 		nowPage: 0
-		
+
 	},
 	mounted: function () {},
 	methods:{

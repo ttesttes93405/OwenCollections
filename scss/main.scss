@@ -145,105 +145,137 @@ body {
 
 		.time-events{
 
-			border-left: $time-event-main-line;
 			margin-left: $time-event-dot-space-left;
 
 			max-width: $time-event-max-width;
 
-			.time-event{
-				//margin-bottom: 80px;
-				display: flex;
-				flex-direction: row;
+			.time-event-year{
+				
+				$year-height:80px;
+				
+				padding-top: $year-height;
 				position: relative;
-
-
-				&-dot{
-					height: 100%;
-					position: relative;
-
-					&-img{
-						position: absolute;
-						left:  -$time-event-dot-r/2;
-						top: 26px;
-						width: $time-event-dot-r;
-						height: $time-event-dot-r;
-						border-radius: 100%;
-						background-color: $fill-g-dark3;
-						transition: background-color 0.3s;
-						transition: transform 0.2s;
-					}
-				}
-				&:hover .time-event-dot{
-					&-img{
-						background-color: $fill-m-dark1;
-						transform: scale(1.1);
-					}
-				}
-
-
-
+				
 				&-date{
 					position: absolute;
 					display: inline-block;
 					width: $time-event-dot-space-left;
-					top: 22px;
-					left: -$time-event-dot-space-left;
-					margin-left:  -$time-event-dot-space-right;
-					text-align: right;
+					top: 0;
+					left: -$time-event-dot-space-left/2;
+					height: $year-height;
+					margin-left: 0;
 					margin-top: 0;
+					text-align: center;
 					h2{
-						font-size: 16px;
-						font-weight: 200;
+						font-size: 20px;
+						font-weight: 700;
+						line-height: $year-height;
 					}
 				}
 
-				&-info{
-					padding: $time-event-info-padding;
-					margin-left: $time-event-dot-space-right;
-					border-radius: 10px;
-					background-color: rgba($fill-g-light2, 0.1);
+				.time-event{
 
-					transition: background-color 0.5s;
+					border-left: $time-event-main-line;
+					display: flex;
+					flex-direction: row;
+					position: relative;
 
-					&:hover{
-						background-color: rgba($fill-g-light2, 0.3);
-						//box-shadow: 0 3px 5px rgba($fill-g-dark1, 0.05);
 
-						.time-event-info-triangle{							
-							border-color: transparent rgba($fill-g-light2, 0.3) transparent
+					&-dot{
+						height: 100%;
+						position: relative;
+
+						&-img{
+							position: absolute;
+							left:  -$time-event-dot-r/2;
+							top: 26px;
+							width: $time-event-dot-r;
+							height: $time-event-dot-r;
+							border-radius: 100%;
+							background-color: $fill-g-dark3;
+							transition: background-color 0.3s;
+							transition: transform 0.2s;
+						}
+					}
+					&:hover .time-event-dot{
+						&-img{
+							background-color: $fill-m-dark1;
+							transform: scale(1.1);
 						}
 					}
 
-					&-triangle{
+					&-date{
 						position: absolute;
-						left: $time-event-dot-space-right;
-						top: 20px;
-						margin-left: -15px;
-						width: 0;
-						height: 0;
-						border-style: solid;
-						border-width: 10px 15px 10px 0;
-						border-color: transparent rgba($fill-g-light2, 0.1) transparent;
-						transition: border-color 0.5s;
+						display: inline-block;
+						width: $time-event-dot-space-left;
+						top: 10px;
+						left: -$time-event-dot-space-left;
+						height: 40px;
+						margin-left:  -$time-event-dot-space-right;
+						text-align: right;
+						margin-top: 0;
+						h2{
+							font-size: 20px;
+							font-weight: 700;
+							line-height: 40px;
+						}
+						h3{
+							font-size: 16px;
+							font-weight: 200;
+							line-height: 40px;
+						}
 					}
 
-					&-title{
-						font-size: 20px;
-						margin-bottom: 12px;
-						line-height: 1.8rem;
+					&-info{
+						padding: $time-event-info-padding;
+						margin-left: $time-event-dot-space-right;
+						border-radius: 10px;
+						background-color: rgba($fill-g-light2, 0.1);
+
+						transition: background-color 0.5s;
+
+						&:hover{
+							background-color: rgba($fill-g-light2, 0.3);
+							//box-shadow: 0 3px 5px rgba($fill-g-dark1, 0.05);
+
+							.time-event-info-triangle{							
+								border-color: transparent rgba($fill-g-light2, 0.3) transparent
+							}
+						}
+
+						&-triangle{
+							position: absolute;
+							left: $time-event-dot-space-right;
+							top: 23px;
+							margin-left: -10px;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 8px 10px 8px 0;
+							border-color: transparent rgba($fill-g-light2, 0.1) transparent;
+							transition: border-color 0.5s;
+						}
+
+						&-title{
+							font-size: 20px;
+							margin-bottom: 12px;
+							line-height: 1.8rem;
+						}
+						&-text{
+							line-height: 1.5rem;
+							display: flex;
+							flex-direction: column;
+							max-height: 200px;
+							height: auto;
+							overflow-y: auto;
+							margin-bottom: 4px;
+						}
+
 					}
-					&-text{
-						line-height: 1.5rem;
-						display: flex;
-						flex-direction: column;
-						max-height: 200px;
-						height: auto;
-						overflow-y: auto;
-						margin-bottom: 4px;
-					}
+
+
 
 				}
-
 			}
 		}
 	}

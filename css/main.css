@@ -155,74 +155,97 @@ body {
   flex-direction: row;
   justify-content: center; }
   .time-event-content .container .time-events {
-    border-left: 1px #e0e0e0 solid;
     margin-left: 80px;
     max-width: 600px; }
-    .time-event-content .container .time-events .time-event {
-      display: flex;
-      flex-direction: row;
+    .time-event-content .container .time-events .time-event-year {
+      padding-top: 80px;
       position: relative; }
-      .time-event-content .container .time-events .time-event-dot {
-        height: 100%;
-        position: relative; }
-        .time-event-content .container .time-events .time-event-dot-img {
-          position: absolute;
-          left: -5px;
-          top: 26px;
-          width: 10px;
-          height: 10px;
-          border-radius: 100%;
-          background-color: #888888;
-          transition: background-color 0.3s;
-          transition: transform 0.2s; }
-      .time-event-content .container .time-events .time-event:hover .time-event-dot-img {
-        background-color: #4999e8;
-        transform: scale(1.1); }
-      .time-event-content .container .time-events .time-event-date {
+      .time-event-content .container .time-events .time-event-year-date {
         position: absolute;
         display: inline-block;
         width: 80px;
-        top: 22px;
-        left: -80px;
-        margin-left: -3vw;
-        text-align: right;
-        margin-top: 0; }
-        .time-event-content .container .time-events .time-event-date h2 {
-          font-size: 16px;
-          font-weight: 200; }
-      .time-event-content .container .time-events .time-event-info {
-        padding: 20px;
-        margin-left: 3vw;
-        border-radius: 10px;
-        background-color: rgba(224, 224, 224, 0.1);
-        transition: background-color 0.5s; }
-        .time-event-content .container .time-events .time-event-info:hover {
-          background-color: rgba(224, 224, 224, 0.3); }
-          .time-event-content .container .time-events .time-event-info:hover .time-event-info-triangle {
-            border-color: transparent rgba(224, 224, 224, 0.3) transparent; }
-        .time-event-content .container .time-events .time-event-info-triangle {
-          position: absolute;
-          left: 3vw;
-          top: 20px;
-          margin-left: -15px;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 10px 15px 10px 0;
-          border-color: transparent rgba(224, 224, 224, 0.1) transparent;
-          transition: border-color 0.5s; }
-        .time-event-content .container .time-events .time-event-info-title {
+        top: 0;
+        left: -40px;
+        height: 80px;
+        margin-left: 0;
+        margin-top: 0;
+        text-align: center; }
+        .time-event-content .container .time-events .time-event-year-date h2 {
           font-size: 20px;
-          margin-bottom: 12px;
-          line-height: 1.8rem; }
-        .time-event-content .container .time-events .time-event-info-text {
-          line-height: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          max-height: 200px;
-          height: auto;
-          overflow-y: auto;
-          margin-bottom: 4px; }
+          font-weight: 700;
+          line-height: 80px; }
+      .time-event-content .container .time-events .time-event-year .time-event {
+        border-left: 1px #e0e0e0 solid;
+        display: flex;
+        flex-direction: row;
+        position: relative; }
+        .time-event-content .container .time-events .time-event-year .time-event-dot {
+          height: 100%;
+          position: relative; }
+          .time-event-content .container .time-events .time-event-year .time-event-dot-img {
+            position: absolute;
+            left: -5px;
+            top: 26px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #888888;
+            transition: background-color 0.3s;
+            transition: transform 0.2s; }
+        .time-event-content .container .time-events .time-event-year .time-event:hover .time-event-dot-img {
+          background-color: #4999e8;
+          transform: scale(1.1); }
+        .time-event-content .container .time-events .time-event-year .time-event-date {
+          position: absolute;
+          display: inline-block;
+          width: 80px;
+          top: 10px;
+          left: -80px;
+          height: 40px;
+          margin-left: -3vw;
+          text-align: right;
+          margin-top: 0; }
+          .time-event-content .container .time-events .time-event-year .time-event-date h2 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 40px; }
+          .time-event-content .container .time-events .time-event-year .time-event-date h3 {
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 40px; }
+        .time-event-content .container .time-events .time-event-year .time-event-info {
+          padding: 20px;
+          margin-left: 3vw;
+          border-radius: 10px;
+          background-color: rgba(224, 224, 224, 0.1);
+          transition: background-color 0.5s; }
+          .time-event-content .container .time-events .time-event-year .time-event-info:hover {
+            background-color: rgba(224, 224, 224, 0.3); }
+            .time-event-content .container .time-events .time-event-year .time-event-info:hover .time-event-info-triangle {
+              border-color: transparent rgba(224, 224, 224, 0.3) transparent; }
+          .time-event-content .container .time-events .time-event-year .time-event-info-triangle {
+            position: absolute;
+            left: 3vw;
+            top: 23px;
+            margin-left: -10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 10px 8px 0;
+            border-color: transparent rgba(224, 224, 224, 0.1) transparent;
+            transition: border-color 0.5s; }
+          .time-event-content .container .time-events .time-event-year .time-event-info-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.8rem; }
+          .time-event-content .container .time-events .time-event-year .time-event-info-text {
+            line-height: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            max-height: 200px;
+            height: auto;
+            overflow-y: auto;
+            margin-bottom: 4px; }
 
 .top-content {
   width: 100%;

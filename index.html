@@ -5,10 +5,10 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
 		<title>Owen Sun</title>
-		
+
 		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
@@ -87,24 +87,33 @@
 				<div class="container">
 
 					<div class="time-events">
-						<div class="time-event" v-for="(item, index) in timeEvents" v-bind:style="{'margin-bottom':item.marginBottom}">
-
-							<div class="time-event-dot">
-								<div class="time-event-dot-img"></div>
+						<div class="time-event-year" v-for="(yearItem, index) in timeEvents">
+							
+							<div class="time-event-year-date">
+								<h2>{{yearItem.year}}</h2>
 							</div>
+							
+							<div class="time-event" v-for="(item, index) in yearItem.data">
 
-							<div class="time-event-date font-color-g-dark3">
-								<h2>{{item.year}}/{{item.month}}</h2>
-							</div>
+								<div class="time-event-dot">
+									<div class="time-event-dot-img"></div>
+								</div>
 
-							<div class="time-event-info" @click="calcTimeEventMargin($index)">
-								<h1 class="time-event-info-title">{{item.title}}</h1>
-								<p class="time-event-info-text font-color-g-dark2" v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
+								<div class="time-event-date font-color-g-dark3">
+									<h3>{{item.month}}</h3>
+								</div>
+								<div class="time-event-info" @click="calcTimeEventMargin($index)"
+									 v-bind:style="{'margin-bottom':item.marginSpace}">
 
-								<div class="time-event-info-triangle"></div>
+									<h1 class="time-event-info-title">{{item.title}}</h1>
+									<p class="time-event-info-text font-color-g-dark2" v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
+
+									<div class="time-event-info-triangle"></div>
+								</div>
+
+
 							</div>
 						</div>
-
 					</div>
 				</div>
 
