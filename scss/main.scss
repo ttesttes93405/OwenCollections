@@ -2,6 +2,7 @@
 
 @import "reset";
 @import "color";
+@import "base";
 
 
 html,
@@ -17,23 +18,28 @@ body {
 
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content:center;
 		align-items:center;
 		flex-shrink: 1;
 		margin-bottom: 60px;
+		padding: 0 20px;
 
 		$page-item-line: 1px $fill-g-light1 solid;	
-		$page-radius: 8px;
+		$page-radius: 9999px;
 		.page-item{
 			padding: 10px 0;
 			cursor: pointer;
 			display: inline-block;
 			border: rgba($fill-g-dark1, 0.3) 1px solid;
-			width: 50vw;
+			min-width: 200px;
+			margin: 5px 10px;
 			max-width: 300px;
 			text-align: center;
 			border-left-style: none;
-
+			border-right-style: none;
+			border-radius: $page-radius;
+/*
 			&:first-child{
 				border-left-style: solid;
 				border-radius: $page-radius 0 0 $page-radius;
@@ -42,7 +48,7 @@ body {
 			&:last-child{
 				border-radius: 0 $page-radius $page-radius 0;
 			}
-
+*/
 			&:hover{
 				background-color: rgba($fill-g-light1,0.5);
 			}
@@ -61,27 +67,21 @@ body {
 	}
 }
 
-
 .cards {
 	padding-top: 24px;
 
 	.card {
 
-		margin:0;
-		margin-top: 0;
-		margin-bottom: 30px;
 		border: 1px solid rgba(#000, 0.1);
-		border-radius: 20px;
+		border-radius: 30px;
 		overflow: hidden;
 		box-shadow: 0 0 0 rgba(#000, 0);
 		transform: scale(1.0001);
-
-		//transition: box-shadow 0.5s;
 		transition: transform 0.4s;
 
 		&:hover {
 			box-shadow: 0 5px 10px rgba(#000, 0.15);
-			transform: scale(1.02);
+			transform: scale(1.015);
 		}
 
 		&-title{
@@ -103,19 +103,26 @@ body {
 			max-height: 200px;
 			height: auto;
 			overflow-y: auto;
-			margin-bottom: 4px;			
+			margin-bottom: 4px;
+			&:last-child{
+				margin-bottom: 35px;
+			}
 		}
 		&-btn{
 			display: inline-block;
-			width:100%;
+			box-sizing: border-box;
 			text-align: center;
-			padding:20px;
-			height: 70px;
+			width: 100%;
+			padding: 15px 0;
+			height: 60px;
+			margin-top: 20px;
+			border-radius: 9999px;
 
-			border-style: none;
-			border-top-style: dashed;
-			border-top-width: 1px;
-			border-color: rgba(#000, 0.1);
+			//border-style: none;
+			//border-top-style: dashed;
+			//border-top-width: 1px;
+			//border-color: rgba(#000, 0.1);
+			border: 1px solid rgba($font-m-dark1,0.3);
 			opacity: 0.8;
 
 			transition: color 0.4s;
@@ -136,7 +143,7 @@ body {
 		justify-content: center;
 
 		$time-event-dot-r: 10px;
-		$time-event-dot-space-left: 80px;
+		$time-event-dot-space-left: 70px;
 		$time-event-dot-space-right: 3vw;
 		$time-event-info-padding: 20px;
 
@@ -150,12 +157,12 @@ body {
 			max-width: $time-event-max-width;
 
 			.time-event-year{
-				
+
 				$year-height:80px;
-				
+
 				padding-top: $year-height;
 				position: relative;
-				
+
 				&-date{
 					position: absolute;
 					display: inline-block;
@@ -179,6 +186,7 @@ body {
 					display: flex;
 					flex-direction: row;
 					position: relative;
+					padding-right: 10px;
 
 
 					&-dot{
@@ -282,9 +290,9 @@ body {
 
 }
 
-
 .top-content {
-	width: 100%;
+	display: flex;
+	justify-content: center;
 	padding: 50px 0 70px 0;
 
 	.author{
@@ -344,6 +352,10 @@ body {
 				flex-direction: row;
 				align-items: center;
 				margin-left: -20px;
+				margin-right: -20px;
+				padding-right: 15px;
+				border-radius: 9999px;
+				border: 1px solid rgba($fill-g-dark2, 0.1);
 
 				&-img{
 					width: 50px;
@@ -357,12 +369,34 @@ body {
 	}
 }
 
-.bottom-content{
+.card-content{
+	display: flex;
+	justify-content: center;
+}
 
+.bottom-content{
+	display: flex;
+	justify-content: center;
 }
 
 .bottom-text{
 	text-align: center;
 	padding:50px 0;
+}
+
+.card-content , .time-event-content {
+	animation: fadeIn 0.5s;
+}
+@keyframes fadeIn{
+	0% {
+		opacity: 0;
+		padding-top: 5px;
+	}
+	70%{
+		opacity: 1;
+	}
+	100% {
+		padding-top: 0;
+	}
 }
 

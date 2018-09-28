@@ -11,10 +11,6 @@
 
 		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-
-		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
-
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<script src="js/vue.min.js"></script>
 
@@ -22,7 +18,7 @@
 
 	<body>
 
-		<img  style="display:none" src="pic/Owen.jpg"/>
+		<img style="display:none" src="pic/Owen.jpg"/>
 
 		<div id="app">
 
@@ -55,11 +51,11 @@
 				</div>
 			</div>
 
-			<div v-if="nowPage==0" class="card-content">
+			<div v-show="nowPage==0" class="card-content">
 				<div class="container">
 					<div class="row cards">
 
-						<div class="col-lg-4 mb-6" v-for="(item,index) in collections">
+						<div class="col" v-for="(item,index) in collections">
 							<div class="card">
 								<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
 									<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
@@ -71,11 +67,11 @@
 									<div class="card-text font-color-g-dark2">
 										<p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
 									</div>
+
+									<a v-bind:href="itemLink.link" target="_blank" v-for="itemLink in item.links">
+										<div class="card-btn">{{itemLink.title}}</div>
+									</a>
 								</div>
-								<a v-bind:href="itemLink.link" target="_blank" v-for="itemLink in item.links">
-									<div class="card-btn">{{itemLink.title}}
-									</div>
-								</a>
 							</div>
 						</div>
 
@@ -83,16 +79,16 @@
 					<p class="font-color-g-dark3 bottom-text">往未來邁進</p>
 				</div>
 			</div>
-			<div v-if="nowPage==1" class="time-event-content">
+			<div v-show="nowPage==1" class="time-event-content">
 				<div class="container">
 
 					<div class="time-events">
 						<div class="time-event-year" v-for="(yearItem, index) in timeEvents">
-							
+
 							<div class="time-event-year-date">
 								<h2>{{yearItem.year}}</h2>
 							</div>
-							
+
 							<div class="time-event" v-for="(item, index) in yearItem.data">
 
 								<div class="time-event-dot">

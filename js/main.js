@@ -167,7 +167,6 @@ var vm = new Vue({
 
 			if (value > 200) value = 200;
 
-			console.log((value * 10) + "px");
 			return (value * 10) + "px";
 		}
 	}
