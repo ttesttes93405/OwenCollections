@@ -1,0 +1,72 @@
+
+@media (min-width: 0) {
+	.cards {
+		.card {
+			&-btn {
+				opacity: 1;
+				color: $font-g-light1;
+                background-color: $font-m-light1;
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.page-item:hover {
+		background-color: rgba($fill-g-light1, 1);
+	}
+	.page-select:hover {
+		background-color: rgba($fill-g-dark1, 0.7);
+	}
+
+	.cards {
+		.card {
+			&:hover {
+				box-shadow: 0 5px 10px rgba(#000, 0.15);
+				transform: scale(1.015);
+			}
+			&-btn {
+				background-color: transparent;
+				border: 1px solid rgba($font-m-dark1, 0.3);
+				opacity: 0.9;
+                color: $font-m-dark1;
+
+				&:hover {
+					opacity: 1;
+					color: $font-g-light1;
+					background-color: $font-m-light1;
+				}
+			}
+		}
+	}
+
+	.time-event-content .container .time-events .time-event-year .time-event {
+		&:hover .time-event-dot {
+			&-img {
+				background-color: $fill-m-dark1;
+			}
+		}
+		&-info {
+			&:hover {
+				background-color: rgba($fill-g-light2, 0.3);
+
+				.time-event-info-triangle {
+					border-color: transparent rgba($fill-g-light2, 0.3) transparent;
+				}
+			}
+		}
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

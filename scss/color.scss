@@ -23,6 +23,7 @@ $fill-g-light2: #e0e0e0;
 $fill-g-light3: #d9d9d9;
 
 $fill-m-dark1: #4999e8;		//填充深色(主色)
+$fill-m-light1: #68b4ff;	//填充色(主色)
 
 
 .font-color-g-dark{
@@ -41,14 +42,5 @@ html, body{
     color: $font-g-dark1;
 }
 
-.card-btn{
-    color: $font-m-dark1;
-    background-color: transparent;
-    
-    &:hover{
-        color: $font-g-light1;
-        background-color: $font-m-light1;
-    }
-}
 
 

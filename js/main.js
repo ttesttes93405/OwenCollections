@@ -4,11 +4,14 @@ var vm = new Vue({
 		author: {
 			title: "孫宇",
 			subtitle: "Owen Sun",
-			picture: ["pic/Owen.jpg","pic/Owen2.jpg"],
-			content: "腦袋很小，簡單就好。",
+			picture: ["pic/Owen.jpg"],
 			info: [
 				{
-					picture: "pic/Mail.svg",
+					picture: "pic/icons.svg#sentence",
+					content: "腦袋很小，簡單就好。"
+				},
+				{
+					picture: "pic/icons.svg#mail",
 					content: "ttesttes93405@gmail.com"
 				}
 			]
