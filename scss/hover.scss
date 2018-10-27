@@ -1,6 +1,6 @@
 
 @media (min-width: 0) {
-	.cards {
+	.cards, .card-window {
 		.card {
 			&-btn {
 				opacity: 1;
@@ -28,7 +28,7 @@
 		background-color: rgba($fill-g-dark1, 0.7);
 	}
 
-	.cards {
+	.cards, .card-window {
 		.card {
 			&:hover {
 				box-shadow: 0 5px 10px rgba(#000, 0.15);

@@ -57,8 +57,12 @@ var vm = new Vue({
 				video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
 				subtitle: "2018/4",
 				type: "Project",
-				content: "參加2018 Kuso Game Jam ，在不到兩天的時間內迅速做出遊戲原型，是會讓人強迫症發作的小遊戲。",
+				content: "參加2018 Kuso Game Jam ，在不到兩天的時間內迅速做出遊戲原型，是會讓人強迫症發作的小遊戲。\n這個遊戲也在2018的10-11月，於澳洲墨爾本的 Longitude exhibition 展出。",
 				links: [
+                    {
+                        link: "http://longitude-exhibition.net/",
+                        title:"Longitude Exhibition"
+                    },
 					{
 						link: "https://sunyu.itch.io/the-hole",
 						title: "玩網頁版"
@@ -136,6 +140,11 @@ var vm = new Vue({
 					title: "參加 2018 Kuso Game Jam",
 					month: "4月",
 					content: "參加 2018 Kuso Game Jam ，於兩天的時間內做出「The Hole」網頁版。",
+					marginSpace:"60px"
+				},{
+					title: "The Hole 於 Longitude Exhibition 展出",
+					month: "10月",
+					content: "於 2018 Kuso Game Jam 做出的遊戲，在澳洲墨爾本的 Longitude Exhibition 展出，展期為：10/17 - 11/25。",
 					marginSpace:"200px"
 				}]
 			}
@@ -148,7 +157,9 @@ var vm = new Vue({
 		toggle:[
 			false	//頭貼切換
 		],
-		nowPage: 0
+		nowPage: 0,
+        currentCollection: 0,
+        isShowCollectionWindow: false
 
 	},
 	mounted: function () {},
@@ -171,6 +182,10 @@ var vm = new Vue({
 			if (value > 200) value = 200;
 
 			return (value * 10) + "px";
-		}
+		},
+        showCollectionWindow: function(inx){
+            this.currentCollection = inx;
+            this.isShowCollectionWindow = true;
+        }
 	}
 })

@@ -94,7 +94,8 @@ html, body {
   .card .card-text > p {
     margin: 0 10px;
     font-size: 17px;
-    line-height: 1.6em; }
+    line-height: 1.6em;
+    margin-bottom: 5px; }
 
 .embed-responsive {
   position: relative;
@@ -132,10 +133,10 @@ html, body {
     width: 100%; }
 
   .row .col {
-    width: 100%; } }
+    width: 50%; } }
 @media (min-width: 992px) {
   .container {
-    width: 100%; }
+    width: 900px; }
 
   .row .col {
     width: 50%; } }
@@ -146,7 +147,7 @@ html, body {
   .row .col {
     width: 33%; } }
 @media (min-width: 0) {
-  .cards .card-btn {
+  .cards .card-btn, .card-window .card-btn {
     opacity: 1;
     color: #ebebeb;
     background-color: #66a7e6; } }
@@ -157,15 +158,15 @@ html, body {
   .page-select:hover {
     background-color: rgba(83, 79, 79, 0.7); }
 
-  .cards .card:hover {
+  .cards .card:hover, .card-window .card:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     transform: scale(1.015); }
-  .cards .card-btn {
+  .cards .card-btn, .card-window .card-btn {
     background-color: transparent;
     border: 1px solid rgba(73, 153, 232, 0.3);
     opacity: 0.9;
     color: #4999e8; }
-    .cards .card-btn:hover {
+    .cards .card-btn:hover, .card-window .card-btn:hover {
       opacity: 1;
       color: #ebebeb;
       background-color: #66a7e6; }
@@ -197,54 +198,62 @@ body {
     text-align: center;
     width: auto;
     border: 1px rgba(83, 79, 79, 0.2) solid;
-    border-radius: 25px; }
+    border-radius: 30px; }
     .page-content .container .page-container .page-item {
       cursor: pointer;
       display: inline-block;
       height: 50px;
       min-width: 150px;
-      max-width: 200px;
+      max-width: 250px;
       line-height: 50px;
       text-align: center;
       border-left-style: none;
       border-right-style: none;
       border-radius: 9999px;
+      margin: 5px;
       transition-property: background-color;
       transition-duration: 0.2s; }
     .page-content .container .page-container .page-select {
       background-color: rgba(73, 153, 232, 0.9);
       color: #ebebeb; }
 
-.cards {
+.cards, .card-window {
   padding-top: 24px; }
-  .cards .card {
+  .cards .card, .card-window .card {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     transform: scale(1.0001);
     transition: transform 0.4s; }
-    .cards .card-title {
+    .cards .card-title, .card-window .card-title {
       font-size: 20px;
       margin-bottom: 4px;
       line-height: 1.8rem; }
-    .cards .card-subtitle {
+    .cards .card-subtitle, .card-window .card-subtitle {
       display: inline-block;
       font-size: 16px;
       font-weight: 200;
       margin-top: 0;
       margin-bottom: 16px; }
-    .cards .card-text {
+    .cards .card-text, .card-window .card-text {
       line-height: 1.5rem;
       display: flex;
       flex-direction: column;
-      max-height: 200px;
-      height: auto;
-      overflow-y: auto;
-      margin-bottom: 4px; }
-      .cards .card-text:last-child {
+      overflow-y: hidden; }
+      .cards .card-text:last-child, .card-window .card-text:last-child {
         margin-bottom: 35px; }
-    .cards .card-btn {
+      .cards .card-text .gradient, .card-window .card-text .gradient {
+        position: absolute;
+        display: inline-block;
+        height: 50px;
+        width: 100%;
+        bottom: 35px;
+        background: -webkit-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+        background: -moz-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+        background: linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+        display: none; }
+    .cards .card-btn, .card-window .card-btn {
       display: inline-block;
       box-sizing: border-box;
       text-align: center;
@@ -255,6 +264,9 @@ body {
       border-radius: 9999px;
       transition: color 0.4s;
       transition: background-color 0.6s; }
+
+.cards .card {
+  cursor: pointer; }
 
 .time-event-content .container {
   display: flex;
@@ -426,23 +438,92 @@ body {
   text-align: center;
   padding: 50px 0; }
 
+.card-window {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  animation: fadeIn 0.3s; }
+  .card-window .card {
+    border-radius: 30px;
+    width: 700px;
+    margin-top: -50px;
+    cursor: default; }
+    .card-window .card-body {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0; }
+      .card-window .card-body .card-left {
+        width: 267.4px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        background-color: #ebebeb;
+        padding: 20px; }
+      .card-window .card-body .card-right {
+        width: right-width;
+        box-sizing: border-box;
+        padding: 20px;
+        padding: 30px 20px; }
+      .card-window .card-body .card-btns {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: flex-end;
+        min-height: 200px; }
+      .card-window .card-body .card-img-top {
+        border-radius: 20px;
+        width: 227.4px;
+        height: 127.9125px; }
+      .card-window .card-body .card-text {
+        padding: 10px;
+        margin: 0; }
+        .card-window .card-body .card-text > p {
+          margin: 0; }
+      .card-window .card-body .card-btn {
+        width: 227.4px;
+        margin-top: 10px; }
+
 .card-content,
 .time-event-content {
-  animation: fadeIn 0.5s; }
+  animation: fadeInAndUp 0.5s; }
 
-@keyframes fadeIn {
+@keyframes fadeInAndUp {
   0% {
     opacity: 0;
     transform: translateY(10px); }
   100% {
     opacity: 1;
     transform: translateY(0); } }
-@keyframes punch {
+@keyframes fadeIn {
   0% {
-    transform: scale(1); }
-  80% {
-    transform: scale(1.3); }
+    opacity: 0; }
   100% {
-    transform: scale(1); } }
+    opacity: 1; } }
+@media (min-width: 1px) {
+  .card-window {
+    display: none; }
+
+  .cards .card {
+    cursor: default; }
+    .cards .card .card-body .card-text {
+      max-height: 9999px;
+      height: auto; } }
+@media (min-width: 768px) {
+  .card-window {
+    display: flex; }
+
+  .cards .card {
+    cursor: pointer; }
+    .cards .card .card-body .card-text {
+      max-height: 200px;
+      height: auto; } }
 
 /*# sourceMappingURL=main.css.map */

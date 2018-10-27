@@ -45,6 +45,7 @@ $card-background: #F8F8F8;
 		margin: 0 10px;
 		font-size: 17px;
 		line-height: 1.6em;
+        margin-bottom: 5px;
 	}	
 }
 
@@ -96,14 +97,14 @@ $card-background: #F8F8F8;
 		width: 100%;
 	}
 	.row .col{
-		width: 100%;
+		width: 50%;
 	}	
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
 	.container{
-		width: 100%;
+		width: 900px;
 	}
 	.row .col{
 		width: 50%;
