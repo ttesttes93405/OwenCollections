@@ -148,14 +148,13 @@ body {
         $time-event-max-width: 600px;
 
         .time-events {
+			
             margin-left: $time-event-dot-space-left;
-
             max-width: $time-event-max-width;
 
             .time-event-year {
-                $year-height: 80px;
-
-                padding-top: $year-height;
+				
+                padding-top: $time-event-dot-space-left;
                 position: relative;
 
                 &-date {
@@ -164,14 +163,17 @@ body {
                     width: $time-event-dot-space-left;
                     top: 0;
                     left: -$time-event-dot-space-left/2;
-                    height: $year-height;
+                    height: $time-event-dot-space-left;
                     margin-left: 0;
                     margin-top: 0;
                     text-align: center;
+					border: $time-event-main-line;
+					border-radius: 9999px;
+					
                     h2 {
                         font-size: 20px;
                         font-weight: 700;
-                        line-height: $year-height;
+                        line-height: $time-event-dot-space-left;
                     }
                 }
 
