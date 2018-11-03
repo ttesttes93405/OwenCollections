@@ -35,8 +35,8 @@
 				transform: scale(1.015);
 			}
 			&-btn {
-				background-color: transparent;
-				border: 1px solid rgba($font-m-dark1, 0.3);
+				background-color: rgba($font-m-light1,0.1);
+				border: 1px solid rgba($font-m-light1, 0.2);
 				opacity: 0.9;
                 color: $font-m-dark1;
 
@@ -57,11 +57,6 @@
 		}
 		&-info {
 			&:hover {
-				background-color: rgba($fill-g-light2, 0.3);
-
-				.time-event-info-triangle {
-					border-color: transparent rgba($fill-g-light2, 0.3) transparent;
-				}
 			}
 		}
 	}

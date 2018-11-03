@@ -22,7 +22,7 @@ var vm = new Vue({
 				picture: "",
 				video: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
 				subtitle: "2015/9 - 2016/1",
-				type: "Project",
+				tag: ["Project"],
 				content: "一人製作的手機益智遊戲，設計在等公車、蹲廁所時都能輕易的遊玩。\n設計時考量使用單手就可以操作的操作手勢，可以很輕易的用單指進行遊戲。",
 				links: []
 			},{
@@ -30,7 +30,7 @@ var vm = new Vue({
 				picture: "",
 				video: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
 				subtitle: "2016/5 -",
-				type: "Project",
+				tag: ["Project"],
 				content: "與另一伙伴一同製作的畢業製作作品，想製作出一款規則單純但能有許多變化的遊戲，也希望各個年齡層都能喜歡。\n畢業後現由自己繼續開發。",
 				links: [
 					{
@@ -43,7 +43,7 @@ var vm = new Vue({
 				picture: "pic/LiteraryDessert.svg",
 				video: "",
 				subtitle: "2016/7 - 2016/8",
-				type: "Project",
+				tag: ["Project"],
 				content: "閒暇時所寫的極短故事，並為這些故事做了瀏覽的網站。\n你可以在這裡搜尋故事、隨機抽選故事，以及將喜歡的故事加入收藏。",
 				links: [
 					{
@@ -56,7 +56,7 @@ var vm = new Vue({
 				picture: "",
 				video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
 				subtitle: "2018/4",
-				type: "Project",
+				tag: ["Project", "Event"],
 				content: "參加2018 Kuso Game Jam ，在不到兩天的時間內迅速做出遊戲原型，是會讓人強迫症發作的小遊戲。\n這個遊戲也在2018的10-11月，於澳洲墨爾本的 Longitude exhibition 展出。",
 				links: [
                     {
@@ -73,7 +73,7 @@ var vm = new Vue({
 				picture: "",
 				video: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
 				subtitle: "2018/1",
-				type: "Event",
+				tag: ["Event"],
 				content: "受GooglePlay邀請，在2018台北電玩展展示「DROOM夢門」，還為此量身訂做精美的影片。\n同樣受邀參展的作品還有：Walkr、OPUS-靈魂之橋、知識王LIVE，及Lanota。",
 				links: []
 			},{
@@ -81,7 +81,7 @@ var vm = new Vue({
 				picture: "pic/x-legend.png",
 				video: "",
 				subtitle: "2017/8 - ",
-				type: "Event",
+				tag: ["Event"],
 				content: "從2017年8月開始，於傳奇任職企劃。\n參與以Unity開發的手遊專案，主要負責系統與介面，規劃功能、撰寫相關文件並與程式溝通。",
 				links: []
 			}
@@ -144,7 +144,7 @@ var vm = new Vue({
 				},{
 					title: "The Hole 於 Longitude Exhibition 展出",
 					month: "10月",
-					content: "於 2018 Kuso Game Jam 做出的遊戲，在澳洲墨爾本的 Longitude Exhibition 展出，展期為：10/17 - 11/25。",
+					content: "於 2018 Kuso Game Jam 做出的遊戲「The Hole」，在澳洲墨爾本的 Longitude Exhibition 展出，展期為：10/17 - 11/25。",
 					marginSpace:"200px"
 				}]
 			}

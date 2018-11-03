@@ -16,8 +16,9 @@
 $card-background: #F8F8F8;
 
 .card {
+	
 	background-color: $card-background;
-	box-sizing: border-box;
+	//box-sizing: border-box;
 	margin: 20px;
 
 	&-img-top{
@@ -34,6 +35,7 @@ $card-background: #F8F8F8;
 	h1.card-title{
 		margin: 0 10px;
 		font-size: 22px;
+		font-weight: 700;
 	}
 	h2.card-subtitle{
 		margin: 0 10px;
@@ -47,6 +49,22 @@ $card-background: #F8F8F8;
 		line-height: 1.6em;
         margin-bottom: 5px;
 	}	
+	.card-tag{
+		margin: 5px 10px;
+		text-align: right;
+		p{
+			display: inline-block;
+			padding : 5px 10px;
+			margin-left: 10px;
+			font-size: 14px;
+			line-height: 14px;
+			border-radius: 9999px;
+			background-color: $fill-g-light1;
+			color: $font-g-dark3;
+			opacity: 0.7;
+        
+		}
+	}
 }
 
 .embed-responsive {

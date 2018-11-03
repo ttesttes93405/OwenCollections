@@ -1,170 +1,175 @@
 <!DOCTYPE html>
 <html lang="zh-TW" prefix="og:http://ogp.me/ns#">
 
-    <head>
+	<head>
 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
-        <title>Owen Sun</title>
+		<meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
+		<title>Owen Sun</title>
 
-        <link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
+		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
 
-        <link href="css/main.css" rel="stylesheet" type="text/css">
-        <script src="js/vue.min.js"></script>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<script src="js/vue.min.js"></script>
 
-    </head>
+	</head>
 
-    <body>
+	<body>
 
-        <img style="display:none" src="pic/Owen_view.jpg" />
+		<img style="display:none" src="pic/Owen_view.jpg" />
 
-        <div id="app">
+		<div id="app">
 
-            <div class="top-content">
-                <div class="container">
-                    <div class="author">
-                        <div class="author-picture" @click="$set(toggle,0,!toggle[0])">
-                            <div v-bind:class="{'author-picture-content-egg': toggle[0]}" class="author-picture-content">
-                                <img v-bind:src="author.picture[0]" />
-                            </div>
-                        </div>
-                        <h1 class="author-title font-color-g-dark1">{{author.title}}</h1>
-                        <h2 class="author-subtitle font-color-g-dark2">{{author.subtitle}}</h2>
-                        <p class="author-content font-color-g-dark2"></p>
-                        <div calss="info">
-                            <div class="info-item" v-for="itemAuthorInfo in author.info">
-                                <svg>
-                                    <use v-bind:xlink:href="itemAuthorInfo.picture" class="info-item-img"></use>
-                                </svg>
-                                <p class="info-item-p font-color-g-dark2">{{itemAuthorInfo.content}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="top-content">
+				<div class="container">
+					<div class="author">
+						<div class="author-picture" @click="$set(toggle,0,!toggle[0])">
+							<div v-bind:class="{'author-picture-content-egg': toggle[0]}" class="author-picture-content">
+								<img v-bind:src="author.picture[0]" />
+							</div>
+						</div>
+						<h1 class="author-title font-color-g-dark1">{{author.title}}</h1>
+						<h2 class="author-subtitle font-color-g-dark2">{{author.subtitle}}</h2>
+						<p class="author-content font-color-g-dark2"></p>
+						<div calss="info">
+							<div class="info-item" v-for="itemAuthorInfo in author.info">
+								<svg>
+									<use v-bind:xlink:href="itemAuthorInfo.picture" class="info-item-img"></use>
+								</svg>
+								<p class="info-item-p font-color-g-dark2">{{itemAuthorInfo.content}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">{{text[0]}}</div>
-                        <div @click="nowPage=1" v-bind:class="{'page-select': nowPage==1}" class="page-item">{{text[1]}}</div>
-                    </div>
-                </div>
-            </div>
+			<div class="view-content">
+				<div class="page-content">
+					<div class="container">
+						<div class="page-container">
+							<div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">{{text[0]}}</div>
+							<div @click="nowPage=1" v-bind:class="{'page-select': nowPage==1}" class="page-item">{{text[1]}}</div>
+						</div>
+					</div>
+				</div>
+				<div v-show="nowPage==0" class="card-content">
+					<div class="container">
+						<div class="row cards">
 
-            <div v-show="nowPage==0" class="card-content">
-                <div class="container">
-                    <div class="row cards">
+							<div class="col" v-for="(item,index) in collections">
+								<div class="card" v-on:click.stop="showCollectionWindow(index)">
+									<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
+										<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
+									</div>
+									<img class="card-img-top" v-bind:src="item.picture" v-if="item.picture!=''" />
+									<div class="card-body">
+										<h1 class="card-title">{{item.title}}</h1>
+										<h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
+										<div class="card-text font-color-g-dark2">
+											<p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
+											<div class="gradient"></div>
+										</div>
 
-                        <div class="col" v-for="(item,index) in collections">
-                            <div class="card" v-on:click.stop="showCollectionWindow(index)">
-                                <div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
-                                    <iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
-                                </div>
-                                <img class="card-img-top" v-bind:src="item.picture" v-if="item.picture!=''" />
-                                <div class="card-body">
-                                    <h1 class="card-title">{{item.title}}</h1>
-                                    <h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
-                                    <div class="card-text font-color-g-dark2">
-                                        <p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
-                                        <div class="gradient"></div>
-                                    </div>
+										<div class="card-tag">
+											<p v-for="itemTag in item.tag">{{itemTag}}</p>
+										</div>
 
-                                    <a v-bind:href="itemLink.link" target="_blank"
-                                       v-on:click.stop="" 
-                                       v-for="itemLink in item.links">
-                                        <div class="card-btn">{{itemLink.title}}</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+										<a v-bind:href="itemLink.link" target="_blank"
+										   v-on:click.stop="" 
+										   v-for="itemLink in item.links">
+											<div class="card-btn">{{itemLink.title}}</div>
+										</a>
+									</div>
+								</div>
+							</div>
 
-                    </div>
-                    <p class="font-color-g-dark3 bottom-text">往未來邁進</p>
-                </div>
-            </div>
-            <div v-show="nowPage==1" class="time-event-content">
-                <div class="container">
+						</div>
+						<p class="font-color-g-dark3 bottom-text">往未來邁進</p>
+					</div>
+				</div>
+				<div v-show="nowPage==1" class="time-event-content">
+					<div class="container">
 
-                    <div class="time-events">
-                        <div class="time-event-year" v-for="(yearItem, index) in timeEvents">
+						<div class="time-events">
+							<div class="time-event-year" v-for="(yearItem, index) in timeEvents">
 
-                            <div class="time-event-year-date">
-                                <h2>{{yearItem.year}}</h2>
-                            </div>
+								<div class="time-event-year-date">
+									<h2>{{yearItem.year}}</h2>
+								</div>
 
-                            <div class="time-event" v-for="(item, index) in yearItem.data">
+								<div class="time-event" v-for="(item, index) in yearItem.data">
 
-                                <div class="time-event-dot">
-                                    <div class="time-event-dot-img"></div>
-                                </div>
+									<div class="time-event-dot">
+										<div class="time-event-dot-img"></div>
+									</div>
 
-                                <div class="time-event-date font-color-g-dark3">
-                                    <h3>{{item.month}}</h3>
-                                </div>
-                                <div class="time-event-info" v-bind:style="{'margin-bottom':item.marginSpace}">
+									<div class="time-event-date font-color-g-dark3">
+										<h3>{{item.month}}</h3>
+									</div>
+									<div class="time-event-info" v-bind:style="{'margin-bottom':item.marginSpace}">
 
-                                    <h1 class="time-event-info-title">{{item.title}}</h1>
-                                    <p class="time-event-info-text font-color-g-dark2" v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
+										<h1 class="time-event-info-title">{{item.title}}</h1>
+										<p class="time-event-info-text font-color-g-dark2" v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
 
-                                    <div class="time-event-info-triangle"></div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bottom-content">
-                    <div class="container">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="card-window" v-if="isShowCollectionWindow" v-on:click="isShowCollectionWindow=false">
-
-                <div class="card" v-on:click.stop="">
-                    <div class="card-body">
-
-                        <div class="card-left">
-                            <div class="card-img-top embed-responsive embed-responsive-16by9" v-if="collections[currentCollection].video!=''">
-                                <iframe class="embed-responsive-item" v-bind:src="collections[currentCollection].video" scrolling="no"></iframe>
-                            </div>
-                            <img class="card-img-top" v-bind:src="collections[currentCollection].picture" v-if="collections[currentCollection].picture!=''" />
-                            <div class="card-btns">
-                                <a v-bind:href="itemLink.link" target="_blank"
-                                   v-on:click.stop="" 
-                                   v-for="itemLink in collections[currentCollection].links">
-                                    <div class="card-btn">{{itemLink.title}}</div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="card-right">
-                            <h1 class="card-title">{{collections[currentCollection].title}}</h1>
-                            <h2 class="card-subtitle font-color-g-dark3">{{collections[currentCollection].subtitle}}</h2>
-                            <div class="card-text font-color-g-dark2">
-                                <p v-for="itemContent in collections[currentCollection].content.split('\n')">{{itemContent}}</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+										<div class="time-event-info-triangle"></div>
+									</div>
 
 
-        </div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="bottom-content">
+						<div class="container">
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<div class="card-window" v-if="isShowCollectionWindow" v-on:click="isShowCollectionWindow=false">
+
+				<div class="card" v-on:click.stop="">
+					<div class="card-body">
+
+						<div class="card-left">
+							<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="collections[currentCollection].video!=''">
+								<iframe class="embed-responsive-item" v-bind:src="collections[currentCollection].video" scrolling="no"></iframe>
+							</div>
+							<img class="card-img-top" v-bind:src="collections[currentCollection].picture" v-if="collections[currentCollection].picture!=''" />
+							<div class="card-btns">
+								<a v-bind:href="itemLink.link" target="_blank"
+								   v-on:click.stop="" 
+								   v-for="itemLink in collections[currentCollection].links">
+									<div class="card-btn">{{itemLink.title}}</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="card-right">
+							<h1 class="card-title">{{collections[currentCollection].title}}</h1>
+							<h2 class="card-subtitle font-color-g-dark3">{{collections[currentCollection].subtitle}}</h2>
+							<div class="card-text font-color-g-dark2">
+								<p v-for="itemContent in collections[currentCollection].content.split('\n')">{{itemContent}}</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
 
 
-    </body>
-    <script src="js/main.js"></script>
+		</div>
+
+
+	</body>
+	<script src="js/main.js"></script>
 
 
 </html>
