@@ -10,7 +10,7 @@
 		<meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
 		<title>Owen Sun</title>
 
-		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
+		<link rel="Shortcut Icon" type="image/x-icon" href="pic/Owen_view.png" />
 
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<script src="js/vue.min.js"></script>
@@ -50,8 +50,16 @@
 				<div class="page-content">
 					<div class="container">
 						<div class="page-container">
-							<div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">{{text[0]}}</div>
-							<div @click="nowPage=1" v-bind:class="{'page-select': nowPage==1}" class="page-item">{{text[1]}}</div>
+							<div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">
+								<svg class="page-icon">
+									<use xlink:href="pic/icons.svg#card"></use>
+								</svg>
+							</div>
+							<div @click="nowPage=1" v-bind:class="{'page-select': nowPage==1}" class="page-item">
+								<svg class="page-icon">
+									<use xlink:href="pic/icons.svg#time"></use>
+								</svg>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -61,6 +69,7 @@
 
 							<div class="col" v-for="(item,index) in collections">
 								<div class="card" v-on:click.stop="showCollectionWindow(index)">
+								
 									<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
 										<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
 									</div>

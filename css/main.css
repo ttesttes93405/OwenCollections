@@ -76,6 +76,7 @@ html, body {
 
 .card {
   background-color: #F8F8F8;
+  box-sizing: border-box;
   margin: 20px; }
   .card-img-top {
     width: 100%;
@@ -167,17 +168,18 @@ html, body {
     color: #ebebeb;
     background-color: #0091f8; } }
 @media (min-width: 992px) {
-  .page-item: hover;
-    .page-item-background-color: white;
-  .page-select:hover {
-    background-color: rgba(83, 79, 79, 0.7); }
+  .page-container .page-item:hover {
+    background-color: rgba(0, 145, 248, 0.2);
+    transform: scale(1.03); }
+  .page-container .page-select:hover {
+    background-color: rgba(0, 145, 248, 0.7);
+    transform: scale(1.03); }
 
   .cards .card:hover, .card-window .card:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     transform: scale(1.015); }
   .cards .card-btn, .card-window .card-btn {
     background-color: rgba(0, 145, 248, 0.1);
-    border: 1px solid rgba(0, 145, 248, 0.1);
     opacity: 0.9;
     color: #0091f8; }
     .cards .card-btn:hover, .card-window .card-btn:hover {
@@ -191,7 +193,6 @@ html,
 body {
   letter-spacing: 0.07em;
   line-height: 1.8em;
-  background: url("pic/background.jpg");
   font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif; }
 
 h1 {
@@ -283,84 +284,85 @@ h1 {
     align-items: center;
     flex-shrink: 1;
     flex-grow: 0;
-    margin-bottom: 60px;
     padding: 0 20px; }
     .page-content .container .page-container {
       display: inline-block;
       text-align: center;
       width: auto;
       background-color: rgba(65, 167, 239, 0.15);
-      border-radius: 30px; }
+      border-radius: 35px;
+      height: 70px; }
       .page-content .container .page-container .page-item {
         cursor: pointer;
         display: inline-block;
-        height: 50px;
-        min-width: 150px;
-        max-width: 250px;
-        line-height: 50px;
+        height: 60px;
+        width: 100px;
+        line-height: 60px;
         text-align: center;
         border-left-style: none;
         border-right-style: none;
         border-radius: 9999px;
         margin: 5px;
         color: #41a7ef;
-        transition-property: background-color;
+        transition-property: background-color, transform;
         transition-duration: 0.3s; }
+        .page-content .container .page-container .page-item .page-icon {
+          width: 50px;
+          height: 50px;
+          margin: 5px; }
       .page-content .container .page-container .page-select {
         background-color: rgba(65, 167, 239, 0.9);
         color: #ebebeb; }
 
 .view-content {
-  background-color: rgba(206, 213, 218, 0.2); }
+  background-color: #E8ECF4; }
 
-.cards, .card-window {
-  padding-top: 24px; }
-  .cards .card, .card-window .card {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    box-sizing: content-box;
-    transform: scale(1.0001);
-    transition: transform 0.4s; }
-    .cards .card-title, .card-window .card-title {
-      font-size: 20px;
-      margin-bottom: 4px;
-      line-height: 1.8rem; }
-    .cards .card-subtitle, .card-window .card-subtitle {
+.cards .card, .card-window .card {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  box-sizing: content-box;
+  transform: scale(1.0001);
+  transition: transform 0.4s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
+  .cards .card-title, .card-window .card-title {
+    font-size: 20px;
+    margin-bottom: 4px;
+    line-height: 1.8rem; }
+  .cards .card-subtitle, .card-window .card-subtitle {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 16px; }
+  .cards .card-text, .card-window .card-text {
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden; }
+    .cards .card-text:last-child, .card-window .card-text:last-child {
+      margin-bottom: 35px; }
+    .cards .card-text .gradient, .card-window .card-text .gradient {
+      position: absolute;
       display: inline-block;
-      font-size: 16px;
-      font-weight: 200;
-      margin-top: 0;
-      margin-bottom: 16px; }
-    .cards .card-text, .card-window .card-text {
-      line-height: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      overflow-y: hidden; }
-      .cards .card-text:last-child, .card-window .card-text:last-child {
-        margin-bottom: 35px; }
-      .cards .card-text .gradient, .card-window .card-text .gradient {
-        position: absolute;
-        display: inline-block;
-        height: 50px;
-        width: 100%;
-        bottom: 35px;
-        background: -webkit-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
-        background: -moz-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
-        background: linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
-        display: none; }
-    .cards .card-btn, .card-window .card-btn {
-      display: inline-block;
-      box-sizing: border-box;
-      text-align: center;
+      height: 50px;
       width: 100%;
-      padding: 15px 0;
-      height: 60px;
-      margin-top: 10px;
-      border-radius: 9999px;
-      transition: color 0.4s;
-      transition: background-color 0.6s; }
+      bottom: 35px;
+      background: -webkit-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+      background: -moz-linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+      background: linear-gradient(bottom, #f8f8f8, rgba(248, 248, 248, 0));
+      display: none; }
+  .cards .card-btn, .card-window .card-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 9999px;
+    transition: color 0.4s;
+    transition: background-color 0.6s; }
 
 .cards .card {
   cursor: pointer; }
@@ -377,7 +379,7 @@ h1 {
     margin-left: 70px;
     max-width: 600px; }
     .time-event-content .container .time-events .time-event-year {
-      padding-top: 70px;
+      padding-top: 40px;
       position: relative; }
       .time-event-content .container .time-events .time-event-year-date {
         position: absolute;
@@ -385,30 +387,31 @@ h1 {
         width: 70px;
         top: 0;
         left: -35px;
-        height: 70px;
+        height: 40px;
         margin-left: 0;
         margin-top: 0;
         text-align: center;
-        border: 1px rgba(0, 145, 248, 0.2) solid;
+        background-color: #e0e0e0;
         box-sizing: border-box;
         border-radius: 9999px; }
         .time-event-content .container .time-events .time-event-year-date h2 {
           font-size: 20px;
           font-weight: 700;
-          line-height: 70px; }
+          line-height: 40px; }
       .time-event-content .container .time-events .time-event-year .time-event {
-        border-left: 1px rgba(0, 145, 248, 0.2) solid;
+        border-left: 1px #e0e0e0 solid;
         display: flex;
         flex-direction: row;
         position: relative;
-        padding-right: 10px; }
+        padding-right: 10px;
+        padding-top: 10px; }
         .time-event-content .container .time-events .time-event-year .time-event-dot {
           height: 100%;
           position: relative; }
           .time-event-content .container .time-events .time-event-year .time-event-dot-img {
             position: absolute;
             left: -5px;
-            top: 26px;
+            top: 16px;
             width: 10px;
             height: 10px;
             border-radius: 100%;

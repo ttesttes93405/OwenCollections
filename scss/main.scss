@@ -18,8 +18,9 @@ html,
 body {
 	letter-spacing: 0.07em;
 	line-height: 1.8em;
-	background: url("pic/background.jpg");
 	font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
+	
+	//filter: grayscale(1);
 }
 
 h1{
@@ -136,7 +137,6 @@ h1{
 		align-items: center;
 		flex-shrink: 1;
 		flex-grow: 0;
-		margin-bottom: 60px;
 		padding: 0 20px;
 
 		$page-item-line: 1px rgba($fill-g-dark1, 0.2) solid;
@@ -144,8 +144,7 @@ h1{
 		$page-radius: 9999px;
 
 		.page-container {
-			$btn-height: 50px;
-
+			$btn-height: 60px;
 
 			$color_m: $fill-m-light1;
 			$color_g: $fill-g-light3;
@@ -158,13 +157,13 @@ h1{
 			background-color: rgba($color_mix, 0.15);
 
 			border-radius: ($btn-height + 10px) / 2;
+			height: $btn-height + 10px;
 
 			.page-item {
 				cursor: pointer;
 				display: inline-block;
 				height: $btn-height;
-				min-width: 150px;
-				max-width: 250px;
+				width: 100px;
 				line-height: $btn-height;
 				text-align: center;
 				border-left-style: none;
@@ -173,8 +172,18 @@ h1{
 				margin: 5px;
 				color: $color_mix;
 
-				transition-property: background-color;
+				transition-property: background-color, transform;
 				transition-duration: 0.3s;
+
+				.page-icon{
+					$size: 50px;
+
+					width: $size;
+					height: $size;
+
+					margin: 5px;
+				}
+				
 			}
 
 			.page-select {
@@ -186,26 +195,21 @@ h1{
 }
 
 .view-content {
-
-	$color_m: $fill-m-light1;
-	$color_g: $fill-g-light3;
-	$color_mix_value: 0.05;
-	$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
-
-	background-color: rgba($color_mix, 0.2);
+	background-color: #E8ECF4;
 }
 
 .cards, .card-window {
-	padding-top: 24px;
 
 	.card {
-		border: 1px solid rgba(#000, 0.1);
+		//border: 1px solid rgba(#000, 0.1);
 		border-radius: 30px;
 		overflow: hidden;
 		box-shadow: 0 0 0 rgba(#000, 0);
 		box-sizing: content-box;
 		transform: scale(1.0001);
 		transition: transform 0.4s;
+		//padding: 5px;
+		box-shadow: 0 0 15px rgba(#000, 0.1);
 
 		&-title {
 			font-size: 20px;
@@ -270,12 +274,15 @@ h1{
 		flex-direction: row;
 		justify-content: center;
 
+
 		$time-event-dot-r: 10px;
 		$time-event-dot-space-left: 70px;
 		$time-event-dot-space-right: 3vw;
 		$time-event-info-padding: 20px;
 
-		$time-event-main-line: 1px rgba($font-m-light1, 0.2) solid;
+
+		$time-event-main-color: rgba($font-g-light2, 1);
+		$time-event-main-line: 1px $time-event-main-color solid;
 		$time-event-max-width: 600px;
 
 		.time-events {
@@ -285,7 +292,9 @@ h1{
 
 			.time-event-year {
 
-				padding-top: $time-event-dot-space-left;
+				$title-height: 40px;
+
+				padding-top: $title-height;
 				position: relative;
 
 				&-date {
@@ -294,18 +303,19 @@ h1{
 					width: $time-event-dot-space-left;
 					top: 0;
 					left: -$time-event-dot-space-left/2;
-					height: $time-event-dot-space-left;
+					height: $title-height;
 					margin-left: 0;
 					margin-top: 0;
 					text-align: center;
-					border: $time-event-main-line;
+					//border: $time-event-main-line;
+					background-color: $time-event-main-color;
 					box-sizing: border-box;
 					border-radius: 9999px;
 
 					h2 {
 						font-size: 20px;
 						font-weight: 700;
-						line-height: $time-event-dot-space-left;
+						line-height: $title-height;
 					}
 				}
 
@@ -315,6 +325,7 @@ h1{
 					flex-direction: row;
 					position: relative;
 					padding-right: 10px;
+					padding-top: 10px;
 
 
 					&-dot {
@@ -324,7 +335,7 @@ h1{
 						&-img {
 							position: absolute;
 							left: -$time-event-dot-r/2;
-							top: 26px;
+							top: 26px - 10px;
 							width: $time-event-dot-r;
 							height: $time-event-dot-r;
 							border-radius: 100%;
