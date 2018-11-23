@@ -168,11 +168,11 @@ html, body {
     color: #ebebeb;
     background-color: #0091f8; } }
 @media (min-width: 992px) {
-  .page-container .page-item:hover {
-    background-color: rgba(0, 145, 248, 0.2);
+  .page-content > .container > .page-container .page-item:hover {
+    background-color: rgba(0, 145, 248, 0.4);
     transform: scale(1.03); }
-  .page-container .page-select:hover {
-    background-color: rgba(0, 145, 248, 0.7);
+  .page-content > .container > .page-container .page-select:hover {
+    background-color: #0091f8;
     transform: scale(1.03); }
 
   .cards .card:hover, .card-window .card:hover {
@@ -219,7 +219,9 @@ h1 {
         transition: margin-top 0.4s; }
         .top-content .author-picture-content img {
           width: 150px;
-          height: 300px; }
+          height: 150px;
+          border-radius: 9999px;
+          transition: margin-top 0.4s; }
       .top-content .author-picture-content-egg {
         margin-top: -150px; }
     .top-content .author-title {
@@ -246,31 +248,12 @@ h1 {
         margin-left: -20px;
         margin-right: -20px;
         padding-right: 15px;
-        height: 50px;
-        				/*
-        				$info-item-border-radius: 25px;
-        				$info-item-border: 1px solid rgba($fill-g-dark2, 0.15);
-        				$info-item-middle-border: 1px dashed rgba($fill-g-dark2, 0.1);
-        
-        				border: $info-item-border;
-        				border-bottom: none;
-        				border-top: $info-item-middle-border;
-        
-        				&:first-child {
-        				border-top: $info-item-border;
-        				border-top-left-radius: $info-item-border-radius;
-        				border-top-right-radius: $info-item-border-radius;
-        			}
-        				&:last-child {
-        				border-bottom: $info-item-border;
-        				border-bottom-left-radius: $info-item-border-radius;
-        				border-bottom-right-radius: $info-item-border-radius;
-        			}
-        				*/ }
+        height: 50px; }
         .top-content .author .info-item-img, .top-content .author .info-item svg {
-          width: 50px;
-          height: 50px;
-          fill: #d9d9d9; }
+          width: 30px;
+          height: 30px;
+          padding: 10px;
+          fill: #c3d2dc; }
         .top-content .author .info-item-p {
           margin: 0; }
 
@@ -303,15 +286,15 @@ h1 {
         border-right-style: none;
         border-radius: 9999px;
         margin: 5px;
-        color: #41a7ef;
+        background-color: rgba(65, 167, 239, 0.3);
         transition-property: background-color, transform;
-        transition-duration: 0.3s; }
+        transition-duration: 0.2s; }
         .page-content .container .page-container .page-item .page-icon {
           width: 50px;
           height: 50px;
           margin: 5px; }
       .page-content .container .page-container .page-select {
-        background-color: rgba(65, 167, 239, 0.9);
+        background-color: #0091f8;
         color: #ebebeb; }
 
 .view-content {
@@ -391,15 +374,16 @@ h1 {
         margin-left: 0;
         margin-top: 0;
         text-align: center;
-        background-color: #e0e0e0;
+        background-color: rgba(65, 167, 239, 0.15);
         box-sizing: border-box;
         border-radius: 9999px; }
         .time-event-content .container .time-events .time-event-year-date h2 {
           font-size: 20px;
           font-weight: 700;
-          line-height: 40px; }
+          line-height: 40px;
+          color: #448dc0; }
       .time-event-content .container .time-events .time-event-year .time-event {
-        border-left: 1px #e0e0e0 solid;
+        border-left: 1px rgba(65, 167, 239, 0.15) solid;
         display: flex;
         flex-direction: row;
         position: relative;

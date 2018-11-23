@@ -7,10 +7,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
+		<meta property="og:title" content="Owen Sun"/>
+		<meta property="og:image" content="pic/Owen01.jpg"/>
+		<meta property="og:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。" />
+		
 		<title>Owen Sun</title>
 
-		<link rel="Shortcut Icon" type="image/x-icon" href="pic/Owen_view.png" />
+		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
 
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<script src="js/vue.min.js"></script>
@@ -19,7 +22,7 @@
 
 	<body>
 
-		<img style="display:none" src="pic/Owen_view.jpg" />
+		<img style="display:none" src="pic/Owen01.jpg" />
 
 		<div id="app">
 
@@ -27,8 +30,9 @@
 				<div class="container">
 					<div class="author">
 						<div class="author-picture" @click="$set(toggle,0,!toggle[0])">
-							<div v-bind:class="{'author-picture-content-egg': toggle[0]}" class="author-picture-content">
+							<div class="author-picture-content">
 								<img v-bind:src="author.picture[0]" />
+								<img v-bind:src="author.picture[1]"  v-bind:class="{'author-picture-content-egg': toggle[0]}"/>
 							</div>
 						</div>
 						<h1 class="author-title font-color-g-dark1">{{author.title}}</h1>
@@ -96,7 +100,7 @@
 							</div>
 
 						</div>
-						<p class="font-color-g-dark3 bottom-text">往未來邁進</p>
+						<p class="font-color-g-dark3 bottom-text"></p>
 					</div>
 				</div>
 				<div v-show="nowPage==1" class="time-event-content">

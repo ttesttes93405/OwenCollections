@@ -4,7 +4,7 @@ var vm = new Vue({
 		author: {
 			title: "孫宇",
 			subtitle: "Owen Sun",
-			picture: ["pic/Owen.jpg"],
+			picture: ["pic/Owen01.jpg","pic/Owen02.jpg"],
 			info: [
 				{
 					picture: "pic/icons.svg#sentence",

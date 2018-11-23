@@ -21,13 +21,14 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-	.page-container{
+
+	.page-content>.container>.page-container{
 		.page-item:hover {
-			background-color: rgba($fill-m-dark1, 0.2);
+			background-color: rgba($fill-m-dark1, 0.4);
 			transform: scale(1.03);
 		}
 		.page-select:hover {
-			background-color: rgba($fill-m-dark1, 0.7);
+			background-color: rgba($fill-m-dark1, 1);
 			transform: scale(1.03);
 		}
 	}

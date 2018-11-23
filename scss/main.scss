@@ -19,7 +19,7 @@ body {
 	letter-spacing: 0.07em;
 	line-height: 1.8em;
 	font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
-	
+
 	//filter: grayscale(1);
 }
 
@@ -50,11 +50,15 @@ h1{
 			&-content {
 				display: flex;
 				flex-direction: column;
+				transition: margin-top 0.4s;
+				
 				img {
 					width: $picture-size;
-					height: $picture-size * 2;
-				}
-				transition: margin-top 0.4s;
+					height: $picture-size;
+					border-radius: 9999px;
+					
+					transition: margin-top 0.4s;
+				}	
 			}
 
 			&-content-egg {
@@ -91,31 +95,19 @@ h1{
 				margin-right: -20px;
 				padding-right: 15px;
 				height: 50px;
-				/*
-				$info-item-border-radius: 25px;
-				$info-item-border: 1px solid rgba($fill-g-dark2, 0.15);
-				$info-item-middle-border: 1px dashed rgba($fill-g-dark2, 0.1);
 
-				border: $info-item-border;
-				border-bottom: none;
-				border-top: $info-item-middle-border;
-
-				&:first-child {
-				border-top: $info-item-border;
-				border-top-left-radius: $info-item-border-radius;
-				border-top-right-radius: $info-item-border-radius;
-			}
-				&:last-child {
-				border-bottom: $info-item-border;
-				border-bottom-left-radius: $info-item-border-radius;
-				border-bottom-right-radius: $info-item-border-radius;
-			}
-				*/
 				&-img, svg {
-					width: 50px;
-					height: 50px;
 
-					fill: $fill-g-light3;
+					width: 30px;
+					height: 30px;
+					padding: 10px;
+
+					$color_m: $fill-m-light1;
+					$color_g: $fill-g-light3;
+					$color_mix_value: 0.1;
+					$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
+
+					fill: $color_mix;
 				}
 				&-p {
 					margin: 0;
@@ -170,10 +162,17 @@ h1{
 				border-right-style: none;
 				border-radius: $page-radius;
 				margin: 5px;
-				color: $color_mix;
+
+				$color_m: $fill-m-light1;
+				$color_g: $fill-g-light3;
+				$color_mix_value: 0.7;
+				$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
+
+				background-color: rgba($color_mix, 0.3);
+
 
 				transition-property: background-color, transform;
-				transition-duration: 0.3s;
+				transition-duration: 0.2s;
 
 				.page-icon{
 					$size: 50px;
@@ -183,11 +182,11 @@ h1{
 
 					margin: 5px;
 				}
-				
+
 			}
 
 			.page-select {
-				background-color: rgba($color_mix, 0.9);
+			background-color: rgba($fill-m-dark1, 1);
 				color: $font-g-light1;
 			}
 		}
@@ -280,8 +279,12 @@ h1{
 		$time-event-dot-space-right: 3vw;
 		$time-event-info-padding: 20px;
 
+		$color_m: $fill-m-light1;
+		$color_g: $fill-g-light3;
+		$color_mix_value: 0.7;
+		$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
-		$time-event-main-color: rgba($font-g-light2, 1);
+		$time-event-main-color: rgba($color_mix, 0.15);//rgba($font-g-light2, 1);
 		$time-event-main-line: 1px $time-event-main-color solid;
 		$time-event-max-width: 600px;
 
@@ -316,6 +319,13 @@ h1{
 						font-size: 20px;
 						font-weight: 700;
 						line-height: $title-height;
+
+						$color_m: $fill-m-light1;
+						$color_g: $fill-g-dark3;
+						$color_mix_value: 0.5;
+						$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
+
+						color: $color_mix;
 					}
 				}
 
