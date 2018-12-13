@@ -155,7 +155,7 @@ h1{
 				cursor: pointer;
 				display: inline-block;
 				height: $btn-height;
-				width: 100px;
+				width: $btn-height;
 				line-height: $btn-height;
 				text-align: center;
 				border-left-style: none;
@@ -171,8 +171,9 @@ h1{
 				background-color: rgba($color_mix, 0.3);
 
 
-				transition-property: background-color, transform;
-				transition-duration: 0.2s;
+				transition-property: background-color, transform, width;
+				transition-duration: 0.3s, 0.3s, 0.3s;
+				transition-timing-function: ease-in,ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 				.page-icon{
 					$size: 50px;
@@ -186,8 +187,9 @@ h1{
 			}
 
 			.page-select {
-			background-color: rgba($fill-m-dark1, 1);
+				background-color: rgba($fill-m-dark1, 1);
 				color: $font-g-light1;
+				width: 100px;
 			}
 		}
 	}
@@ -281,15 +283,19 @@ h1{
 
 		$color_m: $fill-m-light1;
 		$color_g: $fill-g-light3;
-		$color_mix_value: 0.7;
+		$color_mix_value: 0.8;
 		$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
-		$time-event-main-color: rgba($color_mix, 0.15);//rgba($font-g-light2, 1);
-		$time-event-main-line: 1px $time-event-main-color solid;
+		$time-event-main-color: rgba($color_mix, 1);
+		$time-event-main-line-color: rgba($color_mix, 0.1);
+		$time-event-main-line-width: 2px;
+		$time-event-main-line: $time-event-main-line-width $time-event-main-line-color solid;
 		$time-event-max-width: 600px;
 
 		.time-events {
 
+			$dot-tri-top: 30px;
+			
 			margin-left: $time-event-dot-space-left;
 			max-width: $time-event-max-width;
 
@@ -305,24 +311,24 @@ h1{
 					display: inline-block;
 					width: $time-event-dot-space-left;
 					top: 0;
-					left: -$time-event-dot-space-left/2;
+					left: -$time-event-dot-space-left/2 +  $time-event-main-line-width/2;
 					height: $title-height;
 					margin-left: 0;
 					margin-top: 0;
 					text-align: center;
-					//border: $time-event-main-line;
 					background-color: $time-event-main-color;
 					box-sizing: border-box;
 					border-radius: 9999px;
 
 					h2 {
+						
 						font-size: 20px;
 						font-weight: 700;
 						line-height: $title-height;
 
 						$color_m: $fill-m-light1;
-						$color_g: $fill-g-dark3;
-						$color_mix_value: 0.5;
+						$color_g: $fill-white;
+						$color_mix_value: 0.1;
 						$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
 						color: $color_mix;
@@ -330,22 +336,23 @@ h1{
 				}
 
 				.time-event {
+					
+					
 					border-left: $time-event-main-line;
 					display: flex;
 					flex-direction: row;
 					position: relative;
 					padding-right: 10px;
 					padding-top: 10px;
-
-
+					
 					&-dot {
 						height: 100%;
 						position: relative;
 
 						&-img {
 							position: absolute;
-							left: -$time-event-dot-r/2;
-							top: 26px - 10px;
+							left: - ($time-event-dot-r/2 + $time-event-main-line-width/2);
+							top: $dot-tri-top + 6px - 10px;
 							width: $time-event-dot-r;
 							height: $time-event-dot-r;
 							border-radius: 100%;
@@ -359,7 +366,7 @@ h1{
 						position: absolute;
 						display: inline-block;
 						width: $time-event-dot-space-left;
-						top: 10px;
+						top: $dot-tri-top - 10px;
 						left: -$time-event-dot-space-left;
 						height: 40px;
 						margin-left: -$time-event-dot-space-right;
@@ -382,15 +389,18 @@ h1{
 
 						padding: $time-event-info-padding;
 						margin-left: $time-event-dot-space-right;
-						border-radius: 10px;
+						border-radius: 20px;
 						background-color: $info-background-color;
 
-						transition: background-color 0.5s;
+						//transition: background-color 0.5s;
+						
+						
+						box-shadow: 0 0 20px rgba(#000,0.05);
 
 						&-triangle {
 							position: absolute;
 							left: $time-event-dot-space-right;
-							top: 23px;
+							top: $dot-tri-top + 3px;
 							margin-left: -10px;
 							width: 0;
 							height: 0;
