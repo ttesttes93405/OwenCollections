@@ -38,6 +38,8 @@
 			&:hover {
 				box-shadow: 0 5px 10px rgba(#000, 0.15);
 				transform: scale(1.015);
+				transition-duration: 0.3s;
+				transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 			}
 			&-btn {
 				background-color: rgba($font-m-light1, 0.1);
@@ -54,12 +56,7 @@
 		}
 	}
 
-	.time-event-content .container .time-events .time-event-year .time-event {
-		&:hover .time-event-dot {
-			&-img {
-				background-color: $fill-m-dark1;
-			}
-		}
+	.time-event-content .container .time-events .time-event-year .time-event {		
 		&-info {
 			&:hover {
 			}

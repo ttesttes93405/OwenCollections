@@ -10,7 +10,7 @@
 		<meta property="og:title" content="Owen Sun"/>
 		<meta property="og:image" content="pic/Owen01.jpg"/>
 		<meta property="og:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。" />
-		
+
 		<title>Owen Sun</title>
 
 		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
@@ -24,7 +24,15 @@
 
 		<img style="display:none" src="pic/Owen01.jpg" />
 
-		<div id="app">
+		<div id="loading" class="loading">
+			<div class="loading-body">
+				<p class="loading-text">Umm...</p>
+				<div class="round-l"></div>
+				<div class="round"></div>
+			</div>
+		</div>
+
+		<div id="app" style="display:none">
 
 			<div class="top-content">
 				<div class="container">
@@ -73,7 +81,7 @@
 
 							<div class="col" v-for="(item,index) in collections">
 								<div class="card" v-on:click.stop="showCollectionWindow(index)">
-								
+
 									<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="item.video!=''">
 										<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
 									</div>
@@ -143,7 +151,7 @@
 
 				</div>
 			</div>
-			
+
 			<div class="card-window" v-if="isShowCollectionWindow" v-on:click="isShowCollectionWindow=false">
 
 				<div class="card" v-on:click.stop="">

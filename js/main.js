@@ -150,10 +150,6 @@ var vm = new Vue({
 			}
 
 		],
-		text:[
-			"總覽",
-			"時間表"
-		],
 		toggle:[
 			false	//頭貼切換
 		],
@@ -162,7 +158,14 @@ var vm = new Vue({
         isShowCollectionWindow: false
 
 	},
-	mounted: function () {},
+	mounted: function () {
+		
+		if (location.hash != "#loading"){
+			document.getElementById("loading").setAttribute("style", "display: none");
+			document.getElementById("app").setAttribute("style", "display: block");
+		}
+		
+	},
 	methods:{
 		calcTimeEventMargin: function(inx){			
 			var value = 10;

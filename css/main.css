@@ -177,7 +177,9 @@ html, body {
 
   .cards .card:hover, .card-window .card:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    transform: scale(1.015); }
+    transform: scale(1.015);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .cards .card-btn, .card-window .card-btn {
     background-color: rgba(0, 145, 248, 0.1);
     opacity: 0.9;
@@ -185,15 +187,13 @@ html, body {
     .cards .card-btn:hover, .card-window .card-btn:hover {
       opacity: 1;
       color: #ebebeb;
-      background-color: #0091f8; }
-
-  .time-event-content .container .time-events .time-event-year .time-event:hover .time-event-dot-img {
-    background-color: #0091f8; } }
+      background-color: #0091f8; } }
 html,
 body {
   letter-spacing: 0.07em;
   line-height: 1.8em;
-  font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif; }
+  font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
+  animation: FadeIn 0.3s; }
 
 h1 {
   font-family: 'Maven Pro','Noto Sans CJK TC', '微軟正黑體', sans-serif; }
@@ -401,7 +401,7 @@ h1 {
             width: 10px;
             height: 10px;
             border-radius: 100%;
-            background-color: #888888;
+            background-color: #0091f8;
             transition: background-color 0.3s;
             transition: transform 0.2s; }
         .time-event-content .container .time-events .time-event-year .time-event-date {
@@ -516,17 +516,71 @@ h1 {
         width: 227.4px;
         margin-top: 10px; }
 
-.card-content,
-.time-event-content {
-  animation: fadeInAndUp 0.5s; }
+.cards {
+  animation: fadeIn 0.3s; }
 
-@keyframes fadeInAndUp {
+.time-events {
+  animation: fadeIn 0.3s; }
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2; }
+  .loading .loading-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px; }
+    .loading .loading-body img {
+      width: 150px;
+      height: 150px;
+      border-radius: 9999px;
+      margin-bottom: -20px; }
+    .loading .loading-body .round {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      margin-top: -10px;
+      border-radius: 9999px;
+      background-color: #0091f8;
+      animation: LoadingRound 1.3s infinite;
+      animation-timing-function: ease-in-out; }
+      .loading .loading-body .round .round-inner {
+        width: 10px;
+        height: 10px;
+        border-radius: 9999px;
+        animation: LoadingRound-inner 1.5s infinite;
+        animation-delay: 0.5s; }
+    .loading .loading-body .round-l {
+      height: 10px;
+      border-radius: 9999px;
+      background-color: rgba(0, 145, 248, 0.5);
+      animation: LoadingRound-l 1.3s infinite;
+      animation-timing-function: ease-in-out; }
+    .loading .loading-body .loading-text {
+      font-size: 20px;
+      font-weight: 500;
+      height: 80px;
+      line-height: 80px;
+      color: #0091f8; }
+
+@keyframes fadeInAndFromRight {
   0% {
-    opacity: 0;
-    transform: translateY(10px); }
+    transform: translateX(40px); }
   100% {
-    opacity: 1;
-    transform: translateY(0); } }
+    transform: translateX(0px); } }
+@keyframes fadeInAndFromLeft {
+  0% {
+    transform: translateX(-40px); }
+  100% {
+    transform: translateX(0); } }
 @keyframes fadeInAndRotate {
   0% {
     transform-origin: -100% 0%;
@@ -539,11 +593,44 @@ h1 {
     opacity: 0; }
   100% {
     opacity: 1; } }
+@keyframes cardIn {
+  0% {
+    margin-left: -10px; }
+  100% {
+    margin-left: 0; } }
 @keyframes PunchScale {
   0% {
     transform: scale(0.8); }
   100% {
     transform: scale(1); } }
+@keyframes LoadingRound {
+  0% {
+    transform: translateX(-50px); }
+  50% {
+    transform: translateX(50px); }
+  100% {
+    transform: translateX(-50px); } }
+@keyframes LoadingRound-l {
+  0% {
+    width: 0;
+    margin-left: 0;
+    margin-right: 100px;
+    opacity: 1; }
+  50% {
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 0; }
+  50.1% {
+    width: 0;
+    margin-left: 100px;
+    margin-right: 0;
+    opacity: 1; }
+  100% {
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 0; } }
 @media (min-width: 1px) {
   .card-window {
     display: none; }
@@ -561,6 +648,15 @@ h1 {
     cursor: pointer; }
     .cards .card .card-body .card-text {
       max-height: 200px;
-      height: auto; } }
+      height: auto; }
+
+  .col {
+    animation: cardIn 0.3s; }
+
+  .cards {
+    animation: fadeInAndFromLeft 0.3s; }
+
+  .time-events {
+    animation: fadeInAndFromRight 0.3s; } }
 
 /*# sourceMappingURL=main.css.map */
