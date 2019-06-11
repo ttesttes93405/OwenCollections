@@ -106,7 +106,7 @@ h1{
 
 					$color_m: $fill-m-light1;
 					$color_g: $fill-g-light3;
-					$color_mix_value: 0.1;
+					$color_mix_value: 0.5;
 					$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
 					fill: $color_mix;
@@ -198,7 +198,7 @@ h1{
 }
 
 .view-content {
-	background-color: #E8ECF4;
+	background-color: $main-color * 0.05 + $background-color * 0.95; //#E8ECF4;
 }
 
 .cards, .card-window {

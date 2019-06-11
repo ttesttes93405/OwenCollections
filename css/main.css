@@ -166,13 +166,13 @@ html, body {
   .cards .card-btn, .card-window .card-btn {
     opacity: 1;
     color: #ebebeb;
-    background-color: #0091f8; } }
+    background-color: #1ac1ff; } }
 @media (min-width: 992px) {
   .page-content > .container > .page-container .page-item:hover {
-    background-color: rgba(0, 145, 248, 0.4);
+    background-color: rgba(0, 186, 255, 0.4);
     transform: scale(1.03); }
   .page-content > .container > .page-container .page-select:hover {
-    background-color: #0091f8;
+    background-color: #00baff;
     transform: scale(1.03); }
 
   .cards .card:hover, .card-window .card:hover {
@@ -181,13 +181,13 @@ html, body {
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .cards .card-btn, .card-window .card-btn {
-    background-color: rgba(0, 145, 248, 0.1);
+    background-color: rgba(26, 193, 255, 0.1);
     opacity: 0.9;
-    color: #0091f8; }
+    color: #00a7e6; }
     .cards .card-btn:hover, .card-window .card-btn:hover {
       opacity: 1;
       color: #ebebeb;
-      background-color: #0091f8; } }
+      background-color: #1ac1ff; } }
 html,
 body {
   letter-spacing: 0.07em;
@@ -253,7 +253,7 @@ h1 {
           width: 30px;
           height: 30px;
           padding: 10px;
-          fill: #c3d2dc; }
+          fill: #6dcaed; }
         .top-content .author .info-item-p {
           margin: 0; }
 
@@ -272,7 +272,7 @@ h1 {
       display: inline-block;
       text-align: center;
       width: auto;
-      background-color: rgba(65, 167, 239, 0.15);
+      background-color: rgba(65, 195, 244, 0.15);
       border-radius: 35px;
       height: 70px; }
       .page-content .container .page-container .page-item {
@@ -286,7 +286,7 @@ h1 {
         border-right-style: none;
         border-radius: 9999px;
         margin: 5px;
-        background-color: rgba(65, 167, 239, 0.3);
+        background-color: rgba(65, 195, 244, 0.3);
         transition-property: background-color, transform, width;
         transition-duration: 0.3s, 0.3s, 0.3s;
         transition-timing-function: ease-in, ease-in, cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -295,12 +295,12 @@ h1 {
           height: 50px;
           margin: 5px; }
       .page-content .container .page-container .page-select {
-        background-color: #0091f8;
+        background-color: #00baff;
         color: #ebebeb;
         width: 100px; }
 
 .view-content {
-  background-color: #E8ECF4; }
+  background-color: #e6eff3; }
 
 .cards .card, .card-window .card {
   border-radius: 30px;
@@ -376,16 +376,16 @@ h1 {
         margin-left: 0;
         margin-top: 0;
         text-align: center;
-        background-color: #2b9ff1;
+        background-color: #2bc0f7;
         box-sizing: border-box;
         border-radius: 9999px; }
         .time-event-content .container .time-events .time-event-year-date h2 {
           font-size: 20px;
           font-weight: 700;
           line-height: 40px;
-          color: #e6f5ff; }
+          color: #e6f9ff; }
       .time-event-content .container .time-events .time-event-year .time-event {
-        border-left: 2px rgba(43, 159, 241, 0.1) solid;
+        border-left: 2px rgba(43, 192, 247, 0.1) solid;
         display: flex;
         flex-direction: row;
         position: relative;
@@ -401,7 +401,7 @@ h1 {
             width: 10px;
             height: 10px;
             border-radius: 100%;
-            background-color: #0091f8;
+            background-color: #00baff;
             transition: background-color 0.3s;
             transition: transform 0.2s; }
         .time-event-content .container .time-events .time-event-year .time-event-date {
@@ -549,7 +549,7 @@ h1 {
       height: 10px;
       margin-top: -10px;
       border-radius: 9999px;
-      background-color: #0091f8;
+      background-color: #00baff;
       animation: LoadingRound 1.3s infinite;
       animation-timing-function: ease-in-out; }
       .loading .loading-body .round .round-inner {
@@ -561,7 +561,7 @@ h1 {
     .loading .loading-body .round-l {
       height: 10px;
       border-radius: 9999px;
-      background-color: rgba(0, 145, 248, 0.5);
+      background-color: rgba(0, 186, 255, 0.5);
       animation: LoadingRound-l 1.3s infinite;
       animation-timing-function: ease-in-out; }
     .loading .loading-body .loading-text {
@@ -569,7 +569,7 @@ h1 {
       font-weight: 500;
       height: 80px;
       line-height: 80px;
-      color: #0091f8; }
+      color: #00baff; }
 
 @keyframes fadeInAndFromRight {
   0% {

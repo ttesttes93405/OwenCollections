@@ -1,4 +1,6 @@
 
+$main-color: #00baff;		//主色
+
 $background-color:#f2f2f2;	//背景色
 
 
@@ -10,8 +12,8 @@ $font-g-light1: #ebebeb;	//文字淺色(灰階)
 $font-g-light2: #e0e0e0;
 $font-g-light3: #d9d9d9;
 
-$font-m-dark1: #0091f8;		//文字深色(主色)
-$font-m-light1: #0091f8;	//文字淺色(主色)
+$font-m-dark1: $main-color * 0.9 + #000 * 0.1;		//文字深色(主色)
+$font-m-light1: $main-color * 0.9 + #fff * 0.1;		//文字淺色(主色)
 
 
 $fill-g-dark1: #534f4f;		//填充深色(灰階)
@@ -22,8 +24,8 @@ $fill-g-light1: #ebebeb;	//填充淺色(灰階)
 $fill-g-light2: #e0e0e0;
 $fill-g-light3: #d9d9d9;
 
-$fill-m-dark1: #0091f8;		//填充深色(主色)
-$fill-m-light1: #0091f8;	//填充色(主色)
+$fill-m-dark1: $main-color;	//填充深色(主色)
+$fill-m-light1: $main-color;//填充色(主色)
 
 $fill-white: #ffffff;
 $fill-black: #0b0b0b;
