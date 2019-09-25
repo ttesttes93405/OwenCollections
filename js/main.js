@@ -46,7 +46,7 @@ var vm = new Vue({
 			},
 			{
 				title: "The Hole",
-				picture: "pic/TheHole.png",
+				picture: "pic/TheHole.svg",
 				video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
 				subtitle: "2018/4",
 				tag: ["Project", "Event"],
