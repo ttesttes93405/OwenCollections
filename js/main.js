@@ -18,7 +18,7 @@ var vm = new Vue({
 		},
 		collections: [
 			{
-				title: "遊戲企劃(Cloud Macaca)",
+				title: "Cloud Macaca 企劃",
 				picture: "pic/CloudMacaca.png",
 				video: "",
 				subtitle: "2019/6 -",
@@ -27,7 +27,7 @@ var vm = new Vue({
 				links: []
 			},
 			{
-				title: "遊戲企劃(傳奇網路遊戲)",
+				title: "傳奇網路 企劃",
 				picture: "pic/x-legend.jpg",
 				video: "",
 				subtitle: "2017/8 - 2019/5",
@@ -190,8 +190,10 @@ var vm = new Vue({
 		
 		if (location.hash != "#loading"){
 			document.getElementById("loading").setAttribute("style", "display: none");
-			document.getElementById("app").setAttribute("style", "display: block");
+			document.getElementById("app").setAttribute("style", "display: flex");
 		}
+
+		this.shuffle(this.collections);
 		
 	},
 	methods:{
@@ -217,6 +219,10 @@ var vm = new Vue({
         showCollectionWindow: function(inx){
             this.currentCollection = inx;
             this.isShowCollectionWindow = true;
-        }
+		},
+		shuffle: function(array) {
+			array.sort(() => Math.random() - 0.5);
+		}
+		  
 	}
 })

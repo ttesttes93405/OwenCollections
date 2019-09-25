@@ -61,6 +61,8 @@ $card-background: #F8F8F8;
 	&-tag{
 		margin: 25px 10px 5px 10px;
 		text-align: right;
+		height: auto;
+		flex-grow: 1;
 		p{
 			display: inline-block;
 			padding : 5px 16px;
@@ -112,7 +114,7 @@ $card-background: #F8F8F8;
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 	.container{
-		width: 100%;
+		//width: 100%;
 	}
 	.row .col{
 		width: 100%;
@@ -122,29 +124,29 @@ $card-background: #F8F8F8;
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 	.container{
-		width: 100%;
+		//width: 100%;
 	}
 	.row .col{
-		width: 50%;
+		width: 450px;
 	}	
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
 	.container{
-		width: 900px;
+		//width: 900px;
 	}
 	.row .col{
-		width: 50%;
+		width: 500px;
 	}	
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { 
 	.container{
-		width: 1200px;
+		//width: 1200px;
 	}
 	.row .col{
-		width: 33%;
+		width: 500px;
 	}	
 }

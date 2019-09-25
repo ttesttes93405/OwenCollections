@@ -29,6 +29,13 @@ h1{
 	font-family: 'Maven Pro','Noto Sans CJK TC', '微軟正黑體', sans-serif;
 }
 
+#app{
+	display: flex;
+	.view-content {
+		flex-grow: 1;
+	}
+}
+
 .top-content {
 	display: flex;
 	justify-content: center;
@@ -200,6 +207,7 @@ h1{
 .cards, .card-window {
 
 	.card {
+
 		border-radius: 30px;
 		overflow: hidden;
 		box-sizing: content-box;
@@ -275,9 +283,10 @@ h1{
 }
 .cards {
 
-	.card{
-		cursor: pointer;
-	}
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	
 }
 
 .card-content {
@@ -635,7 +644,7 @@ h1{
 @keyframes fadeInAndFromRight {
 	0% {
 		//opacity: 0.5;
-		transform: translateX(40px);
+		transform: translateX(20px);
 	}
 	100% {
 		//opacity: 1;
@@ -645,7 +654,7 @@ h1{
 @keyframes fadeInAndFromLeft {
 	0% {
 		//opacity: 0.5;
-		transform: translateX(-40px);
+		transform: translateX(-20px);
 	}
 	100% {
 		//opacity: 1;
@@ -724,7 +733,22 @@ h1{
 	}
 }
 
+//1~768px
 @media (min-width: 1px) {
+
+	#app{
+		display: flex;
+		flex-direction: column;
+
+		.top-content{
+			position: relative;
+			height: auto;
+			width: 100%;
+		}
+		.view-content {
+			margin-left: 0;
+		}
+	}
 
 	.card-window{
 		display: none;
@@ -739,7 +763,24 @@ h1{
 	}
 
 }
+
+//768px~
 @media (min-width: 768px) {
+	
+	#app{
+		flex-direction: row;
+
+		$side-width: 38.2%;
+
+		.top-content{
+			position: fixed;
+			height: 100vh;
+			width: $side-width;
+		}
+		.view-content {
+			margin-left: $side-width;
+		}
+	}
 	.card-window{
 		display: flex;
 	}
