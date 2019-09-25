@@ -28,7 +28,7 @@ var vm = new Vue({
 			},
 			{
 				title: "遊戲企劃(傳奇網路遊戲)",
-				picture: "pic/x-legend.png",
+				picture: "pic/x-legend.jpg",
 				video: "",
 				subtitle: "2017/8 - 2019/5",
 				tag: ["Work"],
@@ -36,17 +36,17 @@ var vm = new Vue({
 				links: []
 			},
 			{
-				title: "受邀參加 2018台北電玩展 GooglePlay 築夢台灣專區",
-				picture: "",
+				title: "GooglePlay 築夢台灣專區",
+				picture: "pic/GooglePlay.jpg",
 				video: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
 				subtitle: "2018/1",
 				tag: ["Event"],
-				content: "受GooglePlay邀請，在2018台北電玩展展示「DROOM夢門」，還為此量身訂做精美的影片。",
+				content: "受GooglePlay邀請，在2018台北電玩展的GooglePlay築夢台灣專區展示「DROOM夢門」，還為此量身訂做精美的影片。",
 				links: []
 			},
 			{
 				title: "The Hole",
-				picture: "",
+				picture: "pic/TheHole.png",
 				video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
 				subtitle: "2018/4",
 				tag: ["Project", "Event"],
@@ -78,7 +78,7 @@ var vm = new Vue({
 			},
 			{
 				title: "DROOM 夢門",
-				picture: "",
+				picture: "pic/DROOM.png",
 				video: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
 				subtitle: "2016/5 -",
 				tag: ["Project"],
@@ -92,7 +92,7 @@ var vm = new Vue({
 			},			
 			{
 				title: "BEAN",
-				picture: "",
+				picture: "pic/BEAN.png",
 				video: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
 				subtitle: "2015/9 - 2016/1",
 				tag: ["Project"],

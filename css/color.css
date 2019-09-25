@@ -1,19 +1,29 @@
 .font-color-g-dark1 {
-  color: #534f4f; }
+  color: #534f4f;
+}
+
 .font-color-g-dark2 {
-  color: #6c6868; }
+  color: #6c6868;
+}
+
 .font-color-g-dark3 {
-  color: #888888; }
+  color: #888888;
+}
 
 .font-color-g-light1 {
-  color: #ebebeb; }
+  color: #ebebeb;
+}
+
 .font-color-g-light2 {
-  color: #e0e0e0; }
+  color: #e0e0e0;
+}
+
 .font-color-g-light3 {
-  color: #d9d9d9; }
+  color: #d9d9d9;
+}
 
 html, body {
   background-color: #f2f2f2;
-  color: #534f4f; }
-
+  color: #534f4f;
+}
 /*# sourceMappingURL=color.css.map */
