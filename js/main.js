@@ -83,12 +83,7 @@ var vm = new Vue({
 				subtitle: "2016/5 -",
 				tag: ["Project"],
 				content: "與另一伙伴一同製作的畢業製作作品，想製作出一款規則單純但能有許多變化的遊戲，也希望各個年齡層都能喜歡。\n畢業後現由自己繼續開發。",
-				links: [
-					{
-						link: "https://play.google.com/store/apps/details?id=com.YY.Droom",
-						title: "前往下載"
-					}
-				]
+				links: []
 			},			
 			{
 				title: "BEAN",
@@ -199,9 +194,7 @@ var vm = new Vue({
 	methods:{
 		calcTimeEventMargin: function(inx){			
 			var value = 10;
-			//return (value * 10) + "px";
 			var timeEvs = vm.timeEvents;
-			console.log(inx);
 
 			if (inx == (timeEvs.length-1)){ 
 				value = 0;
@@ -216,12 +209,12 @@ var vm = new Vue({
 
 			return (value * 10) + "px";
 		},
-        showCollectionWindow: function(inx){
-            this.currentCollection = inx;
-            this.isShowCollectionWindow = true;
-		},
 		shuffle: function(array) {
 			array.sort(() => Math.random() - 0.5);
+		},
+		goTop: function(){
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 		}
 		  
 	}

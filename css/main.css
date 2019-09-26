@@ -301,10 +301,15 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 50px 0 70px 0;
+  background-color: #f2f2f2;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
 }
 
 .top-content .author {
@@ -356,14 +361,14 @@ h1 {
 
 .top-content .author-title {
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 500;
   letter-spacing: 20px;
   margin-right: -20px;
 }
 
 .top-content .author-subtitle {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 30px;
   font-size: 20px;
   font-weight: 300;
@@ -483,16 +488,24 @@ h1 {
   width: 100px;
 }
 
-.view-content {
-  background-color: #1bced6;
-}
-
 .main-color-gradient {
   background: -webkit-gradient(linear, left bottom, left top, from(#1bced6), to(#1ad5bf));
   background: linear-gradient(bottom, #1bced6, #1ad5bf);
 }
 
-.cards .card, .card-window .card {
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.cards .card {
   border-radius: 30px;
   overflow: hidden;
   -webkit-box-sizing: content-box;
@@ -505,7 +518,7 @@ h1 {
   transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
-.cards .card-img-top, .card-window .card-img-top {
+.cards .card-img-top {
   border-radius: 26px;
   height: 100px;
   width: 100px;
@@ -516,19 +529,19 @@ h1 {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 
-.cards .card-title, .card-window .card-title {
+.cards .card-title {
   font-size: 36px;
   margin-bottom: 4px;
   line-height: 1.2em;
 }
 
-.cards .card-subtitle, .card-window .card-subtitle {
+.cards .card-subtitle {
   display: inline-block;
   font-size: 16px;
   font-weight: 2002;
 }
 
-.cards .card-text, .card-window .card-text {
+.cards .card-text {
   line-height: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -540,11 +553,11 @@ h1 {
   overflow-y: hidden;
 }
 
-.cards .card-text:last-child, .card-window .card-text:last-child {
+.cards .card-text:last-child {
   margin-bottom: 35px;
 }
 
-.cards .card-text .gradient, .card-window .card-text .gradient {
+.cards .card-text .gradient {
   position: absolute;
   display: inline-block;
   height: 50px;
@@ -555,7 +568,7 @@ h1 {
   display: none;
 }
 
-.cards .card-btn, .card-window .card-btn {
+.cards .card-btn {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -571,21 +584,9 @@ h1 {
   transition: background-color 0.3s;
 }
 
-.cards .card-video, .card-window .card-video {
+.cards .card-video {
   border-radius: 10px;
   margin: 20px 0;
-}
-
-.cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 .card-content {
@@ -611,7 +612,8 @@ h1 {
 }
 
 .time-event-content .container .time-events {
-  margin-left: 70px;
+  margin-left: 100px;
+  margin-right: 20px;
   max-width: 600px;
 }
 
@@ -623,9 +625,9 @@ h1 {
 .time-event-content .container .time-events .time-event-year-date {
   position: absolute;
   display: inline-block;
-  width: 70px;
+  width: 100px;
   top: 0;
-  left: -34px;
+  left: -49px;
   height: 40px;
   margin-left: 0;
   margin-top: 0;
@@ -669,7 +671,7 @@ h1 {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: rgba(235, 235, 235, 0.3);
+  background-color: #fff;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   -webkit-transition: -webkit-transform 0.2s;
@@ -681,11 +683,11 @@ h1 {
 .time-event-content .container .time-events .time-event-year .time-event-date {
   position: absolute;
   display: inline-block;
-  width: 70px;
+  width: 100px;
   top: 20px;
-  left: -70px;
+  left: -100px;
   height: 40px;
-  margin-left: -3vw;
+  margin-left: -20px;
   text-align: right;
   margin-top: 0;
 }
@@ -704,7 +706,7 @@ h1 {
 
 .time-event-content .container .time-events .time-event-year .time-event-info {
   padding: 20px;
-  margin-left: 3vw;
+  margin-left: 20px;
   border-radius: 20px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -713,7 +715,7 @@ h1 {
 
 .time-event-content .container .time-events .time-event-year .time-event-info-triangle {
   position: absolute;
-  left: 3vw;
+  left: 20px;
   top: 33px;
   margin-left: -10px;
   width: 0;
@@ -746,128 +748,25 @@ h1 {
   margin-bottom: 4px;
 }
 
-.bottom-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.bottom-text {
-  text-align: center;
-  padding: 50px 0;
-}
-
-.card-window {
+.top-btn {
   position: fixed;
+  height: 50px;
+  width: 50px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 9999px;
+  opacity: 0.5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  -webkit-animation: fadeIn 0.3s;
-          animation: fadeIn 0.3s;
-}
-
-.card-window .card {
-  border-radius: 30px;
-  width: 700px;
-  margin-top: -50px;
-  cursor: default;
-  -webkit-animation: fadeInAndRotate 0.3s;
-          animation: fadeInAndRotate 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-.card-window .card-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 0;
-  margin: 0;
-  /*
-			.card-title{
-
-			}
-			*/
-}
-
-.card-window .card-body .card-left {
-  width: 267.4px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #ebebeb;
-  padding: 20px;
-}
-
-.card-window .card-body .card-right {
-  width: right-width;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 20px;
-  padding: 30px 20px;
-}
-
-.card-window .card-body .card-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  min-height: 200px;
-}
-
-.card-window .card-body .card-img-top {
-  border-radius: 20px;
-  width: 227.4px;
-  height: 127.9125px;
-}
-
-.card-window .card-body .card-text {
-  padding: 10px;
-  margin: 0;
-}
-
-.card-window .card-body .card-text > p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.card-window .card-body .card-btn {
-  width: 227.4px;
-  margin-top: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cards {
@@ -1198,16 +1097,9 @@ h1 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #app .top-content {
+  #app .top-content .container {
     position: relative;
-    height: auto;
-    width: 100%;
-  }
-  #app .view-content {
-    margin-left: 0;
-  }
-  .card-window {
-    display: none;
+    width: auto;
   }
   .cards .card {
     cursor: default;
@@ -1215,6 +1107,9 @@ h1 {
   .cards .card .card-body .card-text {
     max-height: 9999px;
     height: auto;
+  }
+  .top-btn {
+    display: none;
   }
 }
 
@@ -1226,17 +1121,10 @@ h1 {
             flex-direction: row;
   }
   #app .top-content {
+    width: 300px;
+  }
+  #app .top-content .container {
     position: fixed;
-    height: 100vh;
-    width: 38.2%;
-  }
-  #app .view-content {
-    margin-left: 38.2%;
-  }
-  .card-window {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .cards .card {
     cursor: pointer;
@@ -1244,6 +1132,9 @@ h1 {
   .cards .card .card-body .card-text {
     max-height: 200px;
     height: auto;
+  }
+  .top-btn {
+    display: none;
   }
   .col {
     -webkit-animation: cardIn 0.3s;
@@ -1256,6 +1147,12 @@ h1 {
   .time-events {
     -webkit-animation: fadeInAndFromRight 0.3s;
             animation: fadeInAndFromRight 0.3s;
+  }
+}
+
+@media (min-width: 1200px) {
+  #app .top-content {
+    width: 450px;
   }
 }
 /*# sourceMappingURL=main.css.map */

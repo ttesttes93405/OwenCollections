@@ -32,7 +32,7 @@
 			</div>
 		</div>
 
-		<div id="app" style="display:none">
+		<div id="app" style="display:none" class="main-color-gradient">
 
 			<div class="top-content">
 				<div class="container">
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 
-			<div class="view-content main-color-gradient">
+			<div class="view-content" id="content">
 				<div class="page-content">
 					<div class="container">
 						<div class="page-container">
@@ -110,7 +110,6 @@
 							</div>
 
 						</div>
-						<p class="font-color-g-dark3 bottom-text"></p>
 					</div>
 				</div>
 				<div v-show="nowPage==1" class="time-event-content">
@@ -146,47 +145,12 @@
 						</div>
 					</div>
 
-					<div class="bottom-content">
-						<div class="container">
-						</div>
-					</div>
-
 				</div>
 			</div>
 
-			<div class="card-window" v-if="isShowCollectionWindow" v-on:click="isShowCollectionWindow=false">
-
-				<div class="card" v-on:click.stop="">
-					<div class="card-body">
-
-						<div class="card-left">
-							<div class="card-img-top embed-responsive embed-responsive-16by9" v-if="collections[currentCollection].video!=''">
-								<iframe class="embed-responsive-item" v-bind:src="collections[currentCollection].video" scrolling="no"></iframe>
-							</div>
-							<img class="card-img-top" v-bind:src="collections[currentCollection].picture" v-if="collections[currentCollection].picture!=''" />
-							<div class="card-btns">
-								<a v-bind:href="itemLink.link" target="_blank"
-								   v-on:click.stop="" 
-								   v-for="itemLink in collections[currentCollection].links">
-									<div class="card-btn">{{itemLink.title}}</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="card-right">
-							<h1 class="card-title">{{collections[currentCollection].title}}</h1>
-							<h2 class="card-subtitle font-color-g-dark3">{{collections[currentCollection].subtitle}}</h2>
-							<div class="card-text font-color-g-dark2">
-								<p v-for="itemContent in collections[currentCollection].content.split('\n')">{{itemContent}}</p>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
+			<div class="top-btn main-color-gradient" @click="goTop()">
+				<p>TOP</p>
 			</div>
-
 
 		</div>
 

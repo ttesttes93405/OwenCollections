@@ -37,9 +37,14 @@ h1{
 }
 
 .top-content {
+
 	display: flex;
+	flex-shrink: 0;
 	justify-content: center;
 	padding: 50px 0 70px 0;
+	background-color: $background-color;
+
+	transition: width 0.4s;
 
 	.author {
 		display: flex;
@@ -77,13 +82,13 @@ h1{
 
 		&-title {
 			margin-top: 20px;
-			font-size: 30px;
+			font-size: 40px;
 			font-weight: 500;
 			letter-spacing: 20px;
 			margin-right: -20px;
 		}
 		&-subtitle {
-			margin-top: 10px;
+			margin-top: 20px;
 			margin-bottom: 30px;
 			font-size: 20px;
 			font-weight: 300;
@@ -194,17 +199,16 @@ h1{
 	}
 }
 
-.view-content {
-	background-color: $main-color; //$main-color * 0.05 + $background-color * 0.95; //#E8ECF4;
-	
-}
-
 .main-color-gradient{	
 	@include prefix_value(background, linear-gradient(bottom, rgba($fill-m-light1,1), rgba($sub-main-color,1)), ('webkit', 'moz'));
 
 }
 
-.cards, .card-window {
+.cards {
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
 
 	.card {
 
@@ -281,13 +285,6 @@ h1{
 		}
 	}
 }
-.cards {
-
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	
-}
 
 .card-content {
 	display: flex;
@@ -302,9 +299,10 @@ h1{
 
 
 		$time-event-dot-r: 10px;
-		$time-event-dot-space-left: 70px;
-		$time-event-dot-space-right: 3vw;
+		$time-event-dot-space-left: 100px;
+		$time-event-dot-space-right: 20px;
 		$time-event-info-padding: 20px;
+		$time-event-space-right: 20px;
 
 		$color_m: $fill-m-light1;
 		$color_g: $fill-g-light3;
@@ -322,6 +320,8 @@ h1{
 			$dot-tri-top: 30px;
 
 			margin-left: $time-event-dot-space-left;
+			margin-right: $time-event-space-right;
+
 			max-width: $time-event-max-width;
 
 			.time-event-year {
@@ -376,7 +376,7 @@ h1{
 							width: $time-event-dot-r;
 							height: $time-event-dot-r;
 							border-radius: 100%;
-							background-color: $time-event-main-color;
+							background-color: #fff;
 							transition: background-color 0.3s;
 							transition: transform 0.2s;
 						}
@@ -451,107 +451,24 @@ h1{
 	}
 }
 
-.bottom-content {
-	display: flex;
-	justify-content: center;
-}
+.top-btn{
 
-.bottom-text {
-	text-align: center;
-	padding: 50px 0;
-}
+	$size: 50px;
+	$offset: 20px;
 
-.card-window{
 	position: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(#000,0.6);
+	height: $size;
+	width: $size;
+	right: $offset;
+	bottom: $offset;
+	background-color: #fff;
 	cursor: pointer;
+	border-radius: 9999px;
+	opacity: 0.5;
 
-	animation: fadeIn 0.3s;
-
-	.card{
-
-		$card-window-border-radius: 30px;
-
-		$card-width: 700px;
-		$left-width: $card-width * (1 - 0.618);
-		$right-width: $card-width * (0.618);
-
-		$padding-size: 20px;
-
-		border-radius: $card-window-border-radius;
-		width: $card-width;
-		margin-top: -50px;
-		cursor: default;
-
-		animation: fadeInAndRotate 0.3s ;
-		animation-timing-function: ease-out;
-
-		&-body{
-
-			display:flex;
-			flex-direction: row;
-			padding: 0;
-			margin: 0;
-
-			.card-left{
-				width: $left-width;
-				box-sizing: border-box;
-				display: flex;
-				flex-direction: column;
-				background-color: $fill-g-light1;
-				padding: $padding-size;
-
-			}
-			.card-right{
-				width: right-width;
-				box-sizing: border-box;
-				padding: 20px;
-				padding: $padding-size + 10px $padding-size;
-
-			}
-			.card-btns{
-				display: flex;
-				flex-direction: column;
-				flex-grow: 1;
-				justify-content: flex-end;
-				min-height: 200px;
-			}
-
-			.card-img-top{
-				border-radius: $card-window-border-radius - 10px;
-				width: $left-width - $padding-size * 2;
-				height: ($left-width - $padding-size * 2) / 16 * 9;
-			}
-			/*
-			.card-title{
-
-			}
-			*/
-			.card-text{
-				padding: 10px;
-				margin: 0;
-				&>p{
-					margin: 0;
-					margin-bottom: 10px;
-				}
-			}
-
-			.card-btn{
-				width: $left-width - $padding-size * 2;
-				margin-top: 10px;
-			}
-		}
-
-
-	}
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .cards{
@@ -741,19 +658,12 @@ h1{
 		flex-direction: column;
 
 		.top-content{
-			position: relative;
-			height: auto;
-			width: 100%;
-		}
-		.view-content {
-			margin-left: 0;
+			.container{
+				position: relative;
+				width: auto;
+			}
 		}
 	}
-
-	.card-window{
-		display: none;
-	}
-
 	.cards .card{
 		cursor: default;
 		.card-body .card-text{
@@ -762,35 +672,36 @@ h1{
 		}
 	}
 
+	.top-btn{
+		display: none;
+	}
+
 }
 
-//768px~
+//768px~1200px
 @media (min-width: 768px) {
 	
 	#app{
 		flex-direction: row;
 
-		$side-width: 38.2%;
-
 		.top-content{
-			position: fixed;
-			height: 100vh;
-			width: $side-width;
-		}
-		.view-content {
-			margin-left: $side-width;
+			width: 300px;
+			.container{
+				position: fixed;
+			}
 		}
 	}
-	.card-window{
-		display: flex;
-	}
-
 	.cards .card{
 		cursor: pointer;
 		.card-body .card-text{
 			max-height: 200px;
 			height: auto;
 		}
+	}
+
+	.top-btn{
+		//display: flex;
+		display: none;
 	}
 
 	.col{
@@ -801,6 +712,17 @@ h1{
 	}
 	.time-events {
 		animation: fadeInAndFromRight 0.3s;
+	}
+
+}
+
+//1200px~
+@media (min-width: 1200px) {
+	
+	#app{
+		.top-content{
+			width: 450px;
+		}
 	}
 
 }
