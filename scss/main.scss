@@ -3,7 +3,6 @@
 @import "reset";
 @import "color";
 @import "base";
-@import "hover";
 
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700');
 
@@ -21,8 +20,6 @@ body {
 	font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
 
 	animation: FadeIn 0.3s;
-
-	//filter: grayscale(1);
 }
 
 h1{
@@ -30,10 +27,53 @@ h1{
 }
 
 #app{
+
 	display: flex;
+	flex-direction: column;
+	background-color: $neumorphism-main-color;
+
 	.view-content {
 		flex-grow: 1;
 	}
+
+}
+
+.neumorphism{
+
+	@mixin neum-out($alpha){
+		border-radius: 18px;
+		background: #dde6ea;
+		box-shadow: 5px 5px 10px rgba($neumorphism-light-color-1, $alpha),
+					-5px -5px 10px rgba($neumorphism-light-color-2, $alpha);
+	}
+	@mixin neum-in($alpha){
+		border-radius: 18px;
+		background: #dde6ea;
+		box-shadow: inset 5px 5px 10px rgba($neumorphism-light-color-1, $alpha),
+					inset -5px -5px 10px rgba($neumorphism-light-color-2, $alpha);
+	}
+
+
+	&-normal {
+
+		&-out{
+			@include neum-out(1);
+		}
+		&-in{
+			@include neum-in(1);
+		}
+	}
+
+	&-lite {
+
+		&-out{
+			@include neum-out(0.5);
+		}
+		&-in{
+			@include neum-in(0.5);
+		}
+	}
+
 }
 
 .top-content {
@@ -41,25 +81,31 @@ h1{
 	display: flex;
 	flex-shrink: 0;
 	justify-content: center;
-	padding: 50px 0 70px 0;
+	padding: 50px 0 ;
 	background-color: $background-color;
 
 	transition: width 0.4s;
-
+	
+	.container{
+		position: relative;
+		width: auto;
+	}
 	.author {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
 		&-picture {
+
 			$picture-size: 150px;
+			width: $picture-size;
+			height: $picture-size ;
 
 			border-radius: 100%;
 			overflow: hidden;
 			margin: 20px;
-			width: $picture-size;
-			height: $picture-size ;
-			box-shadow: rgba(#000, 0.1) 0 0 20px;
+			
+			//box-shadow: rgba(#000, 0.1) 0 0 20px;
 
 			&-content {
 				display: flex;
@@ -92,10 +138,6 @@ h1{
 			margin-bottom: 30px;
 			font-size: 20px;
 			font-weight: 300;
-		}
-		&-content {
-			margin-bottom: 20px;
-			font-size: 1rem;
 		}
 
 		.info {
@@ -133,7 +175,7 @@ h1{
 
 .page-content {
 
-	padding: 60px 0;
+	padding: 0 0 60px 0;
 
 	.container {
 		display: flex;
@@ -155,7 +197,7 @@ h1{
 			display: inline-block;
 			text-align: center;
 			width: auto;
-			background-color: rgba($fill-g-light1, 0.2);
+			//background-color: rgba($fill-m-light1, 0.2);
 
 			border-radius: ($btn-height + 10px) / 2;
 			height: $btn-height + 10px;
@@ -172,12 +214,11 @@ h1{
 				border-radius: $page-radius;
 				margin: 5px;
 
-				background-color:rgba($fill-g-light1, 0.4);
-
+				background-color: rgba($fill-m-light1, 0.4);
 
 				transition-property: background-color, transform, width;
 				transition-duration: 0.3s, 0.3s, 0.3s;
-				transition-timing-function: ease-in,ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550);
+				transition-timing-function: ease-in, ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 				.page-icon{
 					$size: 50px;
@@ -191,17 +232,12 @@ h1{
 			}
 
 			.page-select {
-				background-color: rgba($fill-g-light1, 0.8);
+				background-color: rgba($fill-m-dark1, 0.8);
 				color: $font-g-light1;
 				width: 100px;
 			}
 		}
 	}
-}
-
-.main-color-gradient{	
-	@include prefix_value(background, linear-gradient(bottom, rgba($fill-m-light1,1), rgba($sub-main-color,1)), ('webkit', 'moz'));
-
 }
 
 .cards {
@@ -215,8 +251,6 @@ h1{
 		border-radius: 30px;
 		overflow: hidden;
 		box-sizing: content-box;
-		transform: scale(1.0001);
-		transition: transform 0.4s;
 
 		&-img-top{
 			
@@ -224,16 +258,14 @@ h1{
 			$icon-margin: 20px;
 
 			border-radius: 26px;
-
 			height: $icon-size;
 			width: $icon-size;
 			object-fit: cover;
 
 			margin: $icon-margin 0 0 $icon-margin;
 
-			box-shadow: 0 0 20px rgba(#000, 0.08);
+			//box-shadow: 0 0 20px rgba(#000, 0.08);
 		}
-
 		&-title {
 			font-size: 36px;
 			margin-bottom: 4px;
@@ -266,21 +298,31 @@ h1{
 			}
 		}
 		&-btn {
+
 			display: inline-block;
 			box-sizing: border-box;
 			text-align: center;
 			width: 100%;
 			padding: 15px 0;
 			height: 60px;
-			margin-top: 10px;
+			margin-top: 20px;
 			border-radius: 20px;
 
-			transition: color 0.2s;
-			transition: background-color 0.3s;
+			background-color: rgba($sub-main-color, 0.1);
+			color: $font-m-dark1;
+
+			transition: background-color, color;
+			transition-duration: 0.4s;
+
+			&:hover{
+				background-color: rgba($sub-main-color, 0.5);
+				color: $font-g-light1;
+			}
+
 		}
 
 		&-video{
-			border-radius: 10px;
+			border-radius: 15px;
 			margin: 20px 0;
 		}
 	}
@@ -289,6 +331,7 @@ h1{
 .card-content {
 	display: flex;
 	justify-content: center;
+
 }
 
 .time-event-content {
@@ -304,13 +347,13 @@ h1{
 		$time-event-info-padding: 20px;
 		$time-event-space-right: 20px;
 
-		$color_m: $fill-m-light1;
-		$color_g: $fill-g-light3;
+		$color_m: $fill-m-dark1;
+		$color_g: $fill-g-dark3;
 		$color_mix_value: 0.8;
 		$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
-		$time-event-main-color: rgba($fill-g-light1, 0.3);
-		$time-event-main-line-color: rgba($fill-g-light1, 0.5);
+		$time-event-main-color: rgba($fill-g-dark1, 0.3);
+		$time-event-main-line-color: rgba($fill-g-dark1, 0.05);
 		$time-event-main-line-width: 2px;
 		$time-event-main-line: $time-event-main-line-width $time-event-main-line-color solid;
 		$time-event-max-width: 600px;
@@ -341,22 +384,18 @@ h1{
 					margin-left: 0;
 					margin-top: 0;
 					text-align: center;
-					background-color: $time-event-main-color;
 					box-sizing: border-box;
-					border-radius: 9999px;
 
 					h2 {
-
 						font-size: 20px;
 						font-weight: 700;
 						line-height: $title-height;
 
-						color: $fill-white;
+						color: $font-g-dark1;
 					}
 				}
 
 				.time-event {
-
 
 					border-left: $time-event-main-line;
 					display: flex;
@@ -392,50 +431,36 @@ h1{
 						margin-left: -$time-event-dot-space-right;
 						text-align: right;
 						margin-top: 0;
+
 						h2 {
+							color: $font-g-dark1;
 							font-size: 20px;
 							font-weight: 700;
 							line-height: 40px;
 						}
 						h3 {
+							color: $font-g-dark3;
 							font-size: 16px;
 							font-weight: 200;
 							line-height: 40px;
+							//opacity: 0.5;
 						}
 					}
 
 					&-info {
-						$info-background-color: #fff;
 
 						padding: $time-event-info-padding;
 						margin-left: $time-event-dot-space-right;
 						border-radius: 20px;
-						background-color: $info-background-color;
-
-						//transition: background-color 0.5s;
-
-
-						box-shadow: 0 0 20px rgba(#000,0.05);
-
-						&-triangle {
-							position: absolute;
-							left: $time-event-dot-space-right;
-							top: $dot-tri-top + 3px;
-							margin-left: -10px;
-							width: 0;
-							height: 0;
-							border-style: solid;
-							border-width: 8px 10px 8px 0;
-							border-color: transparent $info-background-color transparent;
-							transition: border-color 0.5s;
-						}
 
 						&-title {
+							color: $font-g-dark1;
 							font-size: 20px;
 							margin-bottom: 12px;
 							line-height: 1.8rem;
 						}
 						&-text {
+							color: $font-g-dark3;
 							line-height: 1.5rem;
 							display: flex;
 							flex-direction: column;
@@ -456,15 +481,16 @@ h1{
 	$size: 50px;
 	$offset: 20px;
 
-	position: fixed;
+	//position: fixed;
 	height: $size;
 	width: $size;
-	right: $offset;
-	bottom: $offset;
+	//right: $offset;
+	//bottom: $offset;
 	background-color: #fff;
 	cursor: pointer;
 	border-radius: 9999px;
 	opacity: 0.5;
+
 
 	display: flex;
 	align-items: center;
@@ -558,26 +584,6 @@ h1{
 	}
 }
 
-@keyframes fadeInAndFromRight {
-	0% {
-		//opacity: 0.5;
-		transform: translateX(20px);
-	}
-	100% {
-		//opacity: 1;
-		transform: translateX(0px);
-	}
-}
-@keyframes fadeInAndFromLeft {
-	0% {
-		//opacity: 0.5;
-		transform: translateX(-20px);
-	}
-	100% {
-		//opacity: 1;
-		transform: translateX(0);
-	}
-}
 @keyframes fadeInAndRotate {
 	0% {
 		transform-origin: -100% 0%;
@@ -594,14 +600,6 @@ h1{
 	}
 	100% {
 		opacity: 1;
-	}
-}
-@keyframes cardIn {
-	0% {
-		margin-left: -10px;
-	}
-	100% {
-		margin-left: 0;
 	}
 }
 @keyframes PunchScale {
@@ -653,76 +651,19 @@ h1{
 //1~768px
 @media (min-width: 1px) {
 
-	#app{
-		display: flex;
-		flex-direction: column;
-
-		.top-content{
-			.container{
-				position: relative;
-				width: auto;
-			}
-		}
-	}
-	.cards .card{
-		cursor: default;
-		.card-body .card-text{
-			max-height: 9999px;
-			height: auto;
-		}
-	}
-
-	.top-btn{
-		display: none;
-	}
-
 }
 
 //768px~1200px
 @media (min-width: 768px) {
 	
-	#app{
-		flex-direction: row;
-
-		.top-content{
-			width: 300px;
-			.container{
-				position: fixed;
-			}
-		}
-	}
-	.cards .card{
-		cursor: pointer;
-		.card-body .card-text{
-			max-height: 200px;
-			height: auto;
-		}
-	}
-
-	.top-btn{
-		//display: flex;
-		display: none;
-	}
-
-	.col{
-		animation: cardIn 0.3s;
-	}
-	.cards{
-		animation: fadeInAndFromLeft 0.3s;
-	}
-	.time-events {
-		animation: fadeInAndFromRight 0.3s;
-	}
-
 }
 
 //1200px~
 @media (min-width: 1200px) {
-	
-	#app{
-		.top-content{
-			width: 450px;
-		}
+
+	.card{
+		padding: 20px;
+		margin: 30px;
 	}
 
 }

@@ -1,9 +1,13 @@
 
-$main-color: #1bced6;		//主色
-$sub-main-color:#1ad5bf;    //次主色
+$main-color: #5cbbc0;		//主色
+$sub-main-color:#499e94;    //次主色
 
-$background-color:#f2f2f2;	//背景色
+$background-color:#dde6ea;	//背景色
 
+$neumorphism-main-color: #dde6ea;
+$neumorphism-light-color-1: #bec6c9;
+$neumorphism-light-color-2: #edf1f1;
+$neumorphism-line-color: rgba(#f8fafa, 0.05);
 
 $font-g-dark1: #534f4f;		//文字深色(灰階)
 $font-g-dark2: #6c6868;
@@ -13,7 +17,7 @@ $font-g-light1: #ebebeb;	//文字淺色(灰階)
 $font-g-light2: #e0e0e0;
 $font-g-light3: #d9d9d9;
 
-$font-m-dark1: $main-color * 0.9 + #000 * 0.1;		//文字深色(主色)
+$font-m-dark1: $main-color * 0.8 + #000 * 0.2;		//文字深色(主色)
 $font-m-light1: $main-color * 0.9 + #fff * 0.1;		//文字淺色(主色)
 
 
