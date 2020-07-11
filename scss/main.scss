@@ -22,7 +22,7 @@ body {
 	animation: FadeIn 0.3s;
 }
 
-h1{
+h1, h2, h3, p{
 	font-family: 'Maven Pro','Noto Sans CJK TC', '微軟正黑體', sans-serif;
 }
 
@@ -174,9 +174,6 @@ h1{
 }
 
 .page-content {
-
-	padding: 0 0 60px 0;
-
 	.container {
 		display: flex;
 		flex-direction: row;
@@ -252,30 +249,40 @@ h1{
 		overflow: hidden;
 		box-sizing: content-box;
 
-		&-img-top{
-			
-			$icon-size: 100px;
-			$icon-margin: 20px;
+		&-head{
+			display: flex;
+			align-items: center;
 
-			border-radius: 26px;
-			height: $icon-size;
-			width: $icon-size;
-			object-fit: cover;
+			.card-img-top{
+				
+				$icon-size: 100px;
+				$icon-margin: 20px;
 
-			margin: $icon-margin 0 0 $icon-margin;
+				border-radius: 26px;
+				height: $icon-size;
+				width: $icon-size;
+				object-fit: cover;
+				flex-grow: 0;
+				flex-shrink: 0;
 
-			//box-shadow: 0 0 20px rgba(#000, 0.08);
+				//margin: $icon-margin 0 0 $icon-margin;
+				//box-shadow: 0 0 20px rgba(#000, 0.08);
+			}
+			&-text{
+				.card-title {
+					line-height: 1.2em;
+					flex-grow: 1;
+					box-sizing: border-box;
+				}
+				
+				.card-subtitle {
+					display: inline-block;
+					font-size: 16px;
+					font-weight: 200;
+				}
+			}
 		}
-		&-title {
-			font-size: 36px;
-			margin-bottom: 4px;
-			line-height: 1.2em;
-		}
-		&-subtitle {
-			display: inline-block;
-			font-size: 16px;
-			font-weight: 2002
-		}
+
 		&-text {
 			line-height: 1.5rem;
 			display: flex;
@@ -342,8 +349,9 @@ h1{
 
 
 		$time-event-dot-r: 10px;
-		$time-event-dot-space-left: 100px;
-		$time-event-dot-space-right: 20px;
+		$time-event-dot-color:$main-color;
+		$time-event-dot-space-left: 80px;
+		$time-event-dot-space-right: 30px;
 		$time-event-info-padding: 20px;
 		$time-event-space-right: 20px;
 
@@ -415,7 +423,7 @@ h1{
 							width: $time-event-dot-r;
 							height: $time-event-dot-r;
 							border-radius: 100%;
-							background-color: #fff;
+							background-color: $time-event-dot-color;
 							transition: background-color 0.3s;
 							transition: transform 0.2s;
 						}
@@ -478,23 +486,40 @@ h1{
 
 .top-btn{
 
-	$size: 50px;
-	$offset: 20px;
-
-	//position: fixed;
-	height: $size;
-	width: $size;
-	//right: $offset;
-	//bottom: $offset;
-	background-color: #fff;
-	cursor: pointer;
-	border-radius: 9999px;
-	opacity: 0.5;
-
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	padding: 80px 0 120px 0;
+
+	button{
+
+		height: 60px;
+		width: 200px;
+
+		border-style: none;
+		cursor: pointer;
+		border-radius: 20px;
+
+		background-color: rgba($main-color, 0.1);
+		color: $font-m-dark1;
+
+		p{
+			width: 100%;
+			text-align: center;
+			font-size: 18px;
+			font-weight: 600;			
+		}
+
+
+		transition: background-color, color;
+		transition-duration: 0.4s;
+
+		&:hover{
+			background-color: rgba($main-color, 0.5);
+			color: $font-g-light1;
+		}
+	}
 }
 
 .cards{
@@ -648,22 +673,71 @@ h1{
 	}
 }
 
-//1~768px
+
+
+//1px~768px
 @media (min-width: 1px) {
 
+	.page-content{
+		padding-bottom: 30px;
+	}
+
+	.row .col{
+		width: 100%;
+		max-width: 400px;;
+	}
+
+	.cards .card{
+
+		&-head{
+			flex-direction: column;
+			margin: 0 0 10px;
+
+			&-text {
+
+				width: 100%;
+				margin: 30px 0 0 0;
+				padding-left: 0;
+
+				.card-title{
+					font-size: 28px;
+				}
+			}
+		}
+	}
 }
 
-//768px~1200px
+//768px~
 @media (min-width: 768px) {
-	
-}
 
-//1200px~
-@media (min-width: 1200px) {
+	.page-content{
+		padding-bottom: 60px;
+	}
 
-	.card{
+	.row .col{
+		width: 600px;
+		max-width: 600px;;
+	}	
+
+	.cards .card{
+
 		padding: 20px;
 		margin: 30px;
+
+		&-head{
+			flex-direction: row;
+			margin: 0 0 30px;
+
+			&-text {
+				width: 100%;
+				margin: 0;
+				padding-left: 20px;
+
+				.card-title{
+					font-size: 32px;
+				}
+			}
+		}
 	}
 
 }

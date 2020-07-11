@@ -79,12 +79,16 @@
 						<div class="row cards">
 
 							<div class="col" v-for="(item,index) in collections">
-								<div class="card neumorphism-normal-out">
-                  
-									<img class="card-img-top neumorphism-normal-out" v-bind:src="item.picture" />
+								<div class="card neumorphism-normal-out">                  
 									<div class="card-body">
-                    					<h1 class="card-title">{{item.title}}</h1>
-                    					<h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
+
+										<div class="card-head">
+											<img class="card-img-top neumorphism-normal-out" v-bind:src="item.picture" />
+											<div class="card-head-text">
+												<h1 class="card-title">{{item.title}}</h1>
+												<h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
+											</div>
+										</div>
                     
 									  	<div class="card-video embed-responsive embed-responsive-16by9" v-if="item.video!=''">
 										  	<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
@@ -92,7 +96,6 @@
 
 										<div class="card-text font-color-g-dark2">
 											<p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
-											<div class="gradient"></div>
 										</div>
 
 										<a v-bind:href="itemLink.link" target="_blank"
@@ -100,6 +103,7 @@
 										   v-for="itemLink in item.links">
 											<div class="card-btn neumorphism-lite-out">{{itemLink.title}}</div>
 										</a>
+
 									</div>
 								</div>
 							</div>
@@ -107,7 +111,7 @@
 						</div>
 					</div>
 				</div>
-				<div v-show="nowPage==1" class="time-event-content">
+				<div v-if="nowPage==1" class="time-event-content">
 					<div class="container">
 
 						<div class="time-events">
@@ -142,11 +146,9 @@
 				</div>
 			</div>
 
-			<!--
-			<div class="top-btn" @click="goTop()">
-				<p>TOP</p>
+			<div class="top-btn">
+				<button class="neumorphism-normal-out" @click="goTop()"><p>TOP</p></button>
 			</div>
-			-->
 
 		</div>
 

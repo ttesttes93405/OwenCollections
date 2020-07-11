@@ -21,7 +21,7 @@ var vm = new Vue({
 				title: "Cloud Macaca 企劃",
 				picture: "pic/CloudMacaca.png",
 				video: "",
-				subtitle: "2019/6 -",
+				subtitle: "2019/6 - NOW",
 				content: "於玩猴遊戲 Cloud Macaca 任職企劃，參與以Unity開發的手遊專案。",
 				links: []
 			},
