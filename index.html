@@ -47,9 +47,7 @@
 						<h2 class="author-subtitle font-color-g-dark2">{{author.subtitle}}</h2>
 						<div calss="info">
 							<div class="info-item" v-for="itemAuthorInfo in author.info">
-								<svg>
-									<use v-bind:xlink:href="itemAuthorInfo.picture" class="info-item-img"></use>
-								</svg>
+									<img v-bind:src="itemAuthorInfo.picture" class="info-item-img"/>
 								<p class="info-item-p font-color-g-dark2">{{itemAuthorInfo.content}}</p>
 							</div>
 						</div>
@@ -62,14 +60,10 @@
 					<div class="container">
 						<div class="page-container neumorphism-normal-out">
 							<div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">
-								<svg class="page-icon">
-									<use xlink:href="pic/icons.svg#card"></use>
-								</svg>
+								<img class="page-icon" src="pic/Icon_Card.svg">
 							</div>
 							<div @click="nowPage=1" v-bind:class="{'page-select': nowPage==1}" class="page-item">
-								<svg class="page-icon">
-									<use xlink:href="pic/icons.svg#time"></use>
-								</svg>
+								<img class="page-icon" src="pic/Icon_TimeEvent.svg">
 							</div>
 						</div>
 					</div>
@@ -101,7 +95,7 @@
 										<a v-bind:href="itemLink.link" target="_blank"
 										   v-on:click.stop="" 
 										   v-for="itemLink in item.links">
-											<div class="card-btn neumorphism-lite-out">{{itemLink.title}}</div>
+											<div class="card-btn neumorphism-lite-out hoverable-btn">{{itemLink.title}}</div>
 										</a>
 
 									</div>
@@ -147,7 +141,7 @@
 			</div>
 
 			<div class="top-btn">
-				<button class="neumorphism-normal-out" @click="goTop()"><p>TOP</p></button>
+				<button class="neumorphism-normal-out hoverable-btn" @click="goTop()"><img src="pic/Icon_Top.svg"/></button>
 			</div>
 
 		</div>

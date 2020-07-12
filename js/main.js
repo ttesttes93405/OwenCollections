@@ -11,7 +11,7 @@ var vm = new Vue({
 					content: "腦袋很小，簡單就好。"
 				},*/
 				{
-					picture: "pic/icons.svg#mail",
+					picture: "pic/Icon_Mail.svg",
 					content: "ttesttes93405@gmail.com"
 				}
 			]

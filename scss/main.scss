@@ -158,12 +158,7 @@ h1, h2, h3, p{
 					height: 30px;
 					padding: 10px;
 
-					$color_m: $fill-m-light1;
-					$color_g: $fill-g-light3;
-					$color_mix_value: 0.5;
-					$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
-
-					fill: $color_mix;
+					opacity: 0.3;
 				}
 				&-p {
 					margin: 0;
@@ -174,6 +169,10 @@ h1, h2, h3, p{
 }
 
 .page-content {
+
+	transition-property: padding;
+	transition-duration: 0.4s;
+
 	.container {
 		display: flex;
 		flex-direction: row;
@@ -249,24 +248,19 @@ h1, h2, h3, p{
 		overflow: hidden;
 		box-sizing: content-box;
 
+		
+		transition-property: padding, margin;
+		transition-duration: 0.4s;
+
 		&-head{
 			display: flex;
 			align-items: center;
 
-			.card-img-top{
-				
-				$icon-size: 100px;
-				$icon-margin: 20px;
-
+			.card-img-top{				
 				border-radius: 26px;
-				height: $icon-size;
-				width: $icon-size;
 				object-fit: cover;
 				flex-grow: 0;
 				flex-shrink: 0;
-
-				//margin: $icon-margin 0 0 $icon-margin;
-				//box-shadow: 0 0 20px rgba(#000, 0.08);
 			}
 			&-text{
 				.card-title {
@@ -314,17 +308,6 @@ h1, h2, h3, p{
 			height: 60px;
 			margin-top: 20px;
 			border-radius: 20px;
-
-			background-color: rgba($sub-main-color, 0.1);
-			color: $font-m-dark1;
-
-			transition: background-color, color;
-			transition-duration: 0.4s;
-
-			&:hover{
-				background-color: rgba($sub-main-color, 0.5);
-				color: $font-g-light1;
-			}
 
 		}
 
@@ -494,6 +477,10 @@ h1, h2, h3, p{
 
 	button{
 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		height: 60px;
 		width: 200px;
 
@@ -501,8 +488,9 @@ h1, h2, h3, p{
 		cursor: pointer;
 		border-radius: 20px;
 
-		background-color: rgba($main-color, 0.1);
-		color: $font-m-dark1;
+
+		outline-style: none;
+
 
 		p{
 			width: 100%;
@@ -511,14 +499,12 @@ h1, h2, h3, p{
 			font-weight: 600;			
 		}
 
-
-		transition: background-color, color;
-		transition-duration: 0.4s;
-
-		&:hover{
-			background-color: rgba($main-color, 0.5);
-			color: $font-g-light1;
+		img{
+			$size: 30px;
+			height: $size;
+			width: $size;
 		}
+
 	}
 }
 
@@ -693,6 +679,13 @@ h1, h2, h3, p{
 			flex-direction: column;
 			margin: 0 0 10px;
 
+			.card-img-top{				
+				$icon-size: 80px;
+	
+				height: $icon-size;
+				width: $icon-size;
+			}
+
 			&-text {
 
 				width: 100%;
@@ -703,6 +696,18 @@ h1, h2, h3, p{
 					font-size: 28px;
 				}
 			}
+		}
+	}
+
+	.hoverable-btn{
+		
+		background-color: rgba($main-color, 0.5);
+		color: $font-g-light1;
+
+		transition: none;
+
+		&:hover{
+			//none;
 		}
 	}
 }
@@ -727,6 +732,13 @@ h1, h2, h3, p{
 		&-head{
 			flex-direction: row;
 			margin: 0 0 30px;
+			
+			.card-img-top{				
+				$icon-size: 100px;
+	
+				height: $icon-size;
+				width: $icon-size;
+			}
 
 			&-text {
 				width: 100%;
@@ -737,6 +749,20 @@ h1, h2, h3, p{
 					font-size: 32px;
 				}
 			}
+		}
+	}
+
+	.hoverable-btn{
+
+		background-color: rgba($main-color, 0.1);
+		color: $font-m-dark1;
+
+		transition: background-color, color;
+		transition-duration: 0.4s;
+
+		&:hover{
+			background-color: rgba($main-color, 0.5);
+			color: $font-g-light1;
 		}
 	}
 

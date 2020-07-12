@@ -366,11 +366,18 @@ h1, h2, h3, p {
   width: 30px;
   height: 30px;
   padding: 10px;
-  fill: #91bcb7;
+  opacity: 0.3;
 }
 
 .top-content .author .info-item-p {
   margin: 0;
+}
+
+.page-content {
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .page-content .container {
@@ -456,6 +463,10 @@ h1, h2, h3, p {
   overflow: hidden;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  -webkit-transition-property: padding, margin;
+  transition-property: padding, margin;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .cards .card-head {
@@ -469,8 +480,6 @@ h1, h2, h3, p {
 
 .cards .card-head .card-img-top {
   border-radius: 26px;
-  height: 100px;
-  width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-box-flex: 0;
@@ -532,17 +541,6 @@ h1, h2, h3, p {
   height: 60px;
   margin-top: 20px;
   border-radius: 20px;
-  background-color: rgba(73, 158, 148, 0.1);
-  color: #3a7e76;
-  -webkit-transition: background-color, color;
-  transition: background-color, color;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-.cards .card-btn:hover {
-  background-color: rgba(73, 158, 148, 0.5);
-  color: #ebebeb;
 }
 
 .cards .card-video {
@@ -708,17 +706,21 @@ h1, h2, h3, p {
 }
 
 .top-btn button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 60px;
   width: 200px;
   border-style: none;
   cursor: pointer;
   border-radius: 20px;
-  background-color: rgba(73, 158, 148, 0.1);
-  color: #3a7e76;
-  -webkit-transition: background-color, color;
-  transition: background-color, color;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  outline-style: none;
 }
 
 .top-btn button p {
@@ -728,9 +730,9 @@ h1, h2, h3, p {
   font-weight: 600;
 }
 
-.top-btn button:hover {
-  background-color: rgba(73, 158, 148, 0.5);
-  color: #ebebeb;
+.top-btn button img {
+  height: 30px;
+  width: 30px;
 }
 
 .cards {
@@ -1004,6 +1006,10 @@ h1, h2, h3, p {
             flex-direction: column;
     margin: 0 0 10px;
   }
+  .cards .card-head .card-img-top {
+    height: 80px;
+    width: 80px;
+  }
   .cards .card-head-text {
     width: 100%;
     margin: 30px 0 0 0;
@@ -1011,6 +1017,12 @@ h1, h2, h3, p {
   }
   .cards .card-head-text .card-title {
     font-size: 28px;
+  }
+  .hoverable-btn {
+    background-color: rgba(73, 158, 148, 0.5);
+    color: #ebebeb;
+    -webkit-transition: none;
+    transition: none;
   }
 }
 
@@ -1033,6 +1045,10 @@ h1, h2, h3, p {
             flex-direction: row;
     margin: 0 0 30px;
   }
+  .cards .card-head .card-img-top {
+    height: 100px;
+    width: 100px;
+  }
   .cards .card-head-text {
     width: 100%;
     margin: 0;
@@ -1040,6 +1056,18 @@ h1, h2, h3, p {
   }
   .cards .card-head-text .card-title {
     font-size: 32px;
+  }
+  .hoverable-btn {
+    background-color: rgba(73, 158, 148, 0.1);
+    color: #3a7e76;
+    -webkit-transition: background-color, color;
+    transition: background-color, color;
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+  .hoverable-btn:hover {
+    background-color: rgba(73, 158, 148, 0.5);
+    color: #ebebeb;
   }
 }
 /*# sourceMappingURL=main.css.map */
