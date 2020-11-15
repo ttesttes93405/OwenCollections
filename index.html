@@ -37,18 +37,18 @@
 			<div class="top-content">
 				<div class="container">
 					<div class="author">
-						<div class="author-picture neumorphism-normal-out" @click="$set(toggle,0,!toggle[0])">
+						<div class="author-picture" @click="$set(toggle,0,!toggle[0])">
 							<div class="author-picture-content">
 								<img v-bind:src="author.picture[0]" />
 								<img v-bind:src="author.picture[1]"  v-bind:class="{'author-picture-content-egg': toggle[0]}"/>
 							</div>
 						</div>
-						<h1 class="author-title font-color-g-dark1">{{author.title}}</h1>
-						<h2 class="author-subtitle font-color-g-dark2">{{author.subtitle}}</h2>
+						<h1 class="author-title font-color-g-light1">{{author.title}}</h1>
+						<h2 class="author-subtitle font-color-g-light2">{{author.subtitle}}</h2>
 						<div calss="info">
 							<div class="info-item" v-for="itemAuthorInfo in author.info">
 									<img v-bind:src="itemAuthorInfo.picture" class="info-item-img"/>
-								<p class="info-item-p font-color-g-dark2">{{itemAuthorInfo.content}}</p>
+								<p class="info-item-p font-color-g-light2">{{itemAuthorInfo.content}}</p>
 							</div>
 						</div>
 					</div>
@@ -58,7 +58,7 @@
 			<div class="view-content" id="content">
 				<div class="page-content">
 					<div class="container">
-						<div class="page-container neumorphism-normal-out">
+						<div class="page-container">
 							<div @click="nowPage=0" v-bind:class="{'page-select': nowPage==0}" class="page-item">
 								<img class="page-icon" src="pic/Icon_Card.svg">
 							</div>
@@ -73,14 +73,14 @@
 						<div class="row cards">
 
 							<div class="col" v-for="(item,index) in collections">
-								<div class="card neumorphism-normal-out">                  
+								<div class="card">                  
 									<div class="card-body">
 
 										<div class="card-head">
-											<img class="card-img-top neumorphism-normal-out" v-bind:src="item.picture" />
+											<img class="card-img-top" v-bind:src="item.picture" />
 											<div class="card-head-text">
-												<h1 class="card-title">{{item.title}}</h1>
-												<h2 class="card-subtitle font-color-g-dark3">{{item.subtitle}}</h2>
+												<h1 class="card-title font-color-g-light1">{{item.title}}</h1>
+												<h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
 											</div>
 										</div>
                     
@@ -88,14 +88,14 @@
 										  	<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
                     					</div>
 
-										<div class="card-text font-color-g-dark2">
+										<div class="card-text font-color-g-light2">
 											<p v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
 										</div>
 
 										<a v-bind:href="itemLink.link" target="_blank"
 										   v-on:click.stop="" 
 										   v-for="itemLink in item.links">
-											<div class="card-btn neumorphism-lite-out hoverable-btn">{{itemLink.title}}</div>
+											<div class="card-btn hoverable-btn">{{itemLink.title}}</div>
 										</a>
 
 									</div>
@@ -124,7 +124,7 @@
 									<div class="time-event-date">
 										<h3>{{item.month}}</h3>
 									</div>
-									<div class="time-event-info neumorphism-normal-out" v-bind:style="{'margin-bottom':item.marginSpace}">
+									<div class="time-event-info" v-bind:style="{'margin-bottom':item.marginSpace}">
 
 										<h1 class="time-event-info-title">{{item.title}}</h1>
 										<p class="time-event-info-text" v-for="itemContent in item.content.split('\n')">{{itemContent}}</p>
@@ -141,7 +141,11 @@
 			</div>
 
 			<div class="top-btn">
-				<button class="neumorphism-normal-out hoverable-btn" @click="goTop()"><img src="pic/Icon_Top.svg"/></button>
+				<button class="hoverable-btn" @click="goTop()"><img src="pic/Icon_Top.svg"/></button>
+			</div>
+
+			<div class="license">
+				<p class="font-color-g-light3">Icon | <a href="https://feathericons.com/" class="font-color-g-light2">Feather Icon </a></p>
 			</div>
 
 		</div>

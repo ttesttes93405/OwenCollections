@@ -30,7 +30,6 @@ h1, h2, h3, p{
 
 	display: flex;
 	flex-direction: column;
-	background-color: $neumorphism-main-color;
 
 	.view-content {
 		flex-grow: 1;
@@ -153,10 +152,10 @@ h1, h2, h3, p{
 				height: 50px;
 
 				&-img, svg {
-
-					width: 30px;
-					height: 30px;
-					padding: 10px;
+					$size: 24px;
+					width: $size;
+					height: $size;
+					padding: 40px - $size;
 
 					opacity: 0.3;
 				}
@@ -169,6 +168,8 @@ h1, h2, h3, p{
 }
 
 .page-content {
+
+	background-color: $background-color;
 
 	transition-property: padding;
 	transition-duration: 0.4s;
@@ -185,7 +186,7 @@ h1, h2, h3, p{
 
 		$page-item-line: 1px rgba($fill-g-dark1, 0.2) solid;
 
-		$page-radius: 9999px;
+		$page-radius: 28px;
 
 		.page-container {
 			$btn-height: 60px;
@@ -210,27 +211,35 @@ h1, h2, h3, p{
 				border-radius: $page-radius;
 				margin: 5px;
 
-				background-color: rgba($fill-m-light1, 0.4);
+				background-color: rgba($fill-m-light1, 0.1);
 
 				transition-property: background-color, transform, width;
 				transition-duration: 0.3s, 0.3s, 0.3s;
 				transition-timing-function: ease-in, ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 				.page-icon{
-					$size: 50px;
+					$size: 26px;
 
+					opacity: 0.4;
 					width: $size;
 					height: $size;
 
-					margin: 5px;
+					margin: (60px - $size)/2;
+
+					transition-property: opacity;
+					transition-duration: 0.3s;
 				}
 
 			}
 
 			.page-select {
-				background-color: rgba($fill-m-dark1, 0.8);
+				background-color: rgba($fill-m-light1, 0.3);
 				color: $font-g-light1;
 				width: 100px;
+
+				.page-icon{
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -285,7 +294,7 @@ h1, h2, h3, p{
 			&:last-child {
 				margin-bottom: 35px;
 			}
-
+			
 			.gradient {
 				position: absolute;
 				display: inline-block;
@@ -343,8 +352,8 @@ h1, h2, h3, p{
 		$color_mix_value: 0.8;
 		$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
-		$time-event-main-color: rgba($fill-g-dark1, 0.3);
-		$time-event-main-line-color: rgba($fill-g-dark1, 0.05);
+		$time-event-main-color: rgba($fill-g-light1, 0.3);
+		$time-event-main-line-color: rgba($fill-g-light1, 0.05);
 		$time-event-main-line-width: 2px;
 		$time-event-main-line: $time-event-main-line-width $time-event-main-line-color solid;
 		$time-event-max-width: 600px;
@@ -382,7 +391,7 @@ h1, h2, h3, p{
 						font-weight: 700;
 						line-height: $title-height;
 
-						color: $font-g-dark1;
+						color: $font-g-light2;
 					}
 				}
 
@@ -424,13 +433,13 @@ h1, h2, h3, p{
 						margin-top: 0;
 
 						h2 {
-							color: $font-g-dark1;
+							color: $font-g-light1;
 							font-size: 20px;
 							font-weight: 700;
 							line-height: 40px;
 						}
 						h3 {
-							color: $font-g-dark3;
+							color: $font-g-light3;
 							font-size: 16px;
 							font-weight: 200;
 							line-height: 40px;
@@ -445,13 +454,13 @@ h1, h2, h3, p{
 						border-radius: 20px;
 
 						&-title {
-							color: $font-g-dark1;
+							color: $font-g-light1;
 							font-size: 20px;
 							margin-bottom: 12px;
 							line-height: 1.8rem;
 						}
 						&-text {
-							color: $font-g-dark3;
+							color: $font-g-light3;
 							line-height: 1.5rem;
 							display: flex;
 							flex-direction: column;
@@ -473,7 +482,7 @@ h1, h2, h3, p{
 	align-items: center;
 	justify-content: center;
 
-	padding: 80px 0 120px 0;
+	padding: 80px 0 40px 0;
 
 	button{
 
@@ -500,11 +509,24 @@ h1, h2, h3, p{
 		}
 
 		img{
-			$size: 30px;
+			$size: 24px;
 			height: $size;
 			width: $size;
 		}
 
+	}
+}
+
+.license{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	opacity: 0.5;
+	padding: 20px 0 40px 0;
+
+	a{
+		text-decoration-line: none !important;
 	}
 }
 
@@ -514,6 +536,7 @@ h1, h2, h3, p{
 .time-events {
 	animation: fadeIn 0.3s;
 }
+
 
 .loading{
 
@@ -688,8 +711,9 @@ h1, h2, h3, p{
 
 			&-text {
 
+				text-align: center;
 				width: 100%;
-				margin: 30px 0 0 0;
+				margin: 30px 0 20px 0;
 				padding-left: 0;
 
 				.card-title{
@@ -741,6 +765,7 @@ h1, h2, h3, p{
 			}
 
 			&-text {
+				text-align: left;
 				width: 100%;
 				margin: 0;
 				padding-left: 20px;
@@ -754,8 +779,8 @@ h1, h2, h3, p{
 
 	.hoverable-btn{
 
-		background-color: rgba($main-color, 0.1);
-		color: $font-m-dark1;
+		background-color: rgba($main-color, 0.15);
+		color: $font-m-light1;
 
 		transition: background-color, color;
 		transition-duration: 0.4s;

@@ -18,7 +18,26 @@ var vm = new Vue({
 		},
 		collections: [
 			{
+				title: "Sky Bandit 天空盜賊團",
+				sortingOrder: 0,
+				picture: "pic/SkyBandit.png",
+				video: "",
+				subtitle: "2019/6 - ",
+				content: "於玩猴遊戲 Cloud Macaca 任職後參與的第一個專案，在專案前期主要擔任企劃，後期擔任技術企劃及程式設計人員。",
+				links: [
+					{
+						link: "https://play.google.com/store/apps/details?id=com.MacacaGames.SkyBandit",
+						title: "Android 下載"
+					},
+					{
+						link: "https://apps.apple.com/app/id1499441526",
+						title: "iOS 下載"
+					}
+				]
+			},
+			{
 				title: "Cloud Macaca 企劃",
+				sortingOrder: 1,
 				picture: "pic/CloudMacaca.png",
 				video: "",
 				subtitle: "2019/6 - NOW",
@@ -27,6 +46,7 @@ var vm = new Vue({
 			},
 			{
 				title: "傳奇網路 企劃",
+				sortingOrder: 1,
 				picture: "pic/x-legend.jpg",
 				video: "",
 				subtitle: "2017/8 - 2019/5",
@@ -35,6 +55,7 @@ var vm = new Vue({
 			},
 			{
 				title: "GooglePlay 築夢台灣專區",
+				sortingOrder: 1,
 				picture: "pic/GooglePlay.jpg",
 				video: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
 				subtitle: "2018/1",
@@ -43,6 +64,7 @@ var vm = new Vue({
 			},
 			{
 				title: "The Hole",
+				sortingOrder: 1,
 				picture: "pic/TheHole.svg",
 				video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
 				subtitle: "2018/4",
@@ -60,6 +82,7 @@ var vm = new Vue({
 			},
 			{
 				title: "點心故事 Literary Dessert",
+				sortingOrder: 1,
 				picture: "pic/LiteraryDessert.svg",
 				video: "",
 				subtitle: "2016/7 - 2016/8",
@@ -73,6 +96,7 @@ var vm = new Vue({
 			},
 			{
 				title: "DROOM 夢門",
+				sortingOrder: 1,
 				picture: "pic/DROOM.png",
 				video: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
 				subtitle: "2016/5 -",
@@ -81,6 +105,7 @@ var vm = new Vue({
 			},			
 			{
 				title: "BEAN",
+				sortingOrder: 1,
 				picture: "pic/BEAN.png",
 				video: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
 				subtitle: "2015/9 - 2016/1",
@@ -163,6 +188,15 @@ var vm = new Vue({
 					content: "從2019年6月開始，於玩猴遊戲 Cloud Macaca 任職企劃。",
 					marginSpace:"200px"
 				}]
+			},
+			{
+				year: "2020",
+				data:[{
+					title: "Sky Bandit 天空盜賊團雙平台上架",
+					month: "9月",
+					content: "玩猴遊戲 Cloud Macaca 任職參與的第一個專案，於雙平台上架。",
+					marginSpace:"200px"
+				}]
 			}
 
 		],
@@ -181,7 +215,7 @@ var vm = new Vue({
 			document.getElementById("app").setAttribute("style", "display: flex");
 		}
 
-		this.shuffle(this.collections);
+		this.sortBySortingOrder(this.collections);
 		
 	},
 	methods:{
@@ -202,8 +236,12 @@ var vm = new Vue({
 
 			return (value * 10) + "px";
 		},
-		shuffle: function(array) {
-			array.sort(() => Math.random() - 0.5);
+		sortBySortingOrder: function(array) {
+			array.sort((a,b) => {
+				if(a.sortingOrder>b.sortingOrder)	return 1;
+				if(a.sortingOrder<b.sortingOrder)	return -1;
+				if(a.sortingOrder===b.sortingOrder)	return Math.random() - 0.5;	//相等的情況隨機排序
+			});
 		},
 		goTop: function(){
 			document.body.scrollTop = 0; // For Safari
