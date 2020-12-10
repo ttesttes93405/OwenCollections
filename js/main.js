@@ -22,8 +22,8 @@ var vm = new Vue({
 				sortingOrder: 0,
 				picture: "pic/SkyBandit.png",
 				video: "",
-				subtitle: "2019/6 - ",
-				content: "於玩猴遊戲 Cloud Macaca 任職後參與的第一個專案，在專案前期主要擔任企劃，後期擔任技術企劃及程式設計人員。",
+				subtitle: "2019/6 - 2020/12",
+				content: "於玩猴遊戲 Macaca Games 任職後參與的第一個專案，在專案前期主要擔任企劃，後期擔任技術企劃及程式設計人員。",
 				links: [
 					{
 						link: "https://play.google.com/store/apps/details?id=com.MacacaGames.SkyBandit",
@@ -36,12 +36,12 @@ var vm = new Vue({
 				]
 			},
 			{
-				title: "Cloud Macaca 企劃",
+				title: "Macaca Games 技術企劃",
 				sortingOrder: 1,
 				picture: "pic/CloudMacaca.png",
 				video: "",
-				subtitle: "2019/6 - NOW",
-				content: "於玩猴遊戲 Cloud Macaca 任職企劃，參與以Unity開發的手遊專案。",
+				subtitle: "2019/6 -",
+				content: "於玩猴遊戲 Macaca Games 任職企劃，參與「Sky Bandit 天空盜賊團」開發，同時支援寫點code，但是寫的code多到不太確定自己該叫企劃還是程式。",
 				links: []
 			},
 			{
@@ -183,18 +183,18 @@ var vm = new Vue({
 			{
 				year: "2019",
 				data:[{
-					title: "開始玩猴遊戲 Cloud Macaca 遊戲企劃一職",
+					title: "開始玩猴遊戲 Macaca Games 遊戲技術企劃一職",
 					month: "6月",
-					content: "從2019年6月開始，於玩猴遊戲 Cloud Macaca 任職企劃。",
+					content: "從2019年6月開始，於玩猴遊戲 Macaca Games 任職技術企劃。",
 					marginSpace:"200px"
 				}]
 			},
 			{
 				year: "2020",
 				data:[{
-					title: "Sky Bandit 天空盜賊團雙平台上架",
+					title: "Sky Bandit 天空盜賊團手機雙平台上架",
 					month: "9月",
-					content: "玩猴遊戲 Cloud Macaca 任職參與的第一個專案，於雙平台上架。",
+					content: "玩猴遊戲 Macaca Games 任職參與的第一個專案，於 iOS、Android 雙平台上架。",
 					marginSpace:"200px"
 				}]
 			}
