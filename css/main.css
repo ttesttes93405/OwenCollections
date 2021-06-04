@@ -73,7 +73,7 @@ table {
 }
 
 html, body {
-  background-color: #14201e;
+  background-color: #121414;
   color: #534f4f;
 }
 
@@ -104,7 +104,7 @@ html, body {
 }
 
 .card {
-  background-color: #293130;
+  background-color: rgba(255, 255, 255, 0.025);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 20px;
@@ -210,6 +210,10 @@ h1, h2, h3, p {
   font-family: 'Maven Pro','Noto Sans CJK TC', '微軟正黑體', sans-serif;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 #app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +268,7 @@ h1, h2, h3, p {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 50px 0;
-  background-color: #14201e;
+  background-color: #121414;
   -webkit-transition: width 0.4s;
   transition: width 0.4s;
 }
@@ -373,7 +377,7 @@ h1, h2, h3, p {
 }
 
 .page-content {
-  background-color: #14201e;
+  background-color: #121414;
   -webkit-transition-property: padding;
   transition-property: padding;
   -webkit-transition-duration: 0.4s;
@@ -424,14 +428,21 @@ h1, h2, h3, p {
   border-radius: 28px;
   margin: 5px;
   background-color: rgba(73, 158, 148, 0.1);
-  -webkit-transition-property: background-color, width, -webkit-transform;
-  transition-property: background-color, width, -webkit-transform;
-  transition-property: background-color, transform, width;
-  transition-property: background-color, transform, width, -webkit-transform;
-  -webkit-transition-duration: 0.3s, 0.3s, 0.3s;
-          transition-duration: 0.3s, 0.3s, 0.3s;
-  -webkit-transition-timing-function: ease-in, ease-in, cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition-timing-function: ease-in, ease-in, cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+          box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+  -webkit-transition-property: background-color, width, -webkit-transform, -webkit-box-shadow;
+  transition-property: background-color, width, -webkit-transform, -webkit-box-shadow;
+  transition-property: background-color, transform, width, box-shadow;
+  transition-property: background-color, transform, width, box-shadow, -webkit-transform, -webkit-box-shadow;
+  -webkit-transition-duration: 0.3s, 0.3s, 0.3s, 0.5s;
+          transition-duration: 0.3s, 0.3s, 0.3s, 0.5s;
+  -webkit-transition-timing-function: ease-in, ease-in, cubic-bezier(0.68, -0.55, 0.265, 1.55), ease;
+          transition-timing-function: ease-in, ease-in, cubic-bezier(0.68, -0.55, 0.265, 1.55), ease;
+}
+
+.page-content .container .page-container .page-item:hover {
+  -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.05);
+          box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.05);
 }
 
 .page-content .container .page-container .page-item .page-icon {
@@ -453,6 +464,11 @@ h1, h2, h3, p {
 
 .page-content .container .page-container .page-select .page-icon {
   opacity: 1;
+}
+
+.page-content .container .page-container .page-select:hover {
+  -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.2);
+          box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.2);
 }
 
 .cards {
@@ -535,8 +551,8 @@ h1, h2, h3, p {
   height: 50px;
   width: 100%;
   bottom: 35px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#293130), to(rgba(41, 49, 48, 0)));
-  background: linear-gradient(bottom, #293130, rgba(41, 49, 48, 0));
+  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(bottom, white, rgba(255, 255, 255, 0));
   display: none;
 }
 
@@ -580,13 +596,27 @@ h1, h2, h3, p {
 }
 
 .time-event-content .container .time-events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   margin-left: 80px;
   margin-right: 20px;
   max-width: 600px;
 }
 
 .time-event-content .container .time-events .time-event-year {
-  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  padding-bottom: 40px;
   position: relative;
 }
 
@@ -594,7 +624,7 @@ h1, h2, h3, p {
   position: absolute;
   display: inline-block;
   width: 80px;
-  top: 0;
+  bottom: 0;
   left: -39px;
   height: 40px;
   margin-left: 0;
@@ -621,19 +651,19 @@ h1, h2, h3, p {
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 0;
 }
 
 .time-event-content .container .time-events .time-event-year .time-event-dot {
   height: 100%;
-  position: relative;
+  position: absolute;
+  bottom: 0;
 }
 
 .time-event-content .container .time-events .time-event-year .time-event-dot-img {
   position: absolute;
   left: -6px;
-  top: 26px;
+  bottom: 56px;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -650,7 +680,7 @@ h1, h2, h3, p {
   position: absolute;
   display: inline-block;
   width: 80px;
-  top: 20px;
+  bottom: 40px;
   left: -80px;
   height: 40px;
   margin-left: -30px;
@@ -675,7 +705,9 @@ h1, h2, h3, p {
 .time-event-content .container .time-events .time-event-year .time-event-info {
   padding: 20px;
   margin-left: 30px;
+  margin-bottom: 20px;
   border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.025);
 }
 
 .time-event-content .container .time-events .time-event-year .time-event-info-title {
@@ -702,6 +734,9 @@ h1, h2, h3, p {
 }
 
 .top-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -711,7 +746,7 @@ h1, h2, h3, p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 80px 0 40px 0;
+  padding: 0;
 }
 
 .top-btn button {
@@ -725,10 +760,10 @@ h1, h2, h3, p {
       -ms-flex-pack: center;
           justify-content: center;
   height: 60px;
-  width: 200px;
+  width: 60px;
   border-style: none;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 999px;
   outline-style: none;
 }
 
@@ -773,6 +808,10 @@ h1, h2, h3, p {
           animation: fadeIn 0.3s;
 }
 
+.hide {
+  display: none;
+}
+
 .loading {
   width: 100vw;
   height: 100vh;
@@ -785,7 +824,7 @@ h1, h2, h3, p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #14201e;
+  background-color: #121414;
 }
 
 .loading .loading-body {
@@ -1027,6 +1066,9 @@ h1, h2, h3, p {
     width: 100%;
     max-width: 400px;
   }
+  .cards .card {
+    margin: 10px;
+  }
   .cards .card-head {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1047,6 +1089,12 @@ h1, h2, h3, p {
   .cards .card-head-text .card-title {
     font-size: 28px;
   }
+  .time-event-content .container .time-events .time-event-year .time-event-info {
+    margin-left: 25px;
+  }
+  .time-event-content .container .time-events .time-event-year .time-event-date {
+    left: -75px;
+  }
   .hoverable-btn {
     background-color: rgba(73, 158, 148, 0.5);
     color: #e7f0ec;
@@ -1060,8 +1108,8 @@ h1, h2, h3, p {
     padding-bottom: 60px;
   }
   .row .col {
-    width: 600px;
-    max-width: 600px;
+    width: 500px;
+    max-width: 500px;
   }
   .cards .card {
     padding: 20px;
@@ -1090,14 +1138,20 @@ h1, h2, h3, p {
   .hoverable-btn {
     background-color: rgba(73, 158, 148, 0.15);
     color: #a4cfca;
-    -webkit-transition: background-color, color;
-    transition: background-color, color;
+    -webkit-box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+            box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+    -webkit-transition: background-color, color, -webkit-box-shadow;
+    transition: background-color, color, -webkit-box-shadow;
+    transition: background-color, color, box-shadow;
+    transition: background-color, color, box-shadow, -webkit-box-shadow;
     -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
   }
   .hoverable-btn:hover {
     background-color: rgba(73, 158, 148, 0.5);
     color: #e7f0ec;
+    -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
+            box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
   }
 }
 /*# sourceMappingURL=main.css.map */

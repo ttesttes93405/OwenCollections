@@ -13,6 +13,18 @@
 	#{$property}: $value;
 }
 
+$time-event-dot-r: 10px;
+$time-event-dot-color:$main-color;
+$time-event-dot-space-left: 80px;
+$time-event-dot-space-right: 30px;
+$time-event-info-padding: 20px;
+$time-event-space-right: 20px;
+$time-event-main-color: rgba($fill-g-light1, 0.3);
+$time-event-main-line-color: rgba($fill-g-light1, 0.05);
+$time-event-main-line-width: 2px;
+$time-event-main-line: $time-event-main-line-width $time-event-main-line-color solid;
+$time-event-max-width: 600px;
+
 html,
 body {
 	letter-spacing: 0.07em;
@@ -24,6 +36,10 @@ body {
 
 h1, h2, h3, p{
 	font-family: 'Maven Pro','Noto Sans CJK TC', '微軟正黑體', sans-serif;
+}
+
+[v-cloak]{
+	display: none;
 }
 
 #app{
@@ -212,10 +228,17 @@ h1, h2, h3, p{
 				margin: 5px;
 
 				background-color: rgba($fill-m-light1, 0.1);
+				box-shadow: 0 0 0 0px rgba($main-color, 0);
 
-				transition-property: background-color, transform, width;
-				transition-duration: 0.3s, 0.3s, 0.3s;
-				transition-timing-function: ease-in, ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550);
+				transition-property: background-color, transform, width, box-shadow;
+				transition-duration: 0.3s, 0.3s, 0.3s, 0.5s;
+				transition-timing-function: ease-in, ease-in, cubic-bezier(0.680, -0.550, 0.265, 1.550), ease;
+
+		
+		
+				&:hover{		
+					box-shadow: 0 0 0 4px rgba($main-color, 0.05);
+				}
 
 				.page-icon{
 					$size: 26px;
@@ -239,6 +262,10 @@ h1, h2, h3, p{
 
 				.page-icon{
 					opacity: 1;
+				}
+				
+				&:hover{		
+					box-shadow: 0 0 0 4px rgba($main-color, 0.2);
 				}
 			}
 		}
@@ -340,27 +367,19 @@ h1, h2, h3, p{
 		justify-content: center;
 
 
-		$time-event-dot-r: 10px;
-		$time-event-dot-color:$main-color;
-		$time-event-dot-space-left: 80px;
-		$time-event-dot-space-right: 30px;
-		$time-event-info-padding: 20px;
-		$time-event-space-right: 20px;
-
 		$color_m: $fill-m-dark1;
 		$color_g: $fill-g-dark3;
 		$color_mix_value: 0.8;
 		$color_mix: $color_m * $color_mix_value + $color_g * (1-$color_mix_value);
 
-		$time-event-main-color: rgba($fill-g-light1, 0.3);
-		$time-event-main-line-color: rgba($fill-g-light1, 0.05);
-		$time-event-main-line-width: 2px;
-		$time-event-main-line: $time-event-main-line-width $time-event-main-line-color solid;
-		$time-event-max-width: 600px;
+
 
 		.time-events {
 
-			$dot-tri-top: 30px;
+			$dot-tri-top: 50px;
+
+			display: flex;
+			flex-direction: column-reverse;
 
 			margin-left: $time-event-dot-space-left;
 			margin-right: $time-event-space-right;
@@ -371,14 +390,17 @@ h1, h2, h3, p{
 
 				$title-height: 40px;
 
-				padding-top: $title-height;
+				display: flex;
+				flex-direction: column-reverse;
+
+				padding-bottom: $title-height;
 				position: relative;
 
 				&-date {
 					position: absolute;
 					display: inline-block;
 					width: $time-event-dot-space-left;
-					top: 0;
+					bottom: 0;
 					left: -$time-event-dot-space-left/2 +  $time-event-main-line-width/2;
 					height: $title-height;
 					margin-left: 0;
@@ -401,17 +423,18 @@ h1, h2, h3, p{
 					display: flex;
 					flex-direction: row;
 					position: relative;
-					padding-right: 10px;
-					padding-top: 10px;
+
+					padding: 0;					
 
 					&-dot {
 						height: 100%;
-						position: relative;
+						position: absolute;
+						bottom: 0;
 
 						&-img {
 							position: absolute;
 							left: - ($time-event-dot-r/2 + $time-event-main-line-width/2);
-							top: $dot-tri-top + 6px - 10px;
+							bottom: $dot-tri-top + 6px;
 							width: $time-event-dot-r;
 							height: $time-event-dot-r;
 							border-radius: 100%;
@@ -425,7 +448,7 @@ h1, h2, h3, p{
 						position: absolute;
 						display: inline-block;
 						width: $time-event-dot-space-left;
-						top: $dot-tri-top - 10px;
+						bottom: $dot-tri-top - 10px;
 						left: -$time-event-dot-space-left;
 						height: 40px;
 						margin-left: -$time-event-dot-space-right;
@@ -451,7 +474,11 @@ h1, h2, h3, p{
 
 						padding: $time-event-info-padding;
 						margin-left: $time-event-dot-space-right;
+						margin-bottom: 20px;
+
 						border-radius: 20px;
+
+						background-color: $card-background;
 
 						&-title {
 							color: $font-g-light1;
@@ -478,11 +505,15 @@ h1, h2, h3, p{
 
 .top-btn{
 
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	padding: 80px 0 40px 0;
+	padding: 0;
 
 	button{
 
@@ -491,15 +522,13 @@ h1, h2, h3, p{
 		justify-content: center;
 
 		height: 60px;
-		width: 200px;
+		width: 60px;
 
 		border-style: none;
 		cursor: pointer;
-		border-radius: 20px;
-
+		border-radius: 999px;
 
 		outline-style: none;
-
 
 		p{
 			width: 100%;
@@ -537,6 +566,9 @@ h1, h2, h3, p{
 	animation: fadeIn 0.3s;
 }
 
+.hide{
+	display: none;
+}
 
 .loading{
 
@@ -698,6 +730,8 @@ h1, h2, h3, p{
 
 	.cards .card{
 
+		margin: 10px;
+
 		&-head{
 			flex-direction: column;
 			margin: 0 0 10px;
@@ -723,6 +757,16 @@ h1, h2, h3, p{
 		}
 	}
 
+	.time-event-content .container .time-events .time-event-year{
+		.time-event-info{
+			margin-left: $time-event-dot-space-right - 5px;
+		}
+		.time-event-date{
+			left: -$time-event-dot-space-left + 5px;
+		}
+	}
+	
+
 	.hoverable-btn{
 		
 		background-color: rgba($main-color, 0.5);
@@ -744,8 +788,8 @@ h1, h2, h3, p{
 	}
 
 	.row .col{
-		width: 600px;
-		max-width: 600px;;
+		width: 500px;
+		max-width: 500px;;
 	}	
 
 	.cards .card{
@@ -782,12 +826,16 @@ h1, h2, h3, p{
 		background-color: rgba($main-color, 0.15);
 		color: $font-m-light1;
 
-		transition: background-color, color;
+		box-shadow: 0 0 0 0px rgba($main-color, 0);
+
+		transition: background-color, color, box-shadow;
 		transition-duration: 0.4s;
 
 		&:hover{
 			background-color: rgba($main-color, 0.5);
 			color: $font-g-light1;
+
+			box-shadow: 0 0 0 4px rgba($main-color, 0.1);
 		}
 	}
 
