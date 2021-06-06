@@ -25,7 +25,8 @@ export const collections = [
         links: [
             {
                 link: "https://play.google.com/store/apps/details?id=com.MacacaGames.G2_ProjectI",
-                title: "Android 下載"
+                title: "Android 下載",
+                icon: "pic/Icon_Android.svg",
             }
         ]
     },
@@ -39,7 +40,8 @@ export const collections = [
         links: [
             {
                 link: "https://play.google.com/store/apps/details?id=com.MacacaGames.G2_ProjectE",
-                title: "Android 下載"
+                title: "Android 下載",
+                icon: "pic/Icon_Android.svg",
             }
         ]
     },
@@ -53,11 +55,13 @@ export const collections = [
         links: [
             {
                 link: "https://play.google.com/store/apps/details?id=com.MacacaGames.SkyBandit",
-                title: "Android 下載"
+                title: "Android 下載",
+                icon: "pic/Icon_Android.svg",
             },
             {
                 link: "https://apps.apple.com/app/id1499441526",
-                title: "iOS 下載"
+                title: "iOS 下載",
+                icon: "pic/Icon_Apple.svg",
             }
         ]
     },
@@ -98,11 +102,13 @@ export const collections = [
         links: [
             {
                 link: "http://longitude-exhibition.net/",
-                title:"Longitude Exhibition"
+                title:"Longitude Exhibition",
+                icon: "",
             },
             {
                 link: "https://sunyu.itch.io/the-hole",
-                title: "玩網頁版"
+                title: "玩網頁版",
+                icon: "",
             }
         ]
     },
@@ -116,7 +122,8 @@ export const collections = [
         links: [
             {
                 link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
-                title: "前往網站"
+                title: "前往網站",
+                icon: "",
             }
         ]
     },

@@ -54,28 +54,31 @@ Vue.component('card', {
 	<div class="card">                  
 		<div class="card-body">
 
-		<div class="card-head">
-			<img class="card-img-top" v-bind:src="item.picture" />
-			<div class="card-head-text">
-				<h1 class="card-title font-color-g-light1">{{item.title}}</h1>
-				<h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
+			<div class="card-head">
+				<img class="card-img-top" v-bind:src="item.picture" />
+				<div class="card-head-text">
+					<h1 class="card-title font-color-g-light1">{{item.title}}</h1>
+					<h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
+				</div>
 			</div>
-		</div>
 
-		<div class="card-video embed-responsive embed-responsive-16by9" v-if="item.video!=''">
-			<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
-		</div>
-		
-		<div class="card-text font-color-g-light2">
-			<p>{{item.content}}</p>
-		</div>
+			<div class="card-video embed-responsive embed-responsive-16by9" v-if="item.video!=''">
+				<iframe class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
+			</div>
+			
+			<div class="card-text font-color-g-light2">
+				<p>{{item.content}}</p>
+			</div>
 
-		<a v-bind:href="itemLink.link" target="_blank"
-			v-on:click.stop="" 
-			v-for="itemLink in item.links">
-			<div class="card-btn hoverable-btn">{{itemLink.title}}</div>
-		</a>
-
+			<div class="card-link-container">
+				<a v-bind:href="itemLink.link" target="_blank"
+					v-on:click.stop="" 
+					v-for="itemLink in item.links"
+					class="card-btn hoverable-btn">
+					<img v-if="itemLink.icon!==''" v-bind:src="itemLink.icon" />
+					<p>{{itemLink.title}}</p>
+				</a>
+			</div>
 		</div>
 	</div>
 	`,
@@ -94,6 +97,7 @@ const vm = new Vue({
 			false	//頭貼切換
 		],
 		nowPage: 0,
+		showTop: false,
 	},
 	mounted: function () {
 		
@@ -102,6 +106,10 @@ const vm = new Vue({
 		}
 
 		this.sortBySortingOrder(this.collections);
+
+		window.addEventListener('scroll', (e) => {
+			this.onScroll(window.scrollY);
+		});
 		
 	},
 	methods: {
@@ -115,7 +123,10 @@ const vm = new Vue({
 		goTop: function(){
 			document.body.scrollTop = 0; // For Safari
 			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-		}
+		},
+		onScroll: function(y){
+			this.showTop = y > (window.innerHeight * 0.5);
+		},
 		  
 	}
 })
