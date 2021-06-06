@@ -466,6 +466,7 @@ h1, h2, h3, p {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  margin-top: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -564,7 +565,6 @@ h1, h2, h3, p {
   width: 100%;
   padding: 15px 10px;
   height: 60px;
-  margin-top: 20px;
   border-radius: 20px;
   -webkit-text-decoration-line: none !important;
           text-decoration-line: none !important;
@@ -583,6 +583,14 @@ h1, h2, h3, p {
           flex-grow: 0;
 }
 
+.cards .card-btn:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.cards .card-btn:last-child {
+  margin-right: 0;
+}
+
 .cards .card-video {
   border-radius: 15px;
   margin: 20px 0;
@@ -592,9 +600,6 @@ h1, h2, h3, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  row-gap: 16px;
-  -webkit-column-gap: 16px;
-          column-gap: 16px;
 }
 
 .card-content {

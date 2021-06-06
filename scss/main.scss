@@ -270,6 +270,8 @@ h1, h2, h3, p{
 	display: grid;
 	grid-template-columns: 1fr;
 
+	margin-top: 20px;
+
 	flex-direction: column;
 	align-content: center;
 
@@ -344,7 +346,6 @@ h1, h2, h3, p{
 			width: 100%;
 			padding: 15px 10px;
 			height: 60px;
-			margin-top: 20px;
 			border-radius: 20px;
 			text-decoration-line: none !important;
 
@@ -360,16 +361,26 @@ h1, h2, h3, p{
 			}
 		}
 
+		//用此方式模擬gap
+		&-btn{
+			&:nth-child(odd){
+				margin-right: 10px;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+
 		&-video{
 			border-radius: 15px;
 			margin: 20px 0;
 		}
 		
 		&-link-container{
-			$gap: 16px;
 			display: flex;
-			row-gap: $gap;
-			column-gap: $gap;
+			//$gap: 16px;
+			//row-gap: $gap;
+			//column-gap: $gap;
 		}
 	}
 }
