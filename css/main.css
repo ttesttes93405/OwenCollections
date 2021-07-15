@@ -104,7 +104,7 @@ html, body {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #2a2c2c;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 20px;
@@ -193,12 +193,9 @@ html, body {
   border: 0;
 }
 
-.embed-responsive-16by9::before {
-  padding-top: 56.25%;
-}
-
 html,
 body {
+  position: relative;
   letter-spacing: 0.07em;
   line-height: 1.8em;
   font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
@@ -222,12 +219,78 @@ h1, h2, h3, p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: -1;
 }
 
 #app .view-content {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  z-index: 1;
+  background-color: rgba(18, 20, 20, 0.8);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  left: 0;
+  z-index: 0;
+}
+
+.background-pictures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: fixed;
+  margin-top: -160px;
+  -webkit-transform: rotateZ(-5deg);
+          transform: rotateZ(-5deg);
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  opacity: 0.3;
+}
+
+.background-pictures-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100vw;
+}
+
+.background-pictures-row:nth-child(odd) {
+  margin-left: -40px;
+}
+
+.background-pictures-row:nth-child(even) {
+  margin-left: 40px;
+}
+
+.background-pictures img {
+  width: 160px;
+  height: 160px;
+  border-radius: 60px;
+  opacity: 0.5;
+  margin: 10px;
 }
 
 .neumorphism-normal-out {
@@ -268,9 +331,11 @@ h1, h2, h3, p {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 50px 0;
-  background-color: #121414;
   -webkit-transition: width 0.4s;
   transition: width 0.4s;
+  z-index: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(18, 20, 20, 0.8)), to(rgba(18, 20, 20, 0)));
+  background: linear-gradient(0deg, rgba(18, 20, 20, 0.8) 0%, rgba(18, 20, 20, 0) 100%);
 }
 
 .top-content .container {
@@ -377,7 +442,6 @@ h1, h2, h3, p {
 }
 
 .page-content {
-  background-color: #121414;
   -webkit-transition-property: padding;
   transition-property: padding;
   -webkit-transition-duration: 0.4s;
@@ -412,8 +476,10 @@ h1, h2, h3, p {
   display: inline-block;
   text-align: center;
   width: auto;
-  border-radius: 35px;
+  background-color: rgba(254, 255, 254, 0.01);
+  border-radius: 45px;
   height: 70px;
+  padding: 10px;
 }
 
 .page-content .container .page-container .page-item {
@@ -541,8 +607,8 @@ h1, h2, h3, p {
   height: 50px;
   width: 100%;
   bottom: 35px;
-  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(bottom, white, rgba(255, 255, 255, 0));
+  background: -webkit-gradient(linear, left bottom, left top, from(#2a2c2c), to(rgba(42, 44, 44, 0)));
+  background: linear-gradient(bottom, #2a2c2c, rgba(42, 44, 44, 0));
   display: none;
 }
 
@@ -596,10 +662,15 @@ h1, h2, h3, p {
   margin: 20px 0;
 }
 
+.cards .card-video video {
+  background-color: rgba(18, 20, 20, 0.3);
+}
+
 .cards .card-link-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 20px;
 }
 
 .card-content {
@@ -736,7 +807,7 @@ h1, h2, h3, p {
   margin-left: 30px;
   margin-bottom: 20px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #2a2c2c;
 }
 
 .time-event-content .container .time-events .time-event-year .time-event-info-title {
@@ -776,6 +847,7 @@ h1, h2, h3, p {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
+  z-index: 1;
   -webkit-animation: PunchScale 0.3s;
           animation: PunchScale 0.3s;
 }
@@ -820,8 +892,9 @@ h1, h2, h3, p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  opacity: 0.5;
   padding: 20px 0 40px 0;
+  background-color: rgba(18, 20, 20, 0.8);
+  z-index: 0;
 }
 
 .license a {
@@ -1190,7 +1263,7 @@ h1, h2, h3, p {
   }
   .hoverable-btn {
     background-color: rgba(73, 158, 148, 0.15);
-    color: #a4cfca;
+    color: #fefffe;
     -webkit-box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
             box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
     -webkit-transition: background-color, color, -webkit-box-shadow;

@@ -103,9 +103,3 @@
 		border: 0;
 	}
 }
-
-.embed-responsive-16by9 {
-	&::before {
-		padding-top: percentage(9 / 16);
-	}
-}

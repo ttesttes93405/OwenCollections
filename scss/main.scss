@@ -27,6 +27,7 @@ $time-event-max-width: 600px;
 
 html,
 body {
+	position: relative;
 	letter-spacing: 0.07em;
 	line-height: 1.8em;
 	font-family: 'Maven Pro','Noto Sans CJK TC', sans-serif;
@@ -43,14 +44,66 @@ h1, h2, h3, p{
 }
 
 #app{
-
+	
 	display: flex;
 	flex-direction: column;
+	z-index: -1;
 
 	.view-content {
 		flex-grow: 1;
+		z-index: 1;
+		background-color: rgba($background-color, 0.8);
 	}
+}
 
+.background {
+
+	position: fixed;
+	top: 0;
+	bottom: auto;
+	right: auto;
+	left: 0;
+	z-index: 0;
+
+	&-pictures{
+
+		display: flex;
+		flex-direction: column;
+
+		flex-wrap: wrap;
+		position: fixed;
+		margin-top: -160px;
+	
+		transform: rotateZ(-5deg);
+		filter: blur(15px);
+		opacity: 0.3;
+
+		&-row{
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+	
+			flex-wrap: nowrap;
+			width: 100vw;
+		
+			&:nth-child(odd){
+				margin-left: -40px;
+			}
+			&:nth-child(even){
+				margin-left: 40px;
+			}
+		}
+
+		img{
+			width: 160px;
+			height: 160px;
+			border-radius: 60px;
+			opacity: 0.5;
+			margin: 10px;
+		}
+	}
 }
 
 .neumorphism{
@@ -97,10 +150,16 @@ h1, h2, h3, p{
 	flex-shrink: 0;
 	justify-content: center;
 	padding: 50px 0 ;
-	background-color: $background-color;
+
 
 	transition: width 0.4s;
 	
+	z-index: 0;
+	background: linear-gradient(
+		0deg, 
+		rgba($background-color, 0.8) 0%, 
+		rgba($background-color, 0) 100%);
+
 	.container{
 		position: relative;
 		width: auto;
@@ -185,7 +244,6 @@ h1, h2, h3, p{
 
 .page-content {
 
-	background-color: $background-color;
 
 	transition-property: padding;
 	transition-duration: 0.4s;
@@ -210,10 +268,12 @@ h1, h2, h3, p{
 			display: inline-block;
 			text-align: center;
 			width: auto;
-			//background-color: rgba($fill-m-light1, 0.2);
+			background-color: rgba($font-m-light1, 0.01);
 
-			border-radius: ($btn-height + 10px) / 2;
+			border-radius: ($btn-height + 10px) / 2 + 10px;
 			height: $btn-height + 10px;
+
+			padding: 10px;
 
 			.page-item {
 				cursor: pointer;
@@ -374,6 +434,10 @@ h1, h2, h3, p{
 		&-video{
 			border-radius: 15px;
 			margin: 20px 0;
+
+			video {
+				background-color: rgba($background-color, 0.3);
+			}
 		}
 		
 		&-link-container{
@@ -381,6 +445,7 @@ h1, h2, h3, p{
 			//$gap: 16px;
 			//row-gap: $gap;
 			//column-gap: $gap;
+			margin-top: 20px;
 		}
 	}
 }
@@ -545,9 +610,10 @@ h1, h2, h3, p{
 	justify-content: center;
 
 	padding: 0;
+	z-index: 1;
+
 
 	animation: PunchScale 0.3s;
-
 
 	button{
 
@@ -585,8 +651,9 @@ h1, h2, h3, p{
 	align-items: center;
 	justify-content: center;
 
-	opacity: 0.5;
 	padding: 20px 0 40px 0;
+	background-color: rgba($background-color, 0.8);
+	z-index: 0;
 
 	a{
 		text-decoration-line: none !important;

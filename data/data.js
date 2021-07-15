@@ -19,7 +19,8 @@ export const collections = [
         title: "Fall A Sleep",
         sortingOrder: 1,
         picture: "pic/G2I.webp",
-        video: "",
+        video: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364397/OwenCollection/Fall%20A%20Sleep/Fall_A_Sleep_Video.mp4",
+        videoRatio: 1/1,
         subtitle: "2021/4",
         content: "於玩猴遊戲 Macaca Games 參與製作的 Hyper-casual game，約花兩週製作。",
         links: [
@@ -34,7 +35,8 @@ export const collections = [
         title: "Sandwich 101",
         sortingOrder: 1,
         picture: "pic/G2E.webp",
-        video: "",
+        video: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364392/OwenCollection/Sandwich%20101/Sanwich_101_Video.mp4",
+        videoRatio: 1/1,
         subtitle: "2021/2",
         content: "於玩猴遊戲 Macaca Games 參與製作的 Hyper-casual game，約花兩週製作。",
         links: [
@@ -49,7 +51,8 @@ export const collections = [
         title: "Sky Bandit 天空盜賊團",
         sortingOrder: 1,
         picture: "pic/SkyBandit.png",
-        video: "",
+        video: "https://www.youtube.com/embed/Bt4rOBArpHs",
+        videoRatio: 9/16,
         subtitle: "2019/6 - 2020/12",
         content: "於玩猴遊戲 Macaca Games 任職後參與的第一個專案，在專案前期主要擔任企劃，後期擔任技術企劃及程式設計人員。",
         links: [
@@ -70,6 +73,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/CloudMacaca.png",
         video: "",
+        videoRatio: 1/1,
         subtitle: "2019/6 -",
         content: "於玩猴遊戲 Macaca Games 任職企劃，參與「Sky Bandit 天空盜賊團」開發，同時支援寫點code，但是寫的code多到不太確定自己該叫企劃還是程式。",
         links: []
@@ -79,6 +83,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/x-legend.jpg",
         video: "",
+        videoRatio: 1/1,
         subtitle: "2017/8 - 2019/5",
         content: "從2017年於傳奇任職企劃，參與以Unity開發的手遊專案(未上市)，主要負責系統與介面，規劃功能、撰寫相關文件並與程式溝通。",
         links: []
@@ -88,6 +93,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/GooglePlay.jpg",
         video: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
+        videoRatio: 9/16,
         subtitle: "2018/1",
         content: "受GooglePlay邀請，在2018台北電玩展的GooglePlay築夢台灣專區展示「DROOM夢門」，還為此量身訂做精美的影片。",
         links: []
@@ -97,6 +103,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/TheHole.svg",
         video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
+        videoRatio: 1/1,
         subtitle: "2018/4",
         content: "參加2018 Kuso Game Jam ，在不到兩天的時間內迅速做出遊戲原型，是會讓人強迫症發作的小遊戲。\n這個遊戲也在2018的10-11月，於澳洲墨爾本的 Longitude exhibition 展出。",
         links: [
@@ -117,6 +124,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/LiteraryDessert.svg",
         video: "",
+        videoRatio: 1/1,
         subtitle: "2016/7 - 2016/8",
         content: "閒暇時所寫的極短故事，並為這些故事做了瀏覽的網站。\n你可以在這裡搜尋故事、隨機抽選故事，以及將喜歡的故事加入收藏。",
         links: [
@@ -132,6 +140,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/DROOM.png",
         video: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
+        videoRatio: 9/16,
         subtitle: "2016/5 -",
         content: "與另一伙伴一同製作的畢業製作作品，想製作出一款規則單純但能有許多變化的遊戲，也希望各個年齡層都能喜歡。\n畢業後現由自己繼續開發。",
         links: []
@@ -141,6 +150,7 @@ export const collections = [
         sortingOrder: 1,
         picture: "pic/BEAN.png",
         video: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
+        videoRatio: 1/1,
         subtitle: "2015/9 - 2016/1",
         content: "一人製作的手機益智遊戲，設計在等公車、蹲廁所時都能輕易的遊玩。\n設計時考量使用單手就可以操作的操作手勢，可以很輕易的用單指進行遊戲。",
         links: []

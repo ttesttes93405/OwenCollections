@@ -7,13 +7,26 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta property="og:title" content="Owen Sun"/>
-		<meta property="og:image" content="pic/Owen01.jpg"/>
-		<meta property="og:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。" />
-
+		<!-- HTML Meta Tags -->
 		<title>Owen Sun</title>
+		<meta name="description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
 
-		<link rel="Shortcut Icon" type="image/x-icon" href="pic/OwenIcon.png" />
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://ttesttes93405.github.io/OwenCollections/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Owen Sun">
+		<meta property="og:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
+		<meta property="og:image" content="https://ttesttes93405.github.io/OwenCollections/pic/Owen01_Cover.jpg">
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="ttesttes93405.github.io">
+		<meta property="twitter:url" content="https://ttesttes93405.github.io/OwenCollections/">
+		<meta name="twitter:title" content="Owen Sun">
+		<meta name="twitter:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
+		<meta name="twitter:image" content="https://ttesttes93405.github.io/OwenCollections/pic/Owen01_Cover.jpg">
+
+		<link rel="Shortcut Icon" type="image/x-icon" href="/pic/OwenIcon.png" />
 
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<script src="js/vue.min.js"></script>
@@ -22,7 +35,11 @@
 
 	<body>
 
-		<img style="display:none" src="pic/Owen01.jpg" />
+		<div style="display:none">
+			<title>Owen Sun</title>
+			<p>關於 Owen Sun，作品、經歷，以及黑眼圈。</p>
+			<img src="pic/Owen01_Cover.jpg" />
+		</div>
 
 		<div id="loading" class="loading">
 			<div class="loading-body">
@@ -33,6 +50,15 @@
 		</div>
 
 		<div v-cloak id="app" >
+
+
+			<div class="background" v-once>			
+				<div class="background-pictures">
+					<div class="background-pictures-row" v-for="i in 10">
+						<img v-for="picture in getRandomPictures()" v-bind:src="picture" />
+					</div>
+				</div>
+			</div>
 
 			<div class="top-content">
 				<div class="container">

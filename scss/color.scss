@@ -17,8 +17,8 @@ $font-g-light1: #e7f0ec;	//文字淺色(灰階)
 $font-g-light2: #b2c0bb;
 $font-g-light3: #9ca8a3;
 
-$font-m-dark1: $main-color * 0.8 + #000 * 0.2;		//文字深色(主色)
-$font-m-light1: $main-color * 0.5 + #fff * 0.5;		//文字淺色(主色)
+$font-m-dark1: mix($main-color, #000, 0.8%);		//文字深色(主色)
+$font-m-light1: mix($main-color, #fff, 0.5%);		//文字淺色(主色)
 
 
 $fill-g-dark1: #534f4f;		//填充深色(灰階)
@@ -35,7 +35,7 @@ $fill-m-light1: $main-color;//填充色(主色)
 $fill-white: #ffffff;
 $fill-black: #0b0b0b;
 
-$card-background: rgba(#fff, 0.04);
+$card-background: mix($background-color, #fff, 90%);
 
 .font-color-g-dark{
     &1{ color: $font-g-dark1; }
