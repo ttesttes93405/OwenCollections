@@ -107,7 +107,7 @@ html, body {
   background-color: #2a2c2c;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 20px;
+  margin: 16px;
 }
 
 .card-img-top {
@@ -123,18 +123,18 @@ html, body {
 }
 
 .card-title {
-  margin: 0 5px;
+  margin: 0 4px;
   font-size: 22px;
   font-weight: 700;
 }
 
 .card-subtitle {
-  margin: 5px 5px;
+  margin: 5px 4px;
   font-size: 16px;
 }
 
 .card-text {
-  margin: 10px 5px;
+  margin: 12px 4px;
 }
 
 .card-text > p {
@@ -476,7 +476,7 @@ h1, h2, h3, p {
   display: inline-block;
   text-align: center;
   width: auto;
-  background-color: rgba(254, 255, 254, 0.01);
+  background-color: rgba(254, 255, 255, 0.01);
   border-radius: 45px;
   height: 70px;
   padding: 10px;
@@ -493,9 +493,9 @@ h1, h2, h3, p {
   border-right-style: none;
   border-radius: 28px;
   margin: 5px;
-  background-color: rgba(73, 158, 148, 0.1);
-  -webkit-box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
-          box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+  background-color: rgba(67, 228, 209, 0.2);
+  -webkit-box-shadow: 0 0 0 0px rgba(67, 228, 209, 0);
+          box-shadow: 0 0 0 0px rgba(67, 228, 209, 0);
   -webkit-transition-property: background-color, width, -webkit-transform, -webkit-box-shadow;
   transition-property: background-color, width, -webkit-transform, -webkit-box-shadow;
   transition-property: background-color, transform, width, box-shadow;
@@ -518,7 +518,7 @@ h1, h2, h3, p {
 }
 
 .page-content .container .page-container .page-select {
-  background-color: rgba(73, 158, 148, 0.3);
+  background-color: rgba(67, 228, 209, 0.5);
   color: #e7f0ec;
   width: 100px;
 }
@@ -629,9 +629,9 @@ h1, h2, h3, p {
           box-sizing: border-box;
   text-align: center;
   width: 100%;
-  padding: 15px 10px;
-  height: 60px;
-  border-radius: 20px;
+  padding: 16px 8px;
+  height: 56px;
+  border-radius: 18px;
   -webkit-text-decoration-line: none !important;
           text-decoration-line: none !important;
 }
@@ -767,7 +767,7 @@ h1, h2, h3, p {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: #499e94;
+  background-color: #43e4d1;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   -webkit-transition: -webkit-transform 0.2s;
@@ -973,7 +973,7 @@ h1, h2, h3, p {
   height: 10px;
   margin-top: -10px;
   border-radius: 9999px;
-  background-color: #499e94;
+  background-color: #43e4d1;
   -webkit-animation: LoadingRound 1.3s infinite;
           animation: LoadingRound 1.3s infinite;
   -webkit-animation-timing-function: ease-in-out;
@@ -993,7 +993,7 @@ h1, h2, h3, p {
 .loading .loading-body .round-l {
   height: 10px;
   border-radius: 9999px;
-  background-color: rgba(73, 158, 148, 0.5);
+  background-color: rgba(67, 228, 209, 0.5);
   -webkit-animation: LoadingRound-l 1.3s infinite;
           animation: LoadingRound-l 1.3s infinite;
   -webkit-animation-timing-function: ease-in-out;
@@ -1005,7 +1005,7 @@ h1, h2, h3, p {
   font-weight: 500;
   height: 80px;
   line-height: 80px;
-  color: #499e94;
+  color: #43e4d1;
 }
 
 @-webkit-keyframes fadeInAndRotate {
@@ -1179,14 +1179,14 @@ h1, h2, h3, p {
     max-width: 400px;
   }
   .cards .card {
-    margin: 10px;
+    margin: 12px;
   }
   .cards .card-head {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 0 10px;
+    margin: 0 0 8px;
   }
   .cards .card-head .card-img-top {
     height: 80px;
@@ -1195,7 +1195,7 @@ h1, h2, h3, p {
   .cards .card-head-text {
     text-align: center;
     width: 100%;
-    margin: 30px 0 20px 0;
+    margin: 24px 0 16px 0;
     padding-left: 0;
   }
   .cards .card-head-text .card-title {
@@ -1211,7 +1211,7 @@ h1, h2, h3, p {
     opacity: 0.5;
   }
   .hoverable-btn {
-    background-color: rgba(73, 158, 148, 0.5);
+    background-color: rgba(67, 228, 209, 0.5);
     color: #e7f0ec;
     -webkit-transition: none;
     transition: none;
@@ -1223,27 +1223,27 @@ h1, h2, h3, p {
     padding-bottom: 60px;
   }
   .page-content .container .page-container .page-item:hover {
-    -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.05);
-            box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.05);
+    -webkit-box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.05);
+            box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.05);
   }
   .page-content .container .page-container .page-select:hover {
-    -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
-            box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
+    -webkit-box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.1);
+            box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.1);
   }
   .row .col {
     width: 500px;
     max-width: 500px;
   }
   .cards .card {
-    padding: 20px;
-    margin: 10px;
+    padding: 24px;
+    margin: 12px;
   }
   .cards .card-head {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin: 0 0 30px;
+    margin: 0 0 32px;
   }
   .cards .card-head .card-img-top {
     height: 100px;
@@ -1253,7 +1253,7 @@ h1, h2, h3, p {
     text-align: left;
     width: 100%;
     margin: 0;
-    padding-left: 20px;
+    padding-left: 16px;
   }
   .cards .card-head-text .card-title {
     font-size: 32px;
@@ -1262,10 +1262,10 @@ h1, h2, h3, p {
     opacity: 1;
   }
   .hoverable-btn {
-    background-color: rgba(73, 158, 148, 0.15);
-    color: #fefffe;
-    -webkit-box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
-            box-shadow: 0 0 0 0px rgba(73, 158, 148, 0);
+    background-color: rgba(67, 228, 209, 0.25);
+    color: #feffff;
+    -webkit-box-shadow: 0 0 0 0px rgba(67, 228, 209, 0);
+            box-shadow: 0 0 0 0px rgba(67, 228, 209, 0);
     -webkit-transition: background-color, color, -webkit-box-shadow;
     transition: background-color, color, -webkit-box-shadow;
     transition: background-color, color, box-shadow;
@@ -1274,10 +1274,10 @@ h1, h2, h3, p {
             transition-duration: 0.4s;
   }
   .hoverable-btn:hover {
-    background-color: rgba(73, 158, 148, 0.5);
+    background-color: rgba(67, 228, 209, 0.5);
     color: #e7f0ec;
-    -webkit-box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
-            box-shadow: 0 0 0 4px rgba(73, 158, 148, 0.1);
+    -webkit-box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.1);
+            box-shadow: 0 0 0 4px rgba(67, 228, 209, 0.1);
   }
 }
 /*# sourceMappingURL=main.css.map */

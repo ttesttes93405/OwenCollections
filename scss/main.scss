@@ -287,7 +287,8 @@ h1, h2, h3, p{
 				border-radius: $page-radius;
 				margin: 5px;
 
-				background-color: rgba($fill-m-light1, 0.1);
+				background-color: rgba($main-color, 0.2);
+
 				box-shadow: 0 0 0 0px rgba($main-color, 0);
 
 				transition-property: background-color, transform, width, box-shadow;
@@ -313,7 +314,7 @@ h1, h2, h3, p{
 			}
 
 			.page-select {
-				background-color: rgba($fill-m-light1, 0.3);
+				background-color: rgba($main-color, 0.5);
 				color: $font-g-light1;
 				width: 100px;
 
@@ -404,9 +405,9 @@ h1, h2, h3, p{
 			box-sizing: border-box;
 			text-align: center;
 			width: 100%;
-			padding: 15px 10px;
-			height: 60px;
-			border-radius: 20px;
+			padding: 16px 8px;
+			height: 56px;
+			border-radius: 18px;
 			text-decoration-line: none !important;
 
 			img{
@@ -836,11 +837,11 @@ h1, h2, h3, p{
 		
 		.card{
 
-			margin: 10px;
+			margin: 12px;
 
 			&-head{
 				flex-direction: column;
-				margin: 0 0 10px;
+				margin: 0 0 8px;
 
 				.card-img-top{				
 					$icon-size: 80px;
@@ -853,7 +854,7 @@ h1, h2, h3, p{
 
 					text-align: center;
 					width: 100%;
-					margin: 30px 0 20px 0;
+					margin: 24px 0 16px 0;
 					padding-left: 0;
 
 					.card-title{
@@ -916,12 +917,12 @@ h1, h2, h3, p{
 	.cards{
 		.card{
 
-			padding: 20px;
-			margin: 10px;
+			padding: 24px;
+			margin: 12px;
 
 			&-head{
 				flex-direction: row;
-				margin: 0 0 30px;
+				margin: 0 0 32px;
 				
 				.card-img-top{				
 					$icon-size: 100px;
@@ -934,7 +935,7 @@ h1, h2, h3, p{
 					text-align: left;
 					width: 100%;
 					margin: 0;
-					padding-left: 20px;
+					padding-left: 16px;
 
 					.card-title{
 						font-size: 32px;
@@ -950,7 +951,7 @@ h1, h2, h3, p{
 
 	.hoverable-btn{
 
-		background-color: rgba($main-color, 0.15);
+		background-color: rgba($main-color, 0.25);
 		color: $font-m-light1;
 
 		box-shadow: 0 0 0 0px rgba($main-color, 0);

@@ -26,7 +26,7 @@
 		<meta name="twitter:description" content="關於 Owen Sun，作品、經歷，以及黑眼圈。">
 		<meta name="twitter:image" content="https://ttesttes93405.github.io/OwenCollections/pic/Owen01_Cover.jpg">
 
-		<link rel="Shortcut Icon" type="image/x-icon" href="/pic/OwenIcon.png" />
+		<link rel="Shortcut Icon" type="image/x-icon" href="https://ttesttes93405.github.io/OwenCollections/pic/OwenIcon.png" />
 
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 		<script src="js/vue.min.js"></script>
@@ -49,12 +49,12 @@
 			</div>
 		</div>
 
-		<div v-cloak id="app" >
+		<div v-cloak id="app" style="display:none" >
 
 
 			<div class="background" v-once>			
 				<div class="background-pictures">
-					<div class="background-pictures-row" v-for="i in 10">
+					<div class="background-pictures-row" v-for="i in 4">
 						<img v-for="picture in getRandomPictures()" v-bind:src="picture" />
 					</div>
 				</div>

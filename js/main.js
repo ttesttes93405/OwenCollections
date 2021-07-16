@@ -55,7 +55,7 @@ Vue.component('card', {
 		<div class="card-body">
 
 			<div class="card-head">
-				<img class="card-img-top" v-bind:src="item.picture" />
+				<img class="card-img-top" v-bind:src="item.icon" />
 				<div class="card-head-text">
 					<h1 class="card-title font-color-g-light1">{{item.title}}</h1>
 					<h2 class="card-subtitle font-color-g-light3">{{item.subtitle}}</h2>
@@ -66,7 +66,7 @@ Vue.component('card', {
 				<video v-if="item.video.substring(item.video.length-4)==='.mp4'" 
 				v-bind:src="item.video" 
 				type="video/mp4" 
-				autoplay muted loop controls ></video>
+				autoplay muted loop playsinline controls></video>
 				<iframe v-else class="embed-responsive-item" v-bind:src="item.video" scrolling="no"></iframe>
 			</div>
 			
@@ -108,6 +108,8 @@ const vm = new Vue({
 		if (location.hash !== "#loading"){
 			document.querySelector("#loading").style = "display: none";
 		}
+		
+		document.querySelector("#app").style = "display: flex;";
 
 		this.sortBySortingOrder(this.collections);
 
@@ -135,7 +137,7 @@ const vm = new Vue({
 
 			let result = [];
 			for(let i=0; i<this.collections.length; i++){
-				result.push(this.collections[i].picture);
+				result.push(this.collections[i].icon);
 			}
 
 			let shuffleArray = function(array) {
@@ -152,5 +154,7 @@ const vm = new Vue({
 			return result;
 
 		}
+	},
+	computed: {
 	}
 })

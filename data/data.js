@@ -3,10 +3,10 @@ export const author = {
     subtitle: "Owen Sun",
     picture: ["pic/Owen01.jpg","pic/Owen02.jpg"],
     info: [
-        /*{
-            picture: "pic/icons.svg#sentence",
-            content: "腦袋很小，簡單就好。"
-        },*/
+        {
+            picture: "pic/map.svg",
+            content: "一根腳趾踏進前端的遊戲開發者"
+        },
         {
             picture: "pic/Icon_Mail.svg",
             content: "ttesttes93405@gmail.com"
@@ -18,7 +18,7 @@ export const collections = [
     {
         title: "Fall A Sleep",
         sortingOrder: 1,
-        picture: "pic/G2I.webp",
+        icon: "pic/G2I.webp",
         video: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364397/OwenCollection/Fall%20A%20Sleep/Fall_A_Sleep_Video.mp4",
         videoRatio: 1/1,
         subtitle: "2021/4",
@@ -34,7 +34,7 @@ export const collections = [
     {
         title: "Sandwich 101",
         sortingOrder: 1,
-        picture: "pic/G2E.webp",
+        icon: "pic/G2E.webp",
         video: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364392/OwenCollection/Sandwich%20101/Sanwich_101_Video.mp4",
         videoRatio: 1/1,
         subtitle: "2021/2",
@@ -50,7 +50,7 @@ export const collections = [
     {
         title: "Sky Bandit 天空盜賊團",
         sortingOrder: 1,
-        picture: "pic/SkyBandit.png",
+        icon: "pic/SkyBandit.png",
         video: "https://www.youtube.com/embed/Bt4rOBArpHs",
         videoRatio: 9/16,
         subtitle: "2019/6 - 2020/12",
@@ -71,7 +71,7 @@ export const collections = [
     {
         title: "Macaca Games 技術企劃",
         sortingOrder: 1,
-        picture: "pic/CloudMacaca.png",
+        icon: "pic/CloudMacaca.png",
         video: "",
         videoRatio: 1/1,
         subtitle: "2019/6 -",
@@ -81,7 +81,7 @@ export const collections = [
     {
         title: "傳奇網路 企劃",
         sortingOrder: 1,
-        picture: "pic/x-legend.jpg",
+        icon: "pic/x-legend.jpg",
         video: "",
         videoRatio: 1/1,
         subtitle: "2017/8 - 2019/5",
@@ -91,7 +91,7 @@ export const collections = [
     {
         title: "GooglePlay 築夢台灣專區",
         sortingOrder: 1,
-        picture: "pic/GooglePlay.jpg",
+        icon: "pic/GooglePlay.jpg",
         video: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
         videoRatio: 9/16,
         subtitle: "2018/1",
@@ -101,7 +101,7 @@ export const collections = [
     {
         title: "The Hole",
         sortingOrder: 1,
-        picture: "pic/TheHole.svg",
+        icon: "pic/TheHole.svg",
         video: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
         videoRatio: 1/1,
         subtitle: "2018/4",
@@ -122,7 +122,7 @@ export const collections = [
     {
         title: "點心故事 Literary Dessert",
         sortingOrder: 1,
-        picture: "pic/LiteraryDessert.svg",
+        icon: "pic/LiteraryDessert.svg",
         video: "",
         videoRatio: 1/1,
         subtitle: "2016/7 - 2016/8",
@@ -138,7 +138,7 @@ export const collections = [
     {
         title: "DROOM 夢門",
         sortingOrder: 1,
-        picture: "pic/DROOM.png",
+        icon: "pic/DROOM.png",
         video: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
         videoRatio: 9/16,
         subtitle: "2016/5 -",
@@ -148,7 +148,7 @@ export const collections = [
     {
         title: "BEAN",
         sortingOrder: 1,
-        picture: "pic/BEAN.png",
+        icon: "pic/BEAN.png",
         video: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
         videoRatio: 1/1,
         subtitle: "2015/9 - 2016/1",
