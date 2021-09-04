@@ -1,0 +1,28 @@
+{
+  "name": "owen-collections",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Owen Sun",
+    "email": "ttesttes93405@gmail.com",
+    "url": "https://owensun.info/"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-svg": "^14.0.10",
+    "sass": "^1.38.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2"
+  }
+}
