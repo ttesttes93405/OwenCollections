@@ -1,3 +1,19 @@
+export const routeData = [
+    {
+      title: "首頁",
+      route: "/",
+      icon: "/icons/home.svg",
+    }, {
+      title: "前端",
+      route: "/project/front-end",
+      icon: "/icons/code.svg",
+    }, {
+      title: "遊戲",
+      route: "/project/game",
+      icon: "/icons/box.svg",
+    },
+  ]
+
 export const introData = {    
     title: "孫宇",
     subtitle: "Owen Sun",

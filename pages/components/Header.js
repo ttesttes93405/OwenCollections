@@ -3,32 +3,16 @@ import { useRouter } from 'next/router'
 import classNames from 'classnames';
 import swatch from '../../styles/swatch';
 import { useState } from 'react';
+import { routeData } from '../../data';
 
 
 export default function Header() {
-
 
   const router = useRouter();
 
   const isCurrentRoute = (route) => router.route == route;
 
   const [showRouteMenu, useShowRouteMenu] = useState(false);
-
-  const routeData = [
-    {
-      title: "首頁",
-      route: "/",
-      icon: "/icons/home.svg",
-    }, {
-      title: "前端",
-      route: "/project/front-end",
-      icon: "/icons/code.svg",
-    }, {
-      title: "遊戲",
-      route: "/project/game",
-      icon: "/icons/box.svg",
-    },
-  ]
 
   return (
     <div className="header">
@@ -43,7 +27,7 @@ export default function Header() {
         {
           showRouteMenu ? null : (
             <div className="route-menu-btn" onClick={() => useShowRouteMenu(!showRouteMenu)}>
-              <img src="/Owen01.jpg" />
+              <img src="/icons/menu.svg" />
             </div>)
         }
 
@@ -123,7 +107,7 @@ export default function Header() {
           border-radius: 8px;
           padding: 8px 16px;
           margin-left: 8px;
-          background-color: #f0f0f000;
+          background-color: #f0f0f000;          
           transition: background-color 0.15s;
         }
 
@@ -162,8 +146,24 @@ export default function Header() {
         
         @media (max-width: 576px){
 
+          .header {
+            padding-right: 0;
+          }
+
           .route-container {
             display: none;
+            position: relative;
+          }
+
+          .route-container::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-image: url("/icons/x.svg");
+            background-size: 20px 20px;
+            height: 20px;
+            width: 20px;
           }
           
           .route-container.show-route {
@@ -176,15 +176,18 @@ export default function Header() {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
           }
         
           .route {
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             
+            overflow: hidden;
+            width: 200px;
             margin-left: 0;
             margin-bottom: 16px;
             padding: 12px 24px;
+            border: 1px #ddd solid;
 
           } 
 
@@ -200,15 +203,27 @@ export default function Header() {
             padding: 0;
             color: #555;
           }
-        
+
+          .route-current {
+            border: 2px ${swatch.main} solid;
+            border-left-width: 16px;
+            padding-right: 36px;
+          }
+
           .route-current::after{
             display: none;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: auto;
           }
 
           .route-menu-btn {
             display: flex;
-            width: 32px;
-            height: 32px;
+            width: 60px;
+            height: 60px;
+            padding: 20px;
           }
 
         }
