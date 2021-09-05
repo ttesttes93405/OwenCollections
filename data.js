@@ -1,27 +1,27 @@
 export const routeData = [
     {
-      title: "首頁",
-      route: "/",
-      icon: "/icons/home.svg",
+        title: "首頁",
+        route: "/",
+        icon: "/icons/home.svg",
     }, {
-      title: "前端",
-      route: "/project/front-end",
-      icon: "/icons/code.svg",
+        title: "前端",
+        route: "/project/front-end",
+        icon: "/icons/code.svg",
     }, {
-      title: "遊戲",
-      route: "/project/game",
-      icon: "/icons/box.svg",
+        title: "遊戲",
+        route: "/project/game",
+        icon: "/icons/box.svg",
     },
-  ]
+]
 
-export const introData = {    
+export const introData = {
     title: "孫宇",
     subtitle: "Owen Sun",
     picture: "Owen01.jpg",
     content: [
         "前端開發者、遊戲開發者。",
         "喜歡 UI/UX 、遊戲互動、好看的畫面。",
-      ],
+    ],
     info: [
         {
             icon: "/icons/mail.svg",
@@ -32,10 +32,51 @@ export const introData = {
 
 export const projectData = [
     {
+        title: "1000 Cheng 作品集網站",
+        type: "front-end",
+        icon: "/projects/1000-cheng.png",
+        cover: {
+            type: "linkImg",
+            link: "https://1000cheng.cc/",
+            source: "https://res.cloudinary.com/w10x10x10/image/upload/v1626170361/M001_Simplex/Cover/M001_Cover_01.png",
+            ratio: 9 / 16,
+        },
+        subtitle: "2021/8",
+        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub Page 代管，並且設定 GitHub Action，在 master Branch 推送新的 commit 時，自動 Export 新的靜態內容並更新。",
+        links: [
+            {
+                link: "https://1000cheng.cc/",
+                title: "前往網站",
+                icon: "",
+            }
+        ]
+    },
+    {
+        title: "點心故事 Literary Dessert",
+        type: "front-end",
+        icon: "/projects/LiteraryDessert.svg",
+        cover: {
+            type: "linkImg",
+            link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
+            source: "/projects/LiteraryDessert.png",
+            ratio: 9 / 16,
+        },
+        subtitle: "2016/7 - 2016/8",
+        content: "大學時期喜歡寫一些短篇故事，不知不覺篇數累積了不少。\n畢業後，便用業餘時間製作網站，讓人閱讀與收藏這些故事。\n使用 Vue 2 來製作，並使用 SASS 撰寫樣式。",
+        links: [
+            {
+                link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
+                title: "前往網站",
+                icon: "",
+            }
+        ]
+    },
+    {
         title: "Fall A Sleep",
         type: "game",
         icon: "/projects/G2I.webp",
-        video: {
+        cover: {
+            type: "mp4",
             source: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364397/OwenCollection/Fall%20A%20Sleep/Fall_A_Sleep_Video.mp4",
             ratio: 1 / 1,
         },
@@ -53,7 +94,8 @@ export const projectData = [
         title: "Sandwich 101",
         type: "game",
         icon: "/projects/G2E.webp",
-        video: {
+        cover: {
+            type: "mp4",
             source: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364392/OwenCollection/Sandwich%20101/Sanwich_101_Video.mp4",
             ratio: 1 / 1,
         },
@@ -71,7 +113,8 @@ export const projectData = [
         title: "Sky Bandit 天空盜賊團",
         type: "game",
         icon: "/projects/SkyBandit.png",
-        video: {
+        cover: {
+            type: "embed",
             source: "https://www.youtube.com/embed/Bt4rOBArpHs",
             ratio: 9 / 16,
         },
@@ -94,7 +137,7 @@ export const projectData = [
         title: "Macaca Games 技術企劃",
         type: "experence",
         icon: "/projects/CloudMacaca.png",
-        video: { },
+        cover: {},
         subtitle: "2019/6 -",
         content: "於玩猴遊戲 Macaca Games 任職企劃，參與「Sky Bandit 天空盜賊團」開發，同時支援寫點code，但是寫的code多到不太確定自己該叫企劃還是程式。",
         links: []
@@ -103,7 +146,7 @@ export const projectData = [
         title: "傳奇網路 企劃",
         type: "experence",
         icon: "/projects/x-legend.jpg",
-        video: { },
+        cover: {},
         subtitle: "2017/8 - 2019/5",
         content: "從2017年於傳奇任職企劃，參與以Unity開發的手遊專案(未上市)，主要負責系統與介面，規劃功能、撰寫相關文件並與程式溝通。",
         links: []
@@ -112,7 +155,8 @@ export const projectData = [
         title: "GooglePlay 築夢台灣專區",
         type: "experence",
         icon: "/projects/GooglePlay.jpg",
-        video: {
+        cover: {
+            type: "embed",
             source: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
             ratio: 9 / 16,
         },
@@ -124,7 +168,8 @@ export const projectData = [
         title: "The Hole",
         type: "game",
         icon: "/projects/TheHole.svg",
-        video: {
+        cover: {
+            type: "embed",
             source: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
             ratio: 1 / 1,
         },
@@ -144,25 +189,11 @@ export const projectData = [
         ]
     },
     {
-        title: "點心故事 Literary Dessert",
-        type: "front-end",
-        icon: "/projects/LiteraryDessert.svg",
-        video: { },
-        subtitle: "2016/7 - 2016/8",
-        content: "閒暇時所寫的極短故事，並為這些故事做了瀏覽的網站。\n你可以在這裡搜尋故事、隨機抽選故事，以及將喜歡的故事加入收藏。",
-        links: [
-            {
-                link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
-                title: "前往網站",
-                icon: "",
-            }
-        ]
-    },
-    {
         title: "DROOM 夢門",
         type: "game",
         icon: "/projects/DROOM.png",
-        video: {
+        cover: {
+            type: "embed",
             source: "https://www.youtube.com/embed/3N6houOggT4?rel=0&amp;showinfo=0",
             ratio: 9 / 16,
         },
@@ -174,7 +205,8 @@ export const projectData = [
         title: "BEAN",
         type: "game",
         icon: "/projects/BEAN.png",
-        video: {
+        cover: {
+            type: "embed",
             source: "https://www.youtube-nocookie.com/embed/fKfu7L7hGbg?rel=0&amp;showinfo=0",
             ratio: 1 / 1,
         },

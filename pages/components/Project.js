@@ -1,94 +1,6 @@
+import ProjectCover from "./ProjectCover";
 import swatch from "../../styles/swatch"
 
-
-const createVideoComp = (video) => {
-
-  if (!video) {
-    return null;
-  }
-
-  const { source, ratio, } = video;
-  
-  if (!source) {
-    return null;
-  }
-
-  //mp4
-  if (source.endsWith(".mp4")) {
-    return (<div
-      className="project-video"
-    >
-      <video
-        className="video-mp4"
-        src={source}
-        type="video/mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        //controls
-      />
-      <style jsx>{`
-
-      .project-video {
-        margin: 16px 0 16px;
-        width: 100%;    
-        position: relative;
-        padding-top: ${ratio * 100}% ;
-        background-color: rgba(0,0,0,0.05);
-        border-radius: 8px;
-      }
-
-      .video-mp4 {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
-
-    `}</style>
-    </div>)
-  }
-
-  //embed
-  return (<div
-    className="project-video"
-  >
-    <iframe
-      className="video-link"
-      src={source}
-      scrolling="no"
-    />
-    <style jsx>{`
-
-      .project-video {
-        margin: 16px 0 16px;
-        width: 100%;    
-        overflow: hidden;  
-        position: relative;
-        padding-top: ${ratio * 100}%;
-        background-color: rgba(0,0,0,0.05);
-        border-radius: 8px;
-      }
-
-      .video-link {
-        border-style: none;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
-
-    `}</style>
-  </div>)
-
-}
 
 export default function Project(props) {
 
@@ -96,7 +8,7 @@ export default function Project(props) {
     icon,
     title,
     subtitle,
-    video,
+    cover,
     content,
     links,
   } = props;
@@ -114,7 +26,7 @@ export default function Project(props) {
           </div>
         </div>
 
-        {createVideoComp(video)}
+        <ProjectCover cover={cover} />
 
         {content.split('\n').map(c => <p className="des" key={c}>{c}</p>)}
 
@@ -155,7 +67,7 @@ export default function Project(props) {
           width: 50px;
           left: 50%;
           border-radius: 9999px;
-          background-color: ${swatch.main};
+          background-color: #bbb; /*${swatch.main};*/
           opacity: 0.5;
           transform: translateX(-25px);
         }

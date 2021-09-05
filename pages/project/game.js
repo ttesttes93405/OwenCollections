@@ -11,12 +11,12 @@ export default function ProjectsFrontEnd() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-        <ProjectList
-          icon="/icons/box.svg"
-          title="遊戲"
-          projectType="game"
-        />
-        
+      <ProjectList
+        icon="/icons/box.svg"
+        title="遊戲"
+        projectType="game"
+      />
+
     </div>
   )
 }

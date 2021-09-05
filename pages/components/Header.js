@@ -18,9 +18,11 @@ export default function Header() {
     <div className="header">
 
       <div className="container">
-        <img src="/Owen01.jpg" className="icon" />
-        <p className="title">OWENSUN.INFO</p>
-
+        <div className="title-container"
+          onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <img src="/Owen01.jpg" className="icon" />
+          <p className="title">OWENSUN.INFO</p>
+        </div>
 
         <div className="flex-space" />
 
@@ -71,6 +73,13 @@ export default function Header() {
           height: 100%;
           align-items: center;
         }
+        
+        .title-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+        }
 
         .icon {
           width: 30px;
@@ -80,6 +89,7 @@ export default function Header() {
 
         .title {
           font-size: 1.35rem;
+          margin: 0;
           margin-left: 8px;
           color: rgba(0, 0, 0, 0.65);
           font-weight: 500;

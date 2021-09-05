@@ -90,13 +90,20 @@ export default function ProjectList(props) {
 
 
         .project-container {
-          width: 100%;
+          width: 576px;
           display: grid;
           grid-template-columns: repeat(1, 1fr);
           /*grid-column-gap: 24px;
           grid-row-gap: 24px;*/
         }
 
+        @media (max-width: 576px){
+
+          .project-container {
+            width: 100%;
+          }
+
+        }
 
       `}</style>
 

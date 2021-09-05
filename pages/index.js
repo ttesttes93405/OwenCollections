@@ -9,7 +9,7 @@ export default function Home() {
     <div className="home">
 
       <Head>
-        <title>OwenSun</title>
+        <title>Owen Sun</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
