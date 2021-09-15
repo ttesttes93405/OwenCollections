@@ -80,7 +80,7 @@ export default function Project(props) {
         }
 
         .title {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: #000;
           font-weight: 700;
           margin: 0;
@@ -97,7 +97,7 @@ export default function Project(props) {
 
         .des {
           font-size: 1.4rem;
-          color: #555;
+          color: #333;
           margin: 0;
           line-height: 175%;
         }

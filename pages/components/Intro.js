@@ -56,7 +56,7 @@ export default function Intro(props) {
           .subtitle {
             font-size: 1.5rem;
             color: #000;
-            font-weight: 800;
+            font-weight: 400;
             margin: 0;
             opacity: 0.7;
             margin-left: 16px;

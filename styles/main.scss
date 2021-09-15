@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Poppins:wght@300;500;700&display=swap');
 
 :root{
   font-size: 12px; 
@@ -8,8 +8,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 
-    'Rubik',
+  font-family:    
+    'Poppins',
     'Noto Sans TC',
     -apple-system,
     'BlinkMacSystemFont',
@@ -21,9 +21,7 @@ body {
     'Fira Sans', 
     'Droid Sans', 
     'Helvetica Neue',
-    'sans-serif';
-
-    
+    'sans-serif';    
 }
 
 body::-webkit-scrollbar {
@@ -32,11 +30,16 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgb(207, 207, 207);
-  border-radius: 2px;
+  border-radius: 4px;
   width: 10px;
 }
 body::-webkit-scrollbar-track {
   margin: 0 10px;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(#ff7800,0.9);
 }
 
 
