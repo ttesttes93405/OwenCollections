@@ -75,8 +75,9 @@ export default function Project(props) {
         .icon {
           width: 64px;
           height: 64px;
-          border-radius: 999px;
+          border-radius: 16px;
           margin-right: 12px;
+          box-shadow: 0 0 8px #00000018;
         }
 
         .title {
@@ -143,7 +144,7 @@ export default function Project(props) {
         @media (min-width: 576px){
 
           .project {
-            padding: 100px 16px;
+            padding: 100px 0;
           }
 
           .btn-container {

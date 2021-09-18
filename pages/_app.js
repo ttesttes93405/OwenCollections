@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 
       <Header />
 
-      <div className="container">
+      <div className="app-container">
         <Component {...pageProps} />
       </div>
 
@@ -20,14 +20,14 @@ function MyApp({ Component, pageProps }) {
           overflow-x: hidden;
         }
 
-        .container {
+        .app-container {
           
           display: flex;
           flex-direction: column;
           align-items: center;
           max-width: 600px;
           width: 100%;
-          padding: 60px 0 0;
+          padding: 120px 0 0;
         
         }
 

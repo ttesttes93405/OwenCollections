@@ -2,20 +2,37 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import classNames from 'classnames';
 import swatch from '../../styles/swatch';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { routeData } from '../../data';
 
 
 export default function Header() {
 
-  const router = useRouter();
-
-  const isCurrentRoute = (route) => router.route == route;
 
   const [showRouteMenu, useShowRouteMenu] = useState(false);
+  const [onTop, useOnTop] = useState(true);
+
+
+  const isOnTop = () => {
+    return window.scrollY < 30;
+  }
+
+  const scrollHandler = () => {
+    useOnTop(isOnTop());
+  }
+
+  const useScroll = useEffect(() => {
+    const root = window;
+    root.addEventListener('scroll', scrollHandler);
+    return () => { root.removeEventListener('scroll', scrollHandler); }
+  }, [])
+
+  const router = useRouter();
+  const isCurrentRoute = (route) => router.route == route;
+
 
   return (
-    <div className="header">
+    <nav className={classNames("header", { 'on-top': onTop })}>
 
       <div className="container">
         <div className="title-container"
@@ -56,17 +73,26 @@ export default function Header() {
           display: flex;
           flex-direction: row;
           background-color: #fff;
-          border-bottom: 1px rgba(0,0,0,0.1) solid;
+          /*border-bottom: 1px rgba(0,0,0,0.1) solid;*/
           align-items: center;
           justify-content: center;
-          padding: 0 16px;
+          padding: 0;
           margin: 0;
           top: 0;
           z-index: 10;
+          box-shadow: 1px 2px 18px rgba(0, 0, 0, 10%);
+          transition: box-shadow 0.3s, height 0.3s, padding-top 0.3s;
+          
+        }
+
+        .header.on-top {
+          box-shadow: 1px 2px 18px rgba(0, 0, 0, 0%);
+          height: 120px;
+          padding-top: 60px;
         }
 
         .container {
-          max-width: 1024px;
+          max-width: 576px;
           display: flex;
           flex-direction: row;
           flex-grow: 1;
@@ -122,22 +148,12 @@ export default function Header() {
         }
 
         .route:not(.route-current):hover{
-          background-color: #f4f4f4;
+          background-color: #f4f4f4be;
         }
 
         .route-current {
           position: relative;
-        }
-
-        .route-current::after{
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 4px;
-          left: 0;
-          right: 0;
-          bottom: -10px;
-          background-color: ${swatch.main}
+          background-color: #f4f4f4;
         }
 
         .route-icon {
@@ -153,11 +169,20 @@ export default function Header() {
           color: #555;
         }
 
+        .route-current .route-title {
+          color: #333;
+        }
+
         
         @media (max-width: 576px){
 
           .header {
-            padding-right: 0;
+            padding-left: 16px;
+          }
+            
+          .header.on-top {
+            padding-top: 0;
+            height: 60px;
           }
 
           .route-container {
@@ -239,6 +264,6 @@ export default function Header() {
         }
 
       `}</style>
-    </div>
+    </nav>
   )
 }

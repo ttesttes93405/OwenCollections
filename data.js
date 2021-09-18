@@ -34,15 +34,15 @@ export const projectData = [
     {
         title: "1000 Cheng 作品集網站",
         type: "front-end",
-        icon: "/projects/1000-cheng.png",
+        icon: "/projects/1000-cheng-icon.jpg",
         cover: {
             type: "linkImg",
             link: "https://1000cheng.cc/",
-            source: "https://res.cloudinary.com/w10x10x10/image/upload/v1626170361/M001_Simplex/Cover/M001_Cover_01.png",
+            source: "/projects/1000-cheng.jpg",
             ratio: 9 / 16,
         },
         subtitle: "2021/8",
-        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub Page 代管，並且設定 GitHub Action，在 master Branch 推送新的 commit 時，自動 Export 新的靜態內容並更新。",
+        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub 代管，並且設定 GitHub Action，在 master Branch 推送新的 commit 時，自動 Export 新的靜態內容至 GitHub Page。",
         links: [
             {
                 link: "https://1000cheng.cc/",

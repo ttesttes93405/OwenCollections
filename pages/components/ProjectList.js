@@ -73,7 +73,7 @@ export default function ProjectList(props) {
         
         .row {
           align-items: center;
-          padding: 0 24px;
+          padding: 0 8px;
           width: 100%;
         }
 
