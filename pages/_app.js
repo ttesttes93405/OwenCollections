@@ -1,10 +1,13 @@
 import styles from '../styles/main.scss'
 import Header from './components/Header'
 import swatch from '../styles/swatch';
+import HeadGoogleAnalytics from './components/HeadGoogleAnalytics';
 
 function MyApp({ Component, pageProps }) {
   return (
     <div className="app">
+
+      <HeadGoogleAnalytics />
 
       <Header />
 
@@ -12,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
 
-      
+
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Poppins:wght@300;500;700&display=swap');
 
