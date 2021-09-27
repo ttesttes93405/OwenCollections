@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Intro from './components/Intro'
 import ProjectList from './components/ProjectList';
-import { projects, introData, } from '../data';
+import { introData, } from '../data';
 
-export default function Home() {
+function Home(props) {
 
   return (
     <div className="home">
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Intro {...introData} />
+      <Intro {...props.introData} />
 
       <ProjectList
         icon="/icons/code.svg"
@@ -31,3 +31,14 @@ export default function Home() {
 
   )
 }
+
+export async function getStaticProps(context) {
+  
+  return {
+    props: {
+      introData,
+    },
+  }
+}
+
+export default Home;

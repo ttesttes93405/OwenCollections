@@ -2,15 +2,17 @@
 import Project from './Project'
 import { projectData, } from '../../data';
 
-export default function ProjectList(props) {
+function ProjectList(props) {
 
   const {
     icon,
     title,
     projectType,
+    projectData,
   } = props;
 
   const bgLineColor = 'rgba(59, 71, 92, 0.01)';
+
 
   return (
     <div className="project-list">
@@ -114,3 +116,24 @@ export default function ProjectList(props) {
     </div>
   )
 }
+
+ProjectList.defaultProps = {
+  icon: "",
+  title: "",
+  projectType: "",
+  projectData: [],
+};
+
+export async function getStaticProps(context) {
+
+  console.log("---")
+  console.log(context)
+
+  return {
+    props: {
+      projectData,
+    },
+  }
+}
+
+export default ProjectList;

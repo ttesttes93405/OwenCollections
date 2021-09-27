@@ -9,8 +9,8 @@ import { routeData } from '../../data';
 export default function Header() {
 
 
-  const [showRouteMenu, useShowRouteMenu] = useState(false);
-  const [onTop, useOnTop] = useState(true);
+  const [showRouteMenu, UseShowRouteMenu] = useState(false);
+  const [onTop, UseOnTop] = useState(true);
 
 
   const isOnTop = () => {
@@ -18,7 +18,7 @@ export default function Header() {
   }
 
   const scrollHandler = () => {
-    useOnTop(isOnTop());
+    UseOnTop(isOnTop());
   }
 
   const useScroll = useEffect(() => {
@@ -45,14 +45,14 @@ export default function Header() {
 
         {
           showRouteMenu ? null : (
-            <div className="route-menu-btn" onClick={() => useShowRouteMenu(!showRouteMenu)}>
+            <div className="route-menu-btn" onClick={() => UseShowRouteMenu(!showRouteMenu)}>
               <img src="/icons/menu.svg" />
             </div>) 
         }
 
         <div
           className={classNames("route-container", { "show-route": showRouteMenu })}
-          onClick={() => useShowRouteMenu(!showRouteMenu)}>
+          onClick={() => UseShowRouteMenu(!showRouteMenu)}>
           {
             routeData.map(r => (<Link href={r.route} key={r.route}>
               <a className={classNames("route", { "route-current": isCurrentRoute(r.route) })}>

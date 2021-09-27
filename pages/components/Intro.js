@@ -113,3 +113,10 @@ export default function Intro(props) {
 }
 
 
+Intro.defaultProps = {
+  picture: "",
+  title: "",
+  subtitle: "",
+  content: [],
+  info: [],
+};

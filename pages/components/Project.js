@@ -33,7 +33,7 @@ export default function Project(props) {
         <div className="btn-container">
           {
             links.map(m => (
-              <a href={m.link} className="link-btn" key={m.title} target="_blank">
+              <a href={m.link} className="link-btn" key={m.title} target="_blank" rel="noreferrer">
                 {m.icon ? <img src={m.icon} className="link-icon" /> : null}
                 <p className="link-title">{m.title}</p>
               </a>
@@ -166,3 +166,13 @@ export default function Project(props) {
     </div>
   )
 }
+
+
+Project.defaultProps = {
+  icon: "",
+  title: "",
+  subtitle: "",
+  cover: "",
+  content: "",
+  links: [],
+};

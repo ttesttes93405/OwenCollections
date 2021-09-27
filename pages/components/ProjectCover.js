@@ -119,7 +119,7 @@ const linkImgCover = (cover) => {
   const { source, ratio, link, } = cover;
 
   return (
-    <a href={link} target="_blank">
+    <a href={link} target="_blank" rel="noreferrer">
       <div className="project-img">
         <img src={source} className="cover" />
         <style jsx>{`
