@@ -34,7 +34,7 @@ export default function Intro(props) {
             display: flex;
             flex-direction: column;
             background-color: #fff;
-            padding: 40px 16px 72px;
+            padding: 40px 0 72px;
             width: 100%;
           }
 
@@ -98,6 +98,14 @@ export default function Intro(props) {
             color: #555;
           }
 
+          @media (max-width: 576px){
+
+            .intro {
+              padding-left: 16px;
+              padding-right: 16px; 
+            }
+
+          }
         
         `}</style>
     </div >

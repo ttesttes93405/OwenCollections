@@ -124,9 +124,14 @@ export default function Project(props) {
           align-items: center;
           justify-content: center;
           margin-right: 16px;
+          transition: background-color 0.15s;
         }
         .link-btn:last-child {
           margin-right: 0;
+        }
+
+        .link-btn:hover {
+          background-color: ${swatch.mainHover};
         }
 
         .link-icon {

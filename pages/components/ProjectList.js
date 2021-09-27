@@ -103,6 +103,10 @@ export default function ProjectList(props) {
             width: 100%;
           }
 
+          .row {
+            padding: 0 16px;
+          }
+
         }
 
       `}</style>

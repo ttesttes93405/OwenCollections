@@ -42,7 +42,7 @@ export const projectData = [
             ratio: 9 / 16,
         },
         subtitle: "2021/8",
-        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub 代管，並且設定 GitHub Action，在 master Branch 推送新的 commit 時，自動 Export 新的靜態內容至 GitHub Page。",
+        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub 代管，並且設定 GitHub Action，在 master branch push 新的 commit 時，自動 Export 新的靜態內容至 GitHub Page。",
         links: [
             {
                 link: "https://1000cheng.cc/",
