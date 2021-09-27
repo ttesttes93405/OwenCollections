@@ -121,19 +121,7 @@ ProjectList.defaultProps = {
   icon: "",
   title: "",
   projectType: "",
-  projectData: [],
+  projectData: projectData,
 };
-
-export async function getStaticProps(context) {
-
-  console.log("---")
-  console.log(context)
-
-  return {
-    props: {
-      projectData,
-    },
-  }
-}
 
 export default ProjectList;
