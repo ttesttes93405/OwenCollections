@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Intro from './components/Intro'
 import ProjectList from './components/ProjectList';
 import { introData, } from '../data';
+import HeadMeta from './components/HeadMeta';
 
 function Home(props) {
 
@@ -10,8 +11,11 @@ function Home(props) {
 
       <Head>
         <title>Owen Sun</title>
+        <meta property="og:title" content="Owen Sun" />
         <link rel="icon" href="/favicon.png" />
       </Head>
+
+      <HeadMeta />
 
       <Intro {...props.introData} />
 

@@ -36,7 +36,7 @@ export default function Header() {
 
       <div className="container">
         <div className="title-container"
-          onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          onClick={() => { if (!onTop) { window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <img src="/Owen01.jpg" className="icon" />
           <p className="title">OWENSUN.INFO</p>
         </div>
@@ -47,7 +47,7 @@ export default function Header() {
           showRouteMenu ? null : (
             <div className="route-menu-btn" onClick={() => UseShowRouteMenu(!showRouteMenu)}>
               <img src="/icons/menu.svg" />
-            </div>) 
+            </div>)
         }
 
         <div
@@ -105,6 +105,13 @@ export default function Header() {
           flex-direction: row;
           align-items: center;
           cursor: pointer;
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+
+        .on-top .title-container{
+          opacity: 0;
+          cursor: default;
         }
 
         .icon {
