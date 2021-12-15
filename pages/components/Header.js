@@ -6,7 +6,13 @@ import { useEffect, useRef, useState } from 'react';
 import { routeData } from '../../data';
 
 
-export default function Header() {
+function Header(props) {
+
+  const {
+    icon = "/Owen01.jpg",
+    title = "OWENSUN.INFO",
+    alwaysShowTitle = true,
+  } = props;
 
 
   const [showRouteMenu, UseShowRouteMenu] = useState(false);
@@ -28,17 +34,16 @@ export default function Header() {
   }, [])
 
   const router = useRouter();
-  const isCurrentRoute = (route) => router.route == route;
-
+  const isCurrentRoute = (route) => router.asPath == route;
 
   return (
-    <nav className={classNames("header", { 'on-top': onTop })}>
+    <nav className={classNames("header", { 'on-top': onTop, 'always-show-title': alwaysShowTitle })}>
 
       <div className="container">
         <div className="title-container"
           onClick={() => { if (!onTop) { window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
-          <img src="/Owen01.jpg" className="icon" />
-          <p className="title">OWENSUN.INFO</p>
+          <img src={icon} className="icon" />
+          <p className="title">{title}</p>
         </div>
 
         <div className="flex-space" />
@@ -111,6 +116,11 @@ export default function Header() {
 
         .on-top .title-container{
           opacity: 0;
+          cursor: default;
+        }
+
+        .always-show-title .title-container{
+          opacity: 1;
           cursor: default;
         }
 
@@ -274,3 +284,11 @@ export default function Header() {
     </nav>
   )
 }
+
+Header.defaultProps = {
+  icon: "/Owen01.jpg",
+  title: "OWENSUN.INFO",
+  alwaysShowTitle: true,
+};
+
+export default Header;

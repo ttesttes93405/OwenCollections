@@ -5,6 +5,7 @@ import swatch from "../../styles/swatch"
 export default function Project(props) {
 
   const {
+    id,
     icon,
     title,
     subtitle,
@@ -12,6 +13,15 @@ export default function Project(props) {
     content,
     links,
   } = props;
+
+
+  const targetPath = `/project/${id}`;
+  const btnText = "更多內容";
+
+  const forcePathCover = {
+    ...cover,
+    link: targetPath,
+  };
 
   return (
     <div className="m-no-round project">
@@ -22,23 +32,16 @@ export default function Project(props) {
           <img className="icon" src={icon} />
           <div className="col">
             <h2 className="title">{title}</h2>
-            <p className="subtitle">{subtitle}</p>
           </div>
         </div>
 
-        <ProjectCover cover={cover} />
-
-        {content.split('\n').map(c => <p className="des" key={c}>{c}</p>)}
+        <ProjectCover cover={forcePathCover} />
 
         <div className="btn-container">
-          {
-            links.map(m => (
-              <a href={m.link} className="link-btn" key={m.title} target="_blank" rel="noreferrer">
-                {m.icon ? <img src={m.icon} className="link-icon" /> : null}
-                <p className="link-title">{m.title}</p>
-              </a>
-            ))
-          }
+          <a href={targetPath} className="link-btn" key={btnText} rel="noreferrer">
+            <p className="link-title">{btnText}</p>
+            <img src="/icons/arrow-right.svg" className="link-icon" />
+          </a>
         </div>
 
       </div>
@@ -73,10 +76,10 @@ export default function Project(props) {
         }
 
         .icon {
-          width: 64px;
-          height: 64px;
+          width: 52px;
+          height: 52px;
           border-radius: 16px;
-          margin-right: 12px;
+          margin-right: 16px;
           box-shadow: 0 0 8px #00000018;
         }
 
@@ -110,7 +113,7 @@ export default function Project(props) {
         .btn-container {
           display: flex;
           flex-direction: row;
-          margin-top: 16px;
+          /* margin-top: 16px; */
 
         }
 
@@ -137,8 +140,16 @@ export default function Project(props) {
         .link-icon {
           width: 24px;
           height: 24px;
+        }
+
+        .link-icon:first-child {
           margin-right: 8px;
           margin-left: -16px;
+        }
+
+        .link-icon:last-child {
+          margin-right: -16px;
+          margin-left: 8px;
         }
 
         .link-title {

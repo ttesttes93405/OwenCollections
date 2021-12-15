@@ -11,16 +11,19 @@ function ProjectList(props) {
     projectData,
   } = props;
 
-  const bgLineColor = 'rgba(59, 71, 92, 0.01)';
 
 
   return (
     <div className="project-list">
 
-      <div className="row header">
-        <img className="icon" src={icon} />
-        <h2 className="title">{title}</h2>
-      </div>
+      {
+        icon &&
+        title &&
+        (<div className="row header">
+          <img className="icon" src={icon} />
+          <h2 className="title">{title}</h2>
+        </div>)
+      }
 
       <div className="project-container">
         {
@@ -57,20 +60,6 @@ function ProjectList(props) {
           content: '';
           z-index: -1;
           background-color: #fff;
-          /*
-          background-color: #F8F8F8;
-          background-image: linear-gradient(
-            45deg,
-            ${bgLineColor} 12.5%,
-            transparent 12.5%,
-            transparent 50%,
-            ${bgLineColor} 50%,
-            ${bgLineColor} 62.5%,
-            transparent 62.5%,
-            transparent 100%);
-          
-            background-size: 30px 30px;
-            */
         }
         
         .row {

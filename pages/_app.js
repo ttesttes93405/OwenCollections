@@ -1,5 +1,4 @@
 import styles from '../styles/main.scss'
-import Header from './components/Header'
 import swatch from '../styles/swatch';
 import HeadGoogleAnalytics from './components/HeadGoogleAnalytics';
 
@@ -9,7 +8,6 @@ function MyApp({ Component, pageProps }) {
 
       <HeadGoogleAnalytics />
 
-      <Header />
 
       <div className="app-container">
         <Component {...pageProps} />

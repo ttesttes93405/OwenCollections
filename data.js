@@ -1,3 +1,5 @@
+import content1000Website from './contents/1000website';
+
 export const routeData = [
     {
         title: "首頁",
@@ -5,14 +7,26 @@ export const routeData = [
         icon: "/icons/home.svg",
     }, {
         title: "前端",
-        route: "/project/front-end",
+        route: "/type/front-end",
         icon: "/icons/code.svg",
     }, {
         title: "遊戲",
-        route: "/project/game",
+        route: "/type/game",
         icon: "/icons/box.svg",
     },
-]
+];
+
+export const typeData = [
+    {
+        id:"front-end",
+        title: "前端",
+        icon: "/icons/code.svg",
+    }, {
+        id:"game",
+        title: "遊戲",
+        icon: "/icons/box.svg",
+    },
+];
 
 export const introData = {
     title: "孫宇",
@@ -32,17 +46,17 @@ export const introData = {
 
 export const projectData = [
     {
+        id: "1000website",
         title: "1000 Cheng 作品集網站",
         type: "front-end",
         icon: "/projects/1000-cheng-icon.jpg",
         cover: {
-            type: "linkImg",
-            link: "https://1000cheng.cc/",
+            type: "img",
             source: "/projects/1000-cheng.jpg",
             ratio: 9 / 16,
         },
         subtitle: "2021/8",
-        content: "幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub 代管，並且設定 GitHub Action，在 master branch push 新的 commit 時，自動 Export 新的靜態內容至 GitHub Page。",
+        content: content1000Website,//"幫動態設計師 1000 Cheng 製作的作品集網站。\n以 React + Next.js 製作，透過 Next Export 來產出靜態網站。\n網站以 GitHub 代管，並且設定 GitHub Action，在 master branch push 新的 commit 時，自動 Export 新的靜態內容至 GitHub Page。",
         links: [
             {
                 link: "https://1000cheng.cc/",
@@ -52,12 +66,12 @@ export const projectData = [
         ]
     },
     {
+        id: "literary-dessert",
         title: "點心故事 Literary Dessert",
         type: "front-end",
         icon: "/projects/LiteraryDessert.svg",
         cover: {
-            type: "linkImg",
-            link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
+            type: "img",
             source: "/projects/LiteraryDessert.png",
             ratio: 9 / 16,
         },
@@ -72,6 +86,7 @@ export const projectData = [
         ]
     },
     {
+        id: "fall-a-sleep",
         title: "Fall A Sleep",
         type: "game",
         icon: "/projects/G2I.webp",
@@ -91,6 +106,7 @@ export const projectData = [
         ]
     },
     {
+        id: "sandwich101",
         title: "Sandwich 101",
         type: "game",
         icon: "/projects/G2E.webp",
@@ -110,6 +126,7 @@ export const projectData = [
         ]
     },
     {
+        id: "sky-bandit",
         title: "Sky Bandit 天空盜賊團",
         type: "game",
         icon: "/projects/SkyBandit.png",
@@ -134,6 +151,7 @@ export const projectData = [
         ]
     },
     {
+        id: "macaca-games-tech-designer",
         title: "Macaca Games 技術企劃",
         type: "experence",
         icon: "/projects/CloudMacaca.png",
@@ -143,6 +161,7 @@ export const projectData = [
         links: []
     },
     {
+        id: "x-lengend-designer",
         title: "傳奇網路 企劃",
         type: "experence",
         icon: "/projects/x-legend.jpg",
@@ -152,6 +171,7 @@ export const projectData = [
         links: []
     },
     {
+        id: "google-play-bulid-taiwan-dream-droom",
         title: "GooglePlay 築夢台灣專區",
         type: "experence",
         icon: "/projects/GooglePlay.jpg",
@@ -165,6 +185,7 @@ export const projectData = [
         links: []
     },
     {
+        id: "the-hole",
         title: "The Hole",
         type: "game",
         icon: "/projects/TheHole.svg",
@@ -189,6 +210,7 @@ export const projectData = [
         ]
     },
     {
+        id: "droom",
         title: "DROOM 夢門",
         type: "game",
         icon: "/projects/DROOM.png",
@@ -202,6 +224,7 @@ export const projectData = [
         links: []
     },
     {
+        id: "bean",
         title: "BEAN",
         type: "game",
         icon: "/projects/BEAN.png",
@@ -306,4 +329,4 @@ export const timeEvents = [
         data: []
     },
 
-]
+];

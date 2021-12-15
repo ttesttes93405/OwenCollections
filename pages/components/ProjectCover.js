@@ -119,7 +119,7 @@ const linkImgCover = (cover) => {
   const { source, ratio, link, } = cover;
 
   return (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} rel="noreferrer">
       <div className="project-img">
         <img src={source} className="cover" />
         <style jsx>{`
@@ -151,6 +151,16 @@ const linkImgCover = (cover) => {
   )
 }
 
+const linkMp4Cover = (cover) => {
+
+  const { source, ratio, link, } = cover;
+
+  return (
+    <a href={link} rel="noreferrer">
+      {mp4Cover(cover)}
+    </a>
+  );
+}
 
 export default function ProjectCover({ cover, }) {
 
@@ -158,15 +168,13 @@ export default function ProjectCover({ cover, }) {
     return null;
   }
 
-  const { type, } = cover;
+  const { type, link, } = cover;
 
   switch (type) {
     case "mp4":
-      return mp4Cover(cover);
+      return link ? linkMp4Cover(cover) : mp4Cover(cover);
     case "img":
-      return imgCover(cover);
-    case "linkImg":
-      return linkImgCover(cover);
+      return link ? linkImgCover(cover) : imgCover(cover);
     case "embed":
       return embedCover(cover);
 
