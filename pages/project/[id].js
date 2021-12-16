@@ -63,40 +63,63 @@ export default function ProjectPage(props) {
         {/* <style jsx global>{` */}
         <style jsx global>{`
 
-        .rich-text p {
-          font-size: 1.45rem;
+        .rich-text p, .rich-text li {
+          font-size: 1.4rem;
           line-height: 2.4rem;
-          color: #444;
+          color: #222;
           margin: 0 0 4px;
           padding: 0;
         }
+
+        .rich-text ol, .rich-text ul {
+          padding: 0 0 0 28px;
+          margin: 8px 0;
+          position: relative;
+        }
         
+        .rich-text ol {
+          list-style:none;
+        }
+
+        .rich-text ol li::marker {
+          list-style: none;
+        }
+        
+        .rich-text ol li::before {
+          content: counter(list-item) ".";
+          position: absolute;
+          left: 8px;          
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          vertical-align: middle;
+          color: #000;
+        }
+
+        
+        .rich-text h1, .rich-text h2, .rich-text h3 {
+          color: #111;
+          margin: 12px 0 8px;
+          padding: 0;
+          font-weight: 700;
+        }
+
         .rich-text h1 {
           font-size: 2.5rem;
           line-height: 3.5rem;
-          color: #222;
-          margin: 12px 0 8px;
-          padding: 0;
         }
         
         .rich-text h2 {
           font-size: 2.25rem;
           line-height: 3.25rem;
-          color: #222;
-          margin: 12px 0 8px;
-          padding: 0;
         }
         
         .rich-text h3 {
           font-size: 2.0rem;
           line-height: 3.0rem;
-          color: #222;
-          margin: 12px 0 8px;
-          padding: 0;
         }
 
         .rich-text .space {
-          height: 12px;
+          height: 18px;
           display:inline-block;
         }
 
@@ -141,7 +164,7 @@ export default function ProjectPage(props) {
           width: 64px;
           height: 64px;
           border-radius: 16px;
-          margin-right: 12px;
+          margin-bottom: 12px;
           box-shadow: 0 0 8px #00000018;
         }
 
@@ -163,6 +186,7 @@ export default function ProjectPage(props) {
         
         .head {
           align-items: center;
+          margin-bottom: 32px;
         }
 
         .btn-container {

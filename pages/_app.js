@@ -120,6 +120,13 @@ function MyApp({ Component, pageProps }) {
         
         }
 
+        @media (max-width: 576px){
+          .app-container {
+            
+            padding: 60px 0 0;
+          
+          }
+        }
 
       `}</style>
     </div>);
