@@ -1,4 +1,5 @@
 import ProjectCover from "./ProjectCover";
+import classNames from "classnames";
 
 
 const h1Regex = RegExp("^# ?(.+)");
@@ -7,6 +8,10 @@ const h3Regex = RegExp("^### ?(.+)");
 
 const olRegex = RegExp("^[0-9]+\. ?(.+)");
 const ulRegex = RegExp("^[\-\*] ?(.+)");
+
+const refRegex = RegExp("^\{\{(.+)\}\}$");
+
+const lineRegex = RegExp("[-]{3,}");
 
 function RichText(props) {
 
@@ -23,6 +28,14 @@ function RichText(props) {
     if (content.length === 0) {
       return [{
         contentType: "space",
+      }];
+    }
+
+    //line
+    resultGroup = lineRegex.exec(content);
+    if (resultGroup) {
+      return [{
+        contentType: "line",
       }];
     }
 
@@ -71,6 +84,16 @@ function RichText(props) {
       }];
     }
 
+    //ref
+    resultGroup = refRegex.exec(content);
+    if (resultGroup) {
+      return [{
+        contentType: "reference",
+        referenceName: resultGroup[1],
+      }];
+    }
+
+
     //text
     return [{
       contentType: "text",
@@ -79,64 +102,30 @@ function RichText(props) {
 
   }
 
-  const preBuildCmds = [];
-  content.forEach((el) => {
-    switch (typeof (el)) {
-      case "string":
-        el.split("\n").forEach(line => {
-          preBuildCmds.push(...buildString(line.trim()));
-        });
-        return;
 
-      case "object":
-        preBuildCmds.push(el);
-        return;
-    }
-  });
+  const contentList = Array.isArray(content) ? content : [content,];
 
+  const preBuild = (contentList) => {
+    const preBuildCmds = [];
+    contentList.forEach((el) => {
+      switch (typeof (el)) {
+        case "string":
+          el.split("\n").forEach(line => {
+            preBuildCmds.push(...buildString(line.trim()));
+          });
+          return;
 
-  const buildMethod = {
-    image: (cover) => {
-      return (<ProjectCover cover={cover} key={cover.source} />);
-    },
-    link: (link) => {
-      return (
-        <div className="btn" key={link.link}>
-          <a href={link.link} className="link-btn" key={link.title} target="_blank" rel="noreferrer">
-            {link.icon ? <img src={link.icon} className="link-icon" /> : null}
-            <p className="link-title">{link.title}</p>
-          </a>
-        </div>);
-    },
-    text: ({ content, }) => {
-      return (<p key={content}>{content}</p>);
-    },
-    orderListElement: ({ content, }) => {
-      return (<li key={content}>{content}</li>);
-    },
-    unorderListElement: ({ content, }) => {
-      return (<li key={content}>{content}</li>);
-    },
-    orderList: ({ elements, }) => {
-      return (<ol key={Math.random()}>
-        {elements.map(el => buildMethod[el.contentType](el))}
-      </ol>);
-    },
-    unorderList: ({ elements, }) => {
-      return (<ul key={Math.random()}>
-        {elements.map(el => buildMethod[el.contentType](el))}
-      </ul>);
-    },
-    title: ({ content, }) => {
-      return (<h2 key={content}>{content}</h2>);
-    },
-    space: () => {
-      return (<span className="space" key={Math.random()}></span>);
-    },
+        case "object":
+          preBuildCmds.push(el);
+          return;
+      }
+    });
+    return preBuildCmds;
   }
 
-  const groupList = (cmds) => {
+  const buildCmds = (cmds) => {
     const groupedCmds = [];
+    let refs = {};
     let pointerGroup = null;
     cmds.forEach(cmd => {
       if (cmd.contentType === "orderListElement") {
@@ -161,21 +150,84 @@ function RichText(props) {
         }
         pointerGroup.elements.push(cmd);
       }
+
       else {
+        if (cmd.contentType === "references") {
+          refs = { ...refs, ...cmd.references };
+        }
+        else if (cmd.contentType === "reference") {
+          const refCmd = refs[cmd.referenceName];
+          groupedCmds.push({ ...refCmd });
+        }
+        else {
+          groupedCmds.push(cmd);
+        }
         pointerGroup = null;
-        groupedCmds.push(cmd);
       }
     });
     return groupedCmds;
   }
 
-  const grouped = groupList(preBuildCmds);
+  const buildMethod = {
+    image: function build(cover) {
+      return (<div className="media" key={cover.source}>
+        <ProjectCover cover={cover} />
+      </div>);
+    },
+    link: function build(link) {
 
+      const links = link.links || [link,];
+
+      return (
+        <div className="btn-container" key={Math.random()}>
+          {
+            links.map(link =>
+            (<a href={link.link} className={classNames("link-btn", link.theme||"default")} key={link.title} target="_blank" rel="noreferrer">
+              {link.icon ? <img src={link.icon} className="link-icon" /> : null}
+              <p className="link-title">{link.title}</p>
+            </a>))
+          }
+        </div>);
+    },
+    text: function build({ content, }) {
+      return (<p key={content}>{content}</p>);
+    },
+    orderListElement: function build({ content, }) {
+      return (<li key={content}>{content}</li>);
+    },
+    unorderListElement: function build({ content, }) {
+      return (<li key={content}>{content}</li>);
+    },
+    orderList: function build({ elements, }) {
+      return (<ol key={Math.random()}>
+        {elements.map(el => buildMethod[el.contentType](el))}
+      </ol>);
+    },
+    unorderList: function build({ elements, }) {
+      return (<ul key={Math.random()}>
+        {elements.map(el => buildMethod[el.contentType](el))}
+      </ul>);
+    },
+    title: function build({ content, }) {
+      return (<h2 key={content}>{content}</h2>);
+    },
+    space: function build() {
+      return (<span className="space" key={Math.random()}></span>);
+    },
+    line: function build() {
+      return (<span className="line" key={Math.random()}></span>);
+    },
+  }
 
   const result = [];
 
-  grouped.forEach((el) => {
-    const buildElement = buildMethod[el.contentType](el);
+  const builtCmds = buildCmds(preBuild(contentList));
+
+  // console.log(builtCmds);
+
+  builtCmds.forEach((el) => {
+    const method = buildMethod[el.contentType];
+    const buildElement = method(el);
     result.push(buildElement);
     return;
   });

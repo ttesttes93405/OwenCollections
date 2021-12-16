@@ -20,7 +20,6 @@ const mp4Cover = (cover) => {
     <style jsx>{`
 
     .project-video {
-      margin: 16px 0 16px;
       width: 100%;    
       position: relative;
       padding-top: ${ratio * 100}% ;
@@ -57,7 +56,6 @@ const embedCover = (cover) => {
     <style jsx>{`
 
       .project-video {
-        margin: 16px 0 16px;
         width: 100%;    
         overflow: hidden;  
         position: relative;
@@ -86,77 +84,58 @@ const imgCover = (cover) => {
   const { source, ratio, } = cover;
 
   return (<div className="project-img">
-    <img src={source} className="cover" />
+    <div className="cover" />
     <style jsx>{`
 
-      .project-img {
-        margin: 16px 0 16px;
-        width: 100%;    
-        position: relative;
-        padding-top: ${ratio * 100}% ;
-        background-color: rgba(0,0,0,0.05);
-        border-radius: 8px;
-      }
+    .project-img {
+      width: 100%;    
+      position: relative;
+      padding-top: ${ratio * 100}% ;
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
 
-      .cover {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        border: 1px #eee solid;
-        border-radius: 8px;
-      }
+    .cover {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: url(${source});
+      background-position: center;
+      background-size: cover;
+      left: 0;
+      right: 0;
+      top: 0;
+      border: 1px #eee solid;
+      border-radius: 8px;
+    }
 
-    `}</style>
+  `}</style>
   </div>)
 }
 
 const linkImgCover = (cover) => {
 
-  const { source, ratio, link, } = cover;
+  const {
+    link,
+    linkTarget = "_blank",
+  } = cover;
 
   return (
-    <a href={link} rel="noreferrer">
-      <div className="project-img">
-        <img src={source} className="cover" />
-        <style jsx>{`
-
-          .project-img {
-            margin: 16px 0 16px;
-            width: 100%;    
-            position: relative;
-            padding-top: ${ratio * 100}% ;
-            background-color: rgba(0,0,0,0.05);
-            border-radius: 8px;
-          }
-
-          .cover {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            border: 1px #eee solid;
-            border-radius: 8px;
-          }
-
-        `}</style>
-      </div>
+    <a href={link} rel="noreferrer" target={linkTarget}>
+      {imgCover(cover)}
     </a>
   )
 }
 
 const linkMp4Cover = (cover) => {
 
-  const { source, ratio, link, } = cover;
+  const {
+    link,
+    linkTarget = "_blank",
+  } = cover;
 
   return (
-    <a href={link} rel="noreferrer">
+    <a href={link} rel="noreferrer" target={linkTarget}>
       {mp4Cover(cover)}
     </a>
   );

@@ -12,6 +12,7 @@ export default function ProjectPage(props) {
     icon,
     title,
     subtitle,
+    date,
     cover,
     content,
     links,
@@ -19,7 +20,8 @@ export default function ProjectPage(props) {
 
   return (
     <>
-      <Header />
+      <Header paths={[{ title: title, icon: icon }]} />
+
       <div className="project-container">
         <Head>
           <title>{title} | Owen Sun</title>
@@ -33,7 +35,7 @@ export default function ProjectPage(props) {
               <img className="icon" src={icon} />
               <div className="col">
                 <h2 className="title">{title}</h2>
-                <p className="subtitle">{subtitle}</p>
+                {<p className="subtitle">{date || ""}</p>}
               </div>
             </div>
 
@@ -72,7 +74,7 @@ export default function ProjectPage(props) {
         }
 
         .rich-text ol, .rich-text ul {
-          padding: 0 0 0 28px;
+          padding: 0 0 0 24px;
           margin: 8px 0;
           position: relative;
         }
@@ -88,11 +90,13 @@ export default function ProjectPage(props) {
         .rich-text ol li::before {
           content: counter(list-item) ".";
           position: absolute;
-          left: 8px;          
+          left: 0px;          
           font-size: 1.4rem;
           line-height: 2.4rem;
           vertical-align: middle;
           color: #000;
+          width: 24px;
+          text-align: center;
         }
 
         
@@ -121,26 +125,69 @@ export default function ProjectPage(props) {
         .rich-text .space {
           height: 18px;
           display:inline-block;
+          width: 100%;
         }
 
-        .rich-text .btn {
+        .rich-text .line {
+          height: 2px;
+          display:inline-block;
+          border-radius: 9999px;
+          background-color: #0001;
+          width: 30%;
+          margin: 0 35%;
+        }
+
+        .rich-text .media {
+          margin: 16px 0;
+        }
+        
+        .rich-text .btn-container {
           display: flex;
-          padding: 8px;
           
           justify-content: center;
-          align-content: center;
-          margin: 8px 0;
+          align-items: center;
+
         }
 
-        .rich-text .btn p {
-          font-size: 1.35rem;
-          width: 140px;
-          height: 48px;
-          line-height: 48px;
-          background-color: #eee;
+        .rich-text .link-btn {
+          display: flex;
+          
+          justify-content: center;
+          align-items: center;
+
+          padding: 8px 12px;
+          margin: 0 8px;
+          background-color: ${swatch.main};
           border-radius: 12px;
-          text-align: center;
+          min-width: 140px;
+          max-width: 200px;
         }
+
+        .rich-text .link-btn .link-icon {
+          margin: 0 8px 0 -8px;
+          height: 32px;
+          width: 32px;
+        }
+
+        .rich-text .link-btn .link-title {
+          font-size: 1.35rem;
+          text-align: center;
+          color: #fff;
+          margin: 0;
+          padding: 0;
+          height: 32px;
+          line-height: 32px;
+        }
+
+        .rich-text .link-btn.github {
+          background-color: #24292f;
+        }
+        .rich-text .link-btn.github .link-title {
+          color: #fff;
+        }
+
+        
+
 
         `}</style>
 
@@ -154,7 +201,7 @@ export default function ProjectPage(props) {
           position: relative;
           display: flex;
           flex-direction: column;
-          background-color: #fff;
+          /* background-color: #fff; */
           padding: 24px 16px 48px;
           border-radius: 16px;
           

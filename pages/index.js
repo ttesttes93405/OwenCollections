@@ -10,7 +10,6 @@ function Home(props) {
   return (
     <>
       <Header alwaysShowTitle={false} />
-
       <div className="home">
 
         <Head>

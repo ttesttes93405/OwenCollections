@@ -33,7 +33,7 @@ export default function Intro(props) {
           .intro {
             display: flex;
             flex-direction: column;
-            background-color: #fff;
+            /* background-color: #fff; */
             padding: 40px 0 72px;
             width: 100%;
           }

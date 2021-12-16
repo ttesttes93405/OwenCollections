@@ -51,7 +51,7 @@ function ProjectList(props) {
           padding-bottom: 24px;
         }
 
-        .project-list::before {
+        /* .project-list::before {
           position: absolute;
           top: 0;
           bottom: 0;
@@ -60,7 +60,7 @@ function ProjectList(props) {
           content: '';
           z-index: -1;
           background-color: #fff;
-        }
+        } */
         
         .row {
           align-items: center;

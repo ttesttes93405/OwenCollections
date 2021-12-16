@@ -13,7 +13,7 @@ export default function ProjectsFrontEnd(props) {
 
   return (
     <>
-      <Header title={title} icon={icon} />
+      <Header />
       <div>
         <Head>
           <title>{title} | Owen Sun</title>

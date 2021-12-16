@@ -21,6 +21,7 @@ export default function Project(props) {
   const forcePathCover = {
     ...cover,
     link: targetPath,
+    linkTarget: "_self",
   };
 
   return (
@@ -36,6 +37,8 @@ export default function Project(props) {
         </div>
 
         <ProjectCover cover={forcePathCover} />
+
+        {subtitle ? (<p className="subtitle">{subtitle}</p>) : null}
 
         <div className="btn-container">
           <a href={targetPath} className="link-btn" key={btnText} rel="noreferrer">
@@ -53,7 +56,7 @@ export default function Project(props) {
           position: relative;
           display: flex;
           flex-direction: column;
-          background-color: #fff;
+          /* background-color: #fff; */
           padding: 48px 16px;
           border-radius: 16px;
         }
@@ -91,10 +94,9 @@ export default function Project(props) {
         }
 
         .subtitle {
-          font-size: 1.2rem;
-          color: #000;
-          opacity: 0.5;
-          margin: 4px 0 8px;
+          font-size: 1.4rem;
+          color: #444;
+          margin: 8px 0 8px;
 
           
         }
@@ -108,6 +110,7 @@ export default function Project(props) {
         
         .head {
           align-items: center;
+          margin-bottom: 16px;
         }
 
         .btn-container {

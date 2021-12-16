@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import classNames from 'classnames';
 import swatch from '../../styles/swatch';
 import { useEffect, useRef, useState } from 'react';
-import { routeData } from '../../data';
+import { typeData, } from '../../data';
 
 
 function Header(props) {
@@ -12,6 +12,7 @@ function Header(props) {
     icon = "/Owen01.jpg",
     title = "OWENSUN.INFO",
     alwaysShowTitle = true,
+    paths = [],
   } = props;
 
 
@@ -40,12 +41,24 @@ function Header(props) {
     <nav className={classNames("header", { 'on-top': onTop, 'always-show-title': alwaysShowTitle })}>
 
       <div className="container">
-        <div className="title-container"
-          onClick={() => { if (!onTop) { window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
-          <img src={icon} className="icon" />
-          <p className="title">{title}</p>
-        </div>
 
+        <div className="title-container" >
+          <Link href="/">
+            <a className="title-path">
+              <img src={icon} className="icon" />
+              <p className="title">{title}</p>
+            </a>
+          </Link>
+          {
+            paths.map(path => (
+              <div className="title-path" key={path.title}>
+                <span className='slash'>{'/'}</span>
+                <img src={path.icon} className="icon" />
+                <p className="title">{path.title}</p>
+              </div>
+            ))
+          }
+        </div>
         <div className="flex-space" />
 
         {
@@ -58,13 +71,22 @@ function Header(props) {
         <div
           className={classNames("route-container", { "show-route": showRouteMenu })}
           onClick={() => UseShowRouteMenu(!showRouteMenu)}>
+          <Link href="/" key="home">
+            <a className={classNames("home", "route", { "route-current": isCurrentRoute("/") })}>
+              <img src="/icons/home.svg" className="route-icon" />
+              <p className="route-title">首頁</p>
+            </a>
+          </Link>
           {
-            routeData.map(r => (<Link href={r.route} key={r.route}>
-              <a className={classNames("route", { "route-current": isCurrentRoute(r.route) })}>
-                <img src={r.icon} className="route-icon" />
-                <p className="route-title">{r.title}</p>
-              </a>
-            </Link>))
+            typeData.map(r => {
+              const path = `/type/${r.id}`;
+              return (<Link href={path} key={r.id}>
+                <a className={classNames("route", { "route-current": isCurrentRoute(path) })}>
+                  <img src={r.icon} className="route-icon" />
+                  <p className="route-title">{r.title}</p>
+                </a>
+              </Link>)
+            })
           }
         </div>
       </div>
@@ -105,23 +127,36 @@ function Header(props) {
           align-items: center;
         }
         
+        .slash {
+          margin: 0 8px 0 2px;
+          padding: 0;
+          color: #aaa;
+        }
+        
         .title-container {
           display: flex;
           flex-direction: row;
           align-items: center;
-          cursor: pointer;
+          max-width: 350px;
           opacity: 1;
           transition: opacity 0.3s;
         }
 
+        .title-path {
+          height: 60px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          max-width: 230px;
+        }
+
+
         .on-top .title-container{
           opacity: 0;
-          cursor: default;
         }
 
         .always-show-title .title-container{
           opacity: 1;
-          cursor: default;
         }
 
         .icon {
@@ -135,11 +170,41 @@ function Header(props) {
           margin: 0;
           margin-left: 8px;
           color: rgba(0, 0, 0, 0.65);
-          font-weight: 500;
+          font-weight: 500;          
+          text-overflow : ellipsis;
+          flex-shrink: 1;
+          height: 30px;
+          line-height: 30px;
+          overflow: hidden;
+          white-space: nowrap;
         }
 
+        .title-path:first-child {
+          cursor: pointer;
+          padding: 4px 8px;
+          height: 40px;
+        }
+
+        .title-path:first-child:hover {    
+          border-radius: 8px;
+          background-color: #f4f4f4be;
+        }
+
+        .title-path:first-child .title {            
+          max-width: 60px;
+        }
+
+        .title-path:last-child .title {   
+          display: inline-block;    
+          flex-shrink: 0;
+          overflow: hidden;
+          max-width: 300px;
+        }
+        
+        
         .flex-space {
           flex-grow: 1;
+          min-width: 30px;
         }
         
         .route-menu-btn {
@@ -190,9 +255,13 @@ function Header(props) {
           color: #333;
         }
 
+        .home {
+          display: none;
+        }
+
         
         @media (max-width: 576px){
-
+          
           .header {
             padding-left: 16px;
           }
@@ -278,10 +347,21 @@ function Header(props) {
             padding: 20px;
           }
 
+          .title-path:first-child .title {            
+            display: none;
+          }
+
+          .title-path:last-child .title {            
+            display: flex;
+          }
+
+          .home {
+            display: flex;
+          }
         }
 
       `}</style>
-    </nav>
+    </nav >
   )
 }
 

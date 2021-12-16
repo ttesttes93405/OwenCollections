@@ -1,12 +1,15 @@
 import styles from '../styles/main.scss'
 import swatch from '../styles/swatch';
 import HeadGoogleAnalytics from './components/HeadGoogleAnalytics';
+import Background from './components/Background';
 
 function MyApp({ Component, pageProps }) {
   return (
     <div className="app">
 
       <HeadGoogleAnalytics />
+      <Background />
+
 
 
       <div className="app-container">
