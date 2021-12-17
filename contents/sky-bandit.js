@@ -12,13 +12,15 @@ const content = [
                 contentType: "link",
                 links: [{
                     link: "https://play.google.com/store/apps/details?id=com.MacacaGames.SkyBandit",
-                    title: "Android 下載",
-                    icon: "/icons/android.svg",
+                    title: "Google Play 下載",
+                    icon: "/icons/google-play.svg",
+                    theme: "google-play",
                 },
                 {
                     link: "https://apps.apple.com/app/id1499441526",
-                    title: "iOS 下載",
+                    title: "App Store 下載",
                     icon: "/icons/apple.svg",
+                    theme: "app-store",
                 }]
             }
         }

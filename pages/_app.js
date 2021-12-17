@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
 
 
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Poppins:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
 
         :root{
           font-size: 12px; 
@@ -82,6 +82,9 @@ function MyApp({ Component, pageProps }) {
           flex-direction: column;
         }
 
+        .svg-stroke-main {
+          stroke: ${swatch.main};
+        }
 
         @media (max-width: 576px) { 
                   
@@ -94,10 +97,6 @@ function MyApp({ Component, pageProps }) {
             display: flex;
             flex-direction: column;
           }
-        }
-
-        .svg-stroke-main {
-          stroke: ${swatch.main};
         }
 
 

@@ -62,6 +62,9 @@ export default function ProjectBar(props) {
           color: #000;
           font-weight: 600;
           margin: 0;
+          overflow: hidden;
+          text-overflow : ellipsis;
+          white-space: nowrap;
         }
 
         .subtitle {

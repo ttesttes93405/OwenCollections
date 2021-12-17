@@ -11,8 +11,9 @@ const content = [
             link: {
                 contentType: "link",
                 link: "https://play.google.com/store/apps/details?id=com.MacacaGames.G2_ProjectE",
-                title: "Android 下載",
-                icon: "/icons/android.svg",
+                title: "Google Play 下載",
+                icon: "/icons/google-play.svg",
+                theme: "google-play",
             }
         }
     },

@@ -1,4 +1,5 @@
 import ProjectCover from "./ProjectCover";
+import swatch from "../../styles/swatch";
 import classNames from "classnames";
 
 
@@ -182,7 +183,7 @@ function RichText(props) {
         <div className="btn-container" key={Math.random()}>
           {
             links.map(link =>
-            (<a href={link.link} className={classNames("link-btn", link.theme||"default")} key={link.title} target="_blank" rel="noreferrer">
+            (<a href={link.link} className={classNames("link-btn", link.theme || "default")} key={link.title} target="_blank" rel="noreferrer">
               {link.icon ? <img src={link.icon} className="link-icon" /> : null}
               <p className="link-title">{link.title}</p>
             </a>))
@@ -190,13 +191,13 @@ function RichText(props) {
         </div>);
     },
     text: function build({ content, }) {
-      return (<p key={content}>{content}</p>);
+      return (<p key={content + Math.random()}>{content}</p>);
     },
     orderListElement: function build({ content, }) {
-      return (<li key={content}>{content}</li>);
+      return (<li key={content + Math.random()}>{content}</li>);
     },
     unorderListElement: function build({ content, }) {
-      return (<li key={content}>{content}</li>);
+      return (<li key={content + Math.random()}>{content}</li>);
     },
     orderList: function build({ elements, }) {
       return (<ol key={Math.random()}>

@@ -62,129 +62,143 @@ export default function ProjectPage(props) {
 
         <style jsx global>{`
 
-        .rich-text p, .rich-text li {
-          font-size: 1.4rem;
-          line-height: 2.4rem;
-          color: #222;
-          margin: 0 0 4px;
-          padding: 0;
-        }
+          .rich-text p, .rich-text li {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            color: #222;
+            margin: 0 0 4px;
+            padding: 0;
+          }
 
-        .rich-text ol, .rich-text ul {
-          padding: 0 0 0 24px;
-          margin: 8px 0;
-          position: relative;
-        }
-        
-        .rich-text ol {
-          list-style:none;
-        }
-
-        .rich-text ol li::marker {
-          list-style: none;
-        }
-        
-        .rich-text ol li::before {
-          content: counter(list-item) ".";
-          position: absolute;
-          left: 0px;          
-          font-size: 1.4rem;
-          line-height: 2.4rem;
-          vertical-align: middle;
-          color: #000;
-          width: 24px;
-          text-align: center;
-        }
-
-        
-        .rich-text h1, .rich-text h2, .rich-text h3 {
-          color: #111;
-          margin: 12px 0 8px;
-          padding: 0;
-          font-weight: 700;
-        }
-
-        .rich-text h1 {
-          font-size: 2.5rem;
-          line-height: 3.5rem;
-        }
-        
-        .rich-text h2 {
-          font-size: 2.25rem;
-          line-height: 3.25rem;
-        }
-        
-        .rich-text h3 {
-          font-size: 2.0rem;
-          line-height: 3.0rem;
-        }
-
-        .rich-text .space {
-          height: 18px;
-          display:inline-block;
-          width: 100%;
-        }
-
-        .rich-text .line {
-          height: 2px;
-          display:inline-block;
-          border-radius: 9999px;
-          background-color: #0001;
-          width: 30%;
-          margin: 0 35%;
-        }
-
-        .rich-text .media {
-          margin: 16px 0;
-        }
-        
-        .rich-text .btn-container {
-          display: flex;
+          .rich-text ol, .rich-text ul {
+            padding: 0 0 0 24px;
+            margin: 8px 0;
+            position: relative;
+          }
           
-          justify-content: center;
-          align-items: center;
+          .rich-text ol {
+            list-style:none;
+          }
 
-        }
-
-        .rich-text .link-btn {
-          display: flex;
+          .rich-text ol li::marker {
+            list-style: none;
+          }
           
-          justify-content: center;
-          align-items: center;
+          .rich-text ol li::before {
+            content: counter(list-item) ".";
+            position: absolute;
+            left: 0px;          
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            vertical-align: middle;
+            color: #000;
+            width: 24px;
+            text-align: center;
+          }
 
-          padding: 8px 12px;
-          margin: 0 8px;
-          background-color: ${swatch.main};
-          border-radius: 12px;
-          min-width: 140px;
-          max-width: 200px;
-        }
+          
+          .rich-text h1, .rich-text h2, .rich-text h3 {
+            color: #111;
+            margin: 12px 0 8px;
+            padding: 0;
+            font-weight: 700;
+          }
 
-        .rich-text .link-btn .link-icon {
-          margin: 0 8px 0 -8px;
-          height: 32px;
-          width: 32px;
-        }
+          .rich-text h1 {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+          }
+          
+          .rich-text h2 {
+            font-size: 2.25rem;
+            line-height: 3.25rem;
+          }
+          
+          .rich-text h3 {
+            font-size: 2.0rem;
+            line-height: 3.0rem;
+          }
 
-        .rich-text .link-btn .link-title {
-          font-size: 1.35rem;
-          text-align: center;
-          color: #fff;
-          margin: 0;
-          padding: 0;
-          height: 32px;
-          line-height: 32px;
-        }
+          .rich-text .space {
+            height: 18px;
+            display:inline-block;
+            width: 100%;
+          }
 
-        .rich-text .link-btn.github {
-          background-color: #24292f;
-        }
-        .rich-text .link-btn.github .link-title {
-          color: #fff;
-        }
+          .rich-text .line {
+            height: 2px;
+            display:inline-block;
+            border-radius: 9999px;
+            background-color: #0001;
+            width: 30%;
+            margin: 0 35%;
+          }
 
-        
+          .rich-text .media {
+            margin: 16px 0;
+          }
+          
+          .rich-text .btn-container {
+            display: flex;
+            
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          }
 
+          .rich-text .link-btn {
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+
+            padding: 8px 16px;
+            margin: 8px;
+            background-color: ${swatch.main};
+            border-radius: 12px;
+            min-width: 140px;
+            max-width: 240px;
+            box-sizing: border-box;
+          }
+
+          .rich-text .link-btn .link-icon {
+            margin: 0 8px 0 -8px;
+            height: 32px;
+            width: 32px;
+          }
+
+          .rich-text .link-btn .link-title {
+            font-size: 1.35rem;
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 32px;
+            line-height: 32px;
+          }
+
+          .rich-text .link-btn.github {
+            background-color: #24292f;
+          }
+          .rich-text .link-btn.github .link-title {
+            color: #fff;
+          }
+
+          .rich-text .link-btn.google-play {
+            background-color: #eee;
+          }
+          .rich-text .link-btn.google-play .link-title {
+            color: #555;
+          }
+
+          .rich-text .link-btn.app-store {
+            background-color: #222;
+          }
+          .rich-text .link-btn.app-store .link-title {
+            color: #fff;
+          }
+          
 
         `}</style>
 
@@ -234,12 +248,7 @@ export default function ProjectPage(props) {
           margin-bottom: 32px;
         }
 
-        .btn-container {
-          display: flex;
-          flex-direction: row;
-          margin-top: 16px;
-
-        }
+        
 
         .link-btn {
           display: flex;
@@ -296,7 +305,7 @@ export default function ProjectPage(props) {
           }
         }
 
-      `}</style>
+        `}</style>
 
       </div>
     </>

@@ -27,13 +27,13 @@ function Background() {
 
         const z = random();
         const size = (1 - z) * 40 + 60;
-        const alpha = z * 0.3 + 0.7;
+        const alpha = (1 - z) * 1;
 
 
         //const p = viewProjects[parseInt(viewProjects.length * random())];
         const p = viewProjects[index];
 
-        const x = (random() * 800 + 350) * randomSign();
+        const x = (random() * 800 + 400) * randomSign();
         const y = (random() * 400);
 
 
@@ -48,7 +48,7 @@ function Background() {
               opacity: alpha,
               transform: `translate(${x}px, ${y}px)  perspective(5000px) rotate3d(${random() * 0.5},${random() * 0.5},${random() * 0.5},${random() * 100 - 50}deg) `,
               boxShadow: `0 0 10px #0003`,
-              filter: `blur(${(1 - z) * 5 + 4}px)`,
+              filter: `blur(${z * 8 + 12}px)`,
             }} />
         );
 
@@ -76,9 +76,11 @@ function Background() {
         bottom: 0;
         right: 0;
         left: 0;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.7);
         z-index: 0;
       }
+
+
 
       @media (max-width: 576px){
 
