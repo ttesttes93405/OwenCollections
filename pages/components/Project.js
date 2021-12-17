@@ -10,8 +10,6 @@ export default function Project(props) {
     title,
     subtitle,
     cover,
-    content,
-    links,
   } = props;
 
 

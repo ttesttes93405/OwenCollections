@@ -7,7 +7,7 @@ export default function ProjectPage(props) {
   return (
     <>
       <Head>
-        <title>:O | Owen Sun</title>
+        <title>Owen Sun</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
@@ -17,15 +17,15 @@ export default function ProjectPage(props) {
 
         <div className='messagebox'>
           <h1>404</h1>
-          <p>:O</p>
           <p>找不到這個頁面</p>
 
         </div>
 
         <ProjectList
-          icon="/icons/menu.svg"
-          title="不妨看看"
-          projectType="front-end"
+          icon="/icons/notebook.svg"
+          title="其他專案"
+          projectType={["front-end", "game"]}
+          view="bar"
         />
 
       </div>
@@ -36,7 +36,7 @@ export default function ProjectPage(props) {
         text-align: center;
         padding: 50px 0 80px;
         margin: 50px 0 150px;
-        background-color: #f2f2f2;
+        background-color: #f8f8f8;
         border-radius: 16px;
       }
 

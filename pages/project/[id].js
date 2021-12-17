@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import { projectData, } from '../../data';
-import ProjectCover from "../components/ProjectCover";
 import RichText from "../components/RichText";
 import Header from "../components/Header";
+import HeadMeta from "../components/HeadMeta";
+import ProjectList from "../components/ProjectList";
 import swatch from "../../styles/swatch";
 
 export default function ProjectPage(props) {
@@ -15,18 +15,22 @@ export default function ProjectPage(props) {
     date,
     cover,
     content,
-    links,
+    type,
   } = props;
 
   return (
     <>
+
+      <HeadMeta
+        title={title + " | Owen Sun"}
+        description={subtitle}
+        image={cover.type === "img" ? cover.source : null}
+      />
+
       <Header paths={[{ title: title, icon: icon }]} />
 
       <div className="project-container">
-        <Head>
-          <title>{title} | Owen Sun</title>
-          <link rel="icon" href="/favicon.png" />
-        </Head>
+
 
         <div className="m-no-round project">
           <div className="col">
@@ -42,27 +46,20 @@ export default function ProjectPage(props) {
 
             <RichText content={content} />
 
-            {/* <ProjectCover cover={cover} />
-
-
-
-            {content.split('\n').map(c => <p className="des" key={c}>{c}</p>)}
-
-            <div className="btn-container">
-              {
-                links.map(m => (
-                  <a href={m.link} className="link-btn" key={m.title} target="_blank" rel="noreferrer">
-                    {m.icon ? <img src={m.icon} className="link-icon" /> : null}
-                    <p className="link-title">{m.title}</p>
-                  </a>
-                ))
-              }
-            </div> */}
-
           </div>
         </div>
 
-        {/* <style jsx global>{` */}
+
+        <ProjectList
+          icon="/icons/notebook.svg"
+          title="其他專案"
+          projectType={type}
+          projectData={projectData}
+          count={3}
+          view="bar"
+        />
+
+
         <style jsx global>{`
 
         .rich-text p, .rich-text li {
@@ -195,6 +192,7 @@ export default function ProjectPage(props) {
 
         .project-container {
           width: 100%;
+          margin-bottom: 100px;
         }
 
         .project {

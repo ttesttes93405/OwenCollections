@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import ProjectList from '../components/ProjectList';
 import Header from "../components/Header";
+import HeadMeta from "../components/HeadMeta";
 import { typeData } from '../../data';
 
 export default function ProjectsFrontEnd(props) {
@@ -13,12 +13,13 @@ export default function ProjectsFrontEnd(props) {
 
   return (
     <>
+      <HeadMeta
+        title={title + " | Owen Sun"}
+      />
+
       <Header />
+
       <div>
-        <Head>
-          <title>{title} | Owen Sun</title>
-          <link rel="icon" href="/favicon.png" />
-        </Head>
 
         <ProjectList
           icon={icon}

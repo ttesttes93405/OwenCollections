@@ -1,6 +1,8 @@
 
 import Project from './Project'
+import ProjectBar from './ProjectBar'
 import { projectData, } from '../../data';
+import classNames from 'classnames';
 
 function ProjectList(props) {
 
@@ -9,36 +11,40 @@ function ProjectList(props) {
     title,
     projectType,
     projectData,
+    view,
+    count,
   } = props;
 
 
+  const projectTypeList = projectType ? (Array.isArray(projectType) ? projectType : [projectType]) : [];
+
+  // console.log(projectTypeList);
 
   return (
-    <div className="project-list">
+    <div className={classNames("project-list", view)} >
 
-      {
-        icon &&
-        title &&
-        (<div className="row header">
-          <img className="icon" src={icon} />
-          <h2 className="title">{title}</h2>
-        </div>)
-      }
+      <div className="row header">
+        {icon && <img className="icon" src={icon} />}
+        {title && <h2 className="title">{title}</h2>}
+      </div>
 
       <div className="project-container">
         {
           projectData
-            .filter(p => !projectType || p.type === projectType)
-            .map(p => <Project {...p} key={p.title} />)
+            .filter(p => projectTypeList.length === 0 || projectTypeList.includes(p.type))
+            .slice(0, (count > 0) ? count : projectData.length)
+            .map(p => {
+              switch (view) {
+                case "card": return (<Project {...p} key={p.title} />);
+                case "bar": return (<ProjectBar {...p} key={p.title} />);
+                default: return (<div>{"ERROR! 未知的 view type"}</div>)
+              }
+            })
         }
       </div>
 
       <style jsx>{`
         
-        .header {
-          margin-bottom: 24px;
-        }
-
         .project-list {
           position: relative;
           display: flex;
@@ -50,18 +56,11 @@ function ProjectList(props) {
           align-items: center;
           padding-bottom: 24px;
         }
-
-        /* .project-list::before {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          right: -9999px;
-          left: -9999px;
-          content: '';
-          z-index: -1;
-          background-color: #fff;
-        } */
         
+        .project-list.card .header {
+          margin-bottom: 24px;
+        }
+
         .row {
           align-items: center;
           padding: 0 8px;
@@ -79,13 +78,10 @@ function ProjectList(props) {
           flex-grow: 1;
         }
 
-
         .project-container {
           width: 576px;
           display: grid;
           grid-template-columns: repeat(1, 1fr);
-          /*grid-column-gap: 24px;
-          grid-row-gap: 24px;*/
         }
 
         @media (max-width: 576px){
@@ -109,8 +105,10 @@ function ProjectList(props) {
 ProjectList.defaultProps = {
   icon: "",
   title: "",
-  projectType: "",
+  projectType: [],
   projectData: projectData,
+  view: "card",
+  count: -1,
 };
 
 export default ProjectList;
