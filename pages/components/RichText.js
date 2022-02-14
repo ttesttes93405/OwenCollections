@@ -44,7 +44,7 @@ function RichText(props) {
     resultGroup = h3Regex.exec(content);
     if (resultGroup) {
       return [{
-        contentType: "title",
+        contentType: "title3",
         content: resultGroup[1],
       }];
     }
@@ -53,7 +53,7 @@ function RichText(props) {
     resultGroup = h2Regex.exec(content);
     if (resultGroup) {
       return [{
-        contentType: "title",
+        contentType: "title2",
         content: resultGroup[1],
       }];
     }
@@ -62,7 +62,7 @@ function RichText(props) {
     resultGroup = h1Regex.exec(content);
     if (resultGroup) {
       return [{
-        contentType: "title",
+        contentType: "title1",
         content: resultGroup[1],
       }];
     }
@@ -171,9 +171,11 @@ function RichText(props) {
 
   const buildMethod = {
     image: function build(cover) {
-      return (<div className="media" key={cover.source}>
+      const style = cover.style || {};
+      return (<div className="media" key={cover.source} style={style}>
         <ProjectCover cover={cover} />
       </div>);
+
     },
     link: function build(link) {
 
@@ -209,8 +211,14 @@ function RichText(props) {
         {elements.map(el => buildMethod[el.contentType](el))}
       </ul>);
     },
-    title: function build({ content, }) {
+    title1: function build({ content, }) {
+      return (<h1 key={content}>{content}</h1>);
+    },
+    title2: function build({ content, }) {
       return (<h2 key={content}>{content}</h2>);
+    },
+    title3: function build({ content, }) {
+      return (<h3 key={content}>{content}</h3>);
     },
     space: function build() {
       return (<span className="space" key={Math.random()}></span>);

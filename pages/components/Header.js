@@ -11,6 +11,8 @@ function Header(props) {
   const {
     icon = "/Owen01.jpg",
     title = "OWENSUN.INFO",
+    rootPath = "/",
+    isShowType = true,
     alwaysShowTitle = true,
     paths = [],
   } = props;
@@ -43,7 +45,7 @@ function Header(props) {
       <div className="container">
 
         <div className="title-container" >
-          <Link href="/">
+          <Link href={rootPath}>
             <a className="title-path">
               <img src={icon} className="icon" />
               <p className="title">{title}</p>
@@ -78,7 +80,7 @@ function Header(props) {
             </a>
           </Link>
           {
-            typeData.map(r => {
+            isShowType && (typeData.map(r => {
               const path = `/type/${r.id}`;
               return (<Link href={path} key={r.id}>
                 <a className={classNames("route", { "route-current": isCurrentRoute(path) })}>
@@ -86,7 +88,7 @@ function Header(props) {
                   <p className="route-title">{r.title}</p>
                 </a>
               </Link>)
-            })
+            }))
           }
         </div>
       </div>

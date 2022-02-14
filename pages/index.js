@@ -12,13 +12,13 @@ function Home(props) {
       <Header alwaysShowTitle={false} />
       <div className="home">
 
+        <HeadMeta />
+
         <Head>
           <title>Owen Sun</title>
           <meta property="og:title" content="Owen Sun" />
           <link rel="icon" href="/favicon.png" />
         </Head>
-
-        <HeadMeta />
 
 
         <Intro {...props.introData} />

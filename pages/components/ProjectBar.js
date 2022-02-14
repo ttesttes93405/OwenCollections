@@ -9,14 +9,13 @@ export default function ProjectBar(props) {
     icon,
     title,
     subtitle,
+    target,
   } = props;
 
 
-  const targetPath = `/project/${id}`;
-
 
   return (
-    <Link href={targetPath} >
+    <Link href={target} >
       <a className="project">
 
         <div className="row head">

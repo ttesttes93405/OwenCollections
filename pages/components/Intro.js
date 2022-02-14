@@ -96,6 +96,7 @@ export default function Intro(props) {
             font-size: 1.35rem;
             margin: 0;
             color: #555;
+            height: 28px;
           }
 
           @media (max-width: 576px){

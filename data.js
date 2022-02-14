@@ -35,14 +35,52 @@ export const introData = {
     ]
 };
 
+
+const _25SproutData = [
+    // {
+    //     id: "25Sprout_1000website",
+    //     title: "1000 Cheng 作品集網站",
+    //     icon: "/projects/1000-cheng-icon.jpg",
+    //     date: "2021/8",
+    //     subtitle: "為動態設計師 1000 Cheng 製作的作品集網站。",
+    //     types: ["25sprout",],
+    //     cover: {
+    //         type: "img",
+    //         source: "/projects/1000-cheng.jpg",
+    //         ratio: 9 / 16,
+    //     },
+    //     content: content1000Website,
+    // },
+    // {
+    //     id: "25Sprout_sky-bandit",
+    //     title: "Sky Bandit 天空盜賊團",
+    //     icon: "/projects/SkyBandit.png",
+    //     date: "2019/6 - 2020/12",
+    //     subtitle: "於玩猴遊戲 Macaca Games 參與製作的手機遊戲。",
+    //     types: ["25sprout",],
+    //     cover: {
+    //         type: "img",
+    //         source: "https://i.ytimg.com/vi_webp/Bt4rOBArpHs/sddefault.webp",
+    //         ratio: 9 / 16,
+    //     },
+    //     cover_old: {
+    //         type: "embed",
+    //         source: "https://www.youtube.com/embed/Bt4rOBArpHs",
+    //         ratio: 9 / 16,
+    //     },
+    //     content: contentSkyBandit,
+    // },
+]
+
 export const projectData = [
+    ..._25SproutData,
     {
         id: "1000website",
         title: "1000 Cheng 作品集網站",
         icon: "/projects/1000-cheng-icon.jpg",
         date: "2021/8",
         subtitle: "為動態設計師 1000 Cheng 製作的作品集網站。",
-        type: "front-end",
+        types: ["front-end", "25sprout",],
         cover: {
             type: "img",
             source: "/projects/1000-cheng.jpg",
@@ -56,7 +94,7 @@ export const projectData = [
         icon: "/projects/LiteraryDessert.svg",
         date: "2016/7 - 2016/8",
         subtitle: "大學時期喜歡寫一些短篇故事，不知不覺篇數累積了不少。\n畢業後，便用業餘時間製作網站，讓人閱讀與收藏這些故事。",
-        type: "front-end",
+        types: ["front-end",],
         cover: {
             type: "img",
             source: "/projects/LiteraryDessert.png",
@@ -70,7 +108,7 @@ export const projectData = [
         icon: "/projects/G2I.webp",
         date: "2021/4",
         subtitle: "於玩猴遊戲 Macaca Games 參與製作的 Hyper-casual game，約花兩週製作。",
-        type: "game",
+        types: ["game",],
         cover: {
             type: "mp4",
             source: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364397/OwenCollection/Fall%20A%20Sleep/Fall_A_Sleep_Video.mp4",
@@ -84,7 +122,7 @@ export const projectData = [
         icon: "/projects/G2E.webp",
         date: "2021/2",
         subtitle: "於玩猴遊戲 Macaca Games 參與製作的 Hyper-casual game，約花兩週製作。",
-        type: "game",
+        types: ["game",],
         cover: {
             type: "mp4",
             source: "https://res.cloudinary.com/dclfdbu9c/video/upload/v1626364392/OwenCollection/Sandwich%20101/Sanwich_101_Video.mp4",
@@ -98,7 +136,7 @@ export const projectData = [
         icon: "/projects/SkyBandit.png",
         date: "2019/6 - 2020/12",
         subtitle: "於玩猴遊戲 Macaca Games 參與製作的手機遊戲。",
-        type: "game",
+        types: ["game", "25sprout",],
         cover: {
             type: "img",
             source: "https://i.ytimg.com/vi_webp/Bt4rOBArpHs/sddefault.webp",
@@ -116,7 +154,7 @@ export const projectData = [
         title: "Macaca Games 技術企劃",
         icon: "/projects/CloudMacaca.png",
         date: "2019/6 -",
-        type: "experence",
+        types: ["experence",],
         cover: {},
         content: "於玩猴遊戲 Macaca Games 任職企劃，參與「Sky Bandit 天空盜賊團」開發，同時支援寫點code，但是寫的code多到不太確定自己該叫企劃還是程式。",
         links: []
@@ -126,7 +164,7 @@ export const projectData = [
         title: "傳奇網路 企劃",
         icon: "/projects/x-legend.jpg",
         subtitle: "2017/8 - 2019/5",
-        type: "experence",
+        types: ["experence",],
         cover: {},
         content: "從2017年於傳奇任職企劃，參與以Unity開發的手遊專案(未上市)，主要負責系統與介面，規劃功能、撰寫相關文件並與程式溝通。",
         links: []
@@ -136,7 +174,7 @@ export const projectData = [
         title: "GooglePlay 築夢台灣專區",
         icon: "/projects/GooglePlay.jpg",
         date: "2018/1",
-        type: "experence",
+        types: ["experence",],
         cover: {
             type: "embed",
             source: "https://www.youtube-nocookie.com/embed/Quxd9ydNG4Q?rel=0&amp;showinfo=0",
@@ -151,7 +189,7 @@ export const projectData = [
         icon: "/projects/TheHole.svg",
         date: "2018/4",
         subtitle: "於 2018 Kuso Game Jam 製作，是會讓人強迫症發作的小遊戲。",
-        type: "game",
+        types: ["game",],
         cover: {
             type: "embed",
             source: "https://www.youtube-nocookie.com/embed/GNgrLjJVaRU?rel=0&amp;showinfo=0",
@@ -164,7 +202,7 @@ export const projectData = [
         title: "DROOM 夢門",
         date: "2016/5 -",
         subtitle: "與另一伙伴一同製作的手機遊戲，為大學畢業製作作品。",
-        type: "game",
+        types: ["game",],
         icon: "/projects/DROOM.png",
         cover: {
             type: "img",
@@ -177,7 +215,7 @@ export const projectData = [
         id: "bean",
         title: "BEAN",
         date: "2015/9 - 2016/1",
-        type: "game",
+        types: ["game",],
         subtitle: "一人製作的手機益智遊戲，設計在等公車、蹲廁所時都能輕易的遊玩。",
         icon: "/projects/BEAN.png",
         cover: {
@@ -186,7 +224,7 @@ export const projectData = [
             ratio: 1 / 1,
         },
         content: contentBean,
-    }
+    },
 
 ];
 

@@ -13,12 +13,22 @@ function ProjectList(props) {
     projectData,
     view,
     count,
+    target,
   } = props;
 
 
   const projectTypeList = projectType ? (Array.isArray(projectType) ? projectType : [projectType]) : [];
 
   // console.log(projectTypeList);
+
+  const interactive = (arr1, arr2) => {
+
+    const result = arr1.filter((e) => {
+      return arr2.indexOf(e) > -1
+    })
+
+    return result;
+  }
 
   return (
     <div className={classNames("project-list", view)} >
@@ -31,12 +41,13 @@ function ProjectList(props) {
       <div className="project-container">
         {
           projectData
-            .filter(p => projectTypeList.length === 0 || projectTypeList.includes(p.type))
+            .filter(p => projectTypeList.length === 0 || interactive(projectTypeList, p.types).length > 0)
             .slice(0, (count > 0) ? count : projectData.length)
             .map(p => {
+              const t = `${target || 'project'}/${p.id}`;
               switch (view) {
-                case "card": return (<Project {...p} key={p.title} />);
-                case "bar": return (<ProjectBar {...p} key={p.title} />);
+                case "card": return (<Project {...p} key={p.title} target={t} />);
+                case "bar": return (<ProjectBar {...p} key={p.title} target={t} />);
                 default: return (<div>{"ERROR! 未知的 view type"}</div>)
               }
             })

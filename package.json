@@ -8,7 +8,7 @@
     "url": "https://owensun.info/"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 30678",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

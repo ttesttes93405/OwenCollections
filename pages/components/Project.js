@@ -10,15 +10,15 @@ export default function Project(props) {
     title,
     subtitle,
     cover,
+    target,
   } = props;
 
 
-  const targetPath = `/project/${id}`;
   const btnText = "更多內容";
 
   const forcePathCover = {
     ...cover,
-    link: targetPath,
+    link: target,
     linkTarget: "_self",
   };
 
@@ -39,7 +39,7 @@ export default function Project(props) {
         {subtitle ? (<p className="subtitle">{subtitle}</p>) : null}
 
         <div className="btn-container">
-          <a href={targetPath} className="link-btn" key={btnText} rel="noreferrer">
+          <a href={target} className="link-btn" key={btnText} rel="noreferrer">
             <p className="link-title">{btnText}</p>
             <img src="/icons/arrow-right.svg" className="link-icon" />
           </a>

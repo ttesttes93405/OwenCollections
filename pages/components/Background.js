@@ -12,7 +12,7 @@ function seed(a) {
 
 function Background() {
 
-  const viewProjects = projectData.filter(p => p.type === "game" || p.type === "front-end");
+  const viewProjects = projectData.filter(p => p.types.includes("game") || p.types.includes("front-end"));
   const times = viewProjects.length;
   const data = [...Array(times).keys()];
 

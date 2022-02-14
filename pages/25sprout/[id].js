@@ -28,7 +28,10 @@ export default function ProjectPage(props) {
       />
 
       <Header
+        icon='/Owen02.jpg'
         paths={[{ title: title, icon: icon }]}
+        rootPath={'/25sprout-portfolio'}
+        isShowType={false}
       />
 
       <div className="project-container">
@@ -52,14 +55,14 @@ export default function ProjectPage(props) {
         </div>
 
 
-        <ProjectList
+        {/* <ProjectList
           icon="/icons/notebook.svg"
           title="其他專案"
-          projectType={types}
+          projectType={type}
           projectData={projectData}
           count={3}
           view="bar"
-        />
+        /> */}
 
 
         <style jsx global>{`
@@ -322,7 +325,9 @@ export function getStaticProps({ params }) {
 
 export function getStaticPaths() {
 
-  const projectPaths = projectData.map(p => `/project/${p.id}`);
+  const projectPaths = projectData
+    .filter(p => p.types.includes('25sprout'))
+    .map(p => `/25sprout/${p.id}`);
 
   return {
     paths: projectPaths,
