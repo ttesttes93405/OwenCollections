@@ -187,4 +187,5 @@ Project.defaultProps = {
   cover: "",
   content: "",
   links: [],
+  target: "",
 };

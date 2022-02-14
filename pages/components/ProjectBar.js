@@ -103,4 +103,5 @@ ProjectBar.defaultProps = {
   icon: "",
   title: "",
   subtitle: "",
+  target: "",
 };
