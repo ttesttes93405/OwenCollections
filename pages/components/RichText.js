@@ -226,6 +226,10 @@ function RichText(props) {
     line: function build() {
       return (<span className="line" key={Math.random()}></span>);
     },
+    code: function build({ content, }) {
+      console.log(content)
+      return (<pre key={content}><code>{content}</code></pre>);
+    }
   }
 
   const result = [];

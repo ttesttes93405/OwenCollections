@@ -140,6 +140,17 @@ export default function ProjectPage(props) {
             margin: 16px 0;
           }
           
+          .rich-text code {
+            display: block;
+            margin: 16px 0;
+            padding: 16px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-family: "Inconsolata", "Menlo", "Consolas", monospace;
+            color: #222;
+          }
+          
           .rich-text .btn-container {
             display: flex;
             

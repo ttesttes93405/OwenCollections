@@ -6,6 +6,7 @@ import contentSkyBandit from './contents/sky-bandit';
 import contentTheHole from './contents/the-hole';
 import contentDroom from './contents/droom';
 import contentBean from './contents/bean';
+import contentDrafty from './contents/drafty';
 
 export const typeData = [
     {
@@ -87,6 +88,20 @@ export const projectData = [
             ratio: 9 / 16,
         },
         content: content1000Website,
+    },
+    {
+        id: "drafty",
+        title: "Drafty 輕量筆記",
+        icon: "/projects/Drafty.svg",
+        date: "2022/2",
+        subtitle: "Drafty 是個簡單輕量的筆記 Web App，可以對筆記中的內容做簡單的格式化，也能新增多個不同的筆記。",
+        types: ["front-end", "25sprout",],
+        cover: {
+            type: "img",
+            source: "/projects/Drafty.png",
+            ratio: 9 / 16,
+        },
+        content: contentDrafty,
     },
     {
         id: "literary-dessert",
