@@ -14,8 +14,8 @@ function Home25Sprout(props) {
       ``,
       `在遊戲業時，我擔任程式從零開始建構一個遊戲，也有與美術和企劃溝通、制定相關規格的經驗。`,
       `遊戲開發期間也製作一個轉表工具，把複雜多層的資料填寫，變得可以用定義好的表格快速輕鬆的填寫。`,
-      `因為對於前端很有興趣，想透過實習學習前端工程師在實務上的各種眉角。`,
       ``,
+      `因為對於前端很有興趣，想透過實習學習前端工程師在實務上的各種眉角。`,
       `過去的程式開發經驗，能幫助我更快的理解前端開發的新知識，希望這些特質也能為你們帶來幫助。`,
     ],
     picture: '/Owen02.jpg',
@@ -37,7 +37,7 @@ function Home25Sprout(props) {
         <HeadMeta />
 
         <Head>
-          <title>Owen Sun 25sprout portfolio</title>
+          <title>孫宇 25sprout 作品集 | Owen Sun</title>
           <meta property="og:title" content="Owen Sun" />
           <link rel="icon" href="/favicon.png" />
         </Head>

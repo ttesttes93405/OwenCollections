@@ -5,7 +5,7 @@ const content = [
             cover: {
                 contentType: "image",
                 type: "img",
-                source: "/projects/LiteraryDessert.png",
+                source: "/projects/LiteraryDessert.jpg",
                 link: "https://ttesttes93405.github.io/LiteraryDessert/index.html",
                 ratio: 9 / 16,
             },

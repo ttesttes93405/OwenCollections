@@ -5,7 +5,7 @@ const content = [
             cover: {
                 contentType: "image",
                 type: "img",
-                source: "/projects/Drafty.png",
+                source: "/projects/Drafty.jpg",
                 link: "https://drafty-xi.vercel.app/",
                 ratio: 9 / 16,
             },
@@ -85,8 +85,9 @@ const content = [
 
 
     ### 儲存
-    筆記透過 localStorage 來儲存，進入 Web App 時，會先從 localStorage 讀取資料。
-    在筆記新增、更新、刪除時，會同步更新 localStorage 的對應資料。
+    到目前為止，Drafty 都運作得不錯，但因為編輯的內容是存在記憶體，離開頁面後就消失了。
+    接著便是將編輯內容儲存下來，我透過 localStorage 來儲存，剛進入頁面，會先從 localStorage 讀取資料。
+    接著在筆記新增、更新、刪除時，會同步更新 localStorage 的對應資料。
 
     ---
 

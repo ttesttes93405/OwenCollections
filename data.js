@@ -98,7 +98,7 @@ export const projectData = [
         types: ["front-end", "25sprout",],
         cover: {
             type: "img",
-            source: "/projects/Drafty.png",
+            source: "/projects/Drafty.jpg",
             ratio: 9 / 16,
         },
         content: contentDrafty,
@@ -112,7 +112,7 @@ export const projectData = [
         types: ["front-end",],
         cover: {
             type: "img",
-            source: "/projects/LiteraryDessert.png",
+            source: "/projects/LiteraryDessert.jpg",
             ratio: 9 / 16,
         },
         content: contentLiteraryDessert,
