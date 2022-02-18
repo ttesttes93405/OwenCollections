@@ -73,7 +73,7 @@ function Header(props) {
         <div
           className={classNames("route-container", { "show-route": showRouteMenu })}
           onClick={() => UseShowRouteMenu(!showRouteMenu)}>
-          <Link href="/" key="home">
+          <Link href={rootPath} key="home">
             <a className={classNames("home", "route", { "route-current": isCurrentRoute("/") })}>
               <img src="/icons/home.svg" className="route-icon" />
               <p className="route-title">首頁</p>

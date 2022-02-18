@@ -25,7 +25,7 @@ export default function Intro(props) {
       </div>
 
       <div className="content-container">
-        {content.map(c => (<p className="content" key={c}>{c}</p>))}
+        {content.map((c, i) => (<p className="content" key={i}>{c}</p>))}
       </div>
 
       <style jsx>{`
