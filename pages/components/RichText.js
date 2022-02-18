@@ -174,6 +174,7 @@ function RichText(props) {
       const style = cover.style || {};
       return (<div className="media" key={cover.source} style={style}>
         <ProjectCover cover={cover} />
+        {cover.caption && (<p className="caption">{cover.caption}</p>)}
       </div>);
 
     },
@@ -227,7 +228,6 @@ function RichText(props) {
       return (<span className="line" key={Math.random()}></span>);
     },
     code: function build({ content, }) {
-      console.log(content)
       return (<pre key={content}><code>{content}</code></pre>);
     }
   }

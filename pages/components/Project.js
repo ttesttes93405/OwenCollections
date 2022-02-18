@@ -14,7 +14,7 @@ export default function Project(props) {
   } = props;
 
 
-  const btnText = "更多內容";
+  const btnText = "閱讀內文";
 
   const forcePathCover = {
     ...cover,

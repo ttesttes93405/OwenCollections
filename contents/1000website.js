@@ -27,7 +27,7 @@ const content = [
     `
     為動態設計師 1000 Cheng 製作的作品集網站。    
     {{cover}}
-    以 React.js + Next.js 製作，以 SSG (Static Side Generation) 產出靜態網站。網站佈署在 GitHub Page，透過 GitHub Action，在 push commit 時自動化建置與發佈。
+    以 React + Next.js 製作，以 SSG (Static Side Generation) 產出靜態網站。網站佈署在 GitHub Page，透過 GitHub Action，在 push commit 時自動化建置與發佈。
 
     ---
 

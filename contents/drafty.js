@@ -1,3 +1,14 @@
+const code = 
+`const styleMap = {
+  CODE: {
+    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+    fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
+    borderRadius: 4,
+    fontSize: 16,
+    padding: 4,
+  },
+}`;
+
 const content = [
     {
         contentType: "references",
@@ -9,9 +20,20 @@ const content = [
                 link: "https://drafty-xi.vercel.app/",
                 ratio: 9 / 16,
             },
+            pic2: {
+                contentType: "image",
+                type: "img",
+                source: "/projects/Drafty-02.png",
+                ratio: 103 / 658,
+            },
             link: {
                 contentType: "link",
                 links: [{
+                    link: "https://github.com/ttesttes93405/drafty",
+                    title: "GitHub",
+                    icon: "/icons/github.png",
+                    theme: "github"
+                },{
                     link: "https://drafty-xi.vercel.app/",
                     title: "前往 Drafty",
                     icon: "",
@@ -19,16 +41,7 @@ const content = [
             },
             code1: {
                 contentType: "code",
-                content:
-                    `const styleMap = {
-    CODE: {
-        backgroundColor: 'rgba(0, 0, 0, 0.05)',
-        fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
-        borderRadius: 4,
-        fontSize: 16,
-        padding: 4,
-    },
-}`,
+                content: code,
             }
         }
     },
@@ -56,13 +69,13 @@ const content = [
     ### 筆記
     透過文件初步了解 Draft.js 後，選定幾個基本樣式，照著文件和範例將需要的功能做好。
     選定的基本樣式有以下：
-
+    {{pic2}}
     區塊樣式：
     - 標題1 (h1)
     - 標題2 (h2)
     - 標題3 (h3)
-    - 有序清單 (ol)
     - 無序清單 (ul)
+    - 有序清單 (ol)
     - code 區塊 (code)
 
     行內樣式：
@@ -79,23 +92,30 @@ const content = [
 
     ### 筆記×N
     如果只有一則筆記，上面的 Rich Text Editor 處理完就結束了，但我們需要能夠編輯多則筆記。
-    我將目前筆記的 id 記在 State 中，只要知道目前選擇的筆記 id，並讓 Rich Text Editor 顯示該 id 的筆記內容即可。
+    我將目前筆記的 id 記在 State 中，只要知道目前選擇的筆記，並讓 Rich Text Editor 顯示該筆記內容即可。
     在左方的筆記清單點擊各個筆記，會更動 State 中的當前筆記 id ，並重新渲染 Rich Text Editor 的顯示內容。
-    有個需要注意的地方：切換的時候要儲存前一個筆記的內容，避免在切換時遺失前一份筆記的更動，這樣在體驗上感受較好。
+    
+    在製作這個部分時，有個需要注意的地方：切換筆記的時候，要先儲存前一個筆記，避免在切換時遺失前一份筆記的更動，這樣在體驗上感受較好。
 
 
-    ### 儲存
-    到目前為止，Drafty 都運作得不錯，但因為編輯的內容是存在記憶體，離開頁面後就消失了。
-    接著便是將編輯內容儲存下來，我透過 localStorage 來儲存，剛進入頁面，會先從 localStorage 讀取資料。
-    接著在筆記新增、更新、刪除時，會同步更新 localStorage 的對應資料。
+    ### 持久儲存
+    到目前為止，Drafty 都運作得不錯，不過因為編輯的內容是存在記憶體，離開頁面後就消失了。接下來要讓筆記的內容能夠持久儲存，我選擇透過 localStorage 來儲存。
+    在剛進入頁面的時候，會先從 localStorage 讀取資料。接著在筆記新增、更新、刪除時，同步更新 localStorage 的對應資料，我們編輯的筆記內容就能安全地儲存下來。
 
     ---
 
-    如果你想試試 Drafty 的話，就點擊下面按鈕吧！
-    請注意，這個 Web App 尚未完全支援 Mobile，請使用桌面板瀏覽器瀏覽。
+    ### 最後
+    一開始選擇筆記軟體這個題目，覺得最頭大的部分應該是 Rich Text Editor，沒想到很快就找到完整且成熟的套件來使用。
+    反而是覺得不難的切換筆記，卻莫名腦袋卡住，一直想不到怎麼儲存前一個筆記，最後睡了個覺醒來就迎刃而解 🤣。
+    
 
+    如果你想試試 Drafty 的話，用力按下「前往 Drafty」！
+        
+    
     {{link}}
+    
 
+    ⚠ 這個 Web App 尚未完全支援 Mobile，請使用桌面板瀏覽器瀏覽。
     `,
 
 

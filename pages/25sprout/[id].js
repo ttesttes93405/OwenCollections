@@ -152,6 +152,12 @@ export default function ProjectPage(props) {
             font-size: 1.2rem;
             font-family: "Inconsolata", "Menlo", "Consolas", monospace;
             color: #222;
+          }
+
+          .rich-text .caption {
+            font-size: 1.25rem;
+            color: #888;
+            margin: 4px 0 0;
           }          
           
           .rich-text .btn-container {
