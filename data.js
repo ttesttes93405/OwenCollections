@@ -76,20 +76,6 @@ const _25SproutData = [
 export const projectData = [
     ..._25SproutData,
     {
-        id: "1000website",
-        title: "1000 Cheng 作品集網站",
-        icon: "/projects/1000-cheng-icon.jpg",
-        date: "2021/8",
-        subtitle: "為動態設計師 1000 Cheng 製作的作品集網站，以 React + Next.js 製作。",
-        types: ["front-end", "25sprout",],
-        cover: {
-            type: "img",
-            source: "/projects/1000-cheng.jpg",
-            ratio: 9 / 16,
-        },
-        content: content1000Website,
-    },
-    {
         id: "drafty",
         title: "Drafty 輕量筆記",
         icon: "/projects/Drafty.svg",
@@ -103,6 +89,20 @@ export const projectData = [
         },
         content: contentDrafty,
     },
+    {
+        id: "1000website",
+        title: "1000 Cheng 作品集網站",
+        icon: "/projects/1000-cheng-icon.jpg",
+        date: "2021/8",
+        subtitle: "為動態設計師 1000 Cheng 製作的作品集網站，以 React + Next.js 製作。",
+        types: ["front-end", "25sprout",],
+        cover: {
+            type: "img",
+            source: "/projects/1000-cheng.jpg",
+            ratio: 9 / 16,
+        },
+        content: content1000Website,
+    },    
     {
         id: "literary-dessert",
         title: "點心故事 Literary Dessert",
