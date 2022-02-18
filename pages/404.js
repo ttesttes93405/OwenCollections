@@ -26,6 +26,7 @@ export default function ProjectPage(props) {
           title="其他專案"
           projectType={["front-end", "game"]}
           view="bar"
+          target="/project"
         />
 
       </div>

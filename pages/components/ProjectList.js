@@ -44,7 +44,7 @@ function ProjectList(props) {
             .filter(p => projectTypeList.length === 0 || interactive(projectTypeList, p.types).length > 0)
             .slice(0, (count > 0) ? count : projectData.length)
             .map(p => {
-              const t = `${target || 'project'}/${p.id}`;
+              const t = `${target}/${p.id}`;
               switch (view) {
                 case "card": return (<Project {...p} key={p.title} target={t} />);
                 case "bar": return (<ProjectBar {...p} key={p.title} target={t} />);
@@ -120,6 +120,7 @@ ProjectList.defaultProps = {
   projectData: projectData,
   view: "card",
   count: -1,
+  target: "/project",
 };
 
 export default ProjectList;

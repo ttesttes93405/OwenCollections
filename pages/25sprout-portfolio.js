@@ -49,8 +49,8 @@ function Home25Sprout(props) {
         <ProjectList
           // icon="/icons/code.svg"
           // title="前端"
-          target="25sprout"
           projectType="25sprout"
+          target="/25sprout"
         />
 
       </div>
