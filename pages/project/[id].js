@@ -40,7 +40,7 @@ export default function ProjectPage(props) {
             <div className="head">
               <img className="icon" src={icon} />
               <div className="col">
-                <h2 className="title">{title}</h2>
+                <h1 className="title">{title}</h1>
                 {<p className="subtitle">{date || ""}</p>}
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function ProjectPage(props) {
             margin: 8px 0;
             position: relative;
           }
-          
+
           .rich-text ol {
             list-style:none;
           }
@@ -85,7 +85,7 @@ export default function ProjectPage(props) {
           .rich-text ol li::marker {
             list-style: none;
           }
-          
+
           .rich-text ol li::before {
             content: counter(list-item) ".";
             position: absolute;
@@ -98,7 +98,7 @@ export default function ProjectPage(props) {
             text-align: center;
           }
 
-          
+
           .rich-text h1, .rich-text h2, .rich-text h3 {
             color: #111;
             margin: 12px 0 8px;
@@ -110,12 +110,12 @@ export default function ProjectPage(props) {
             font-size: 2.5rem;
             line-height: 3.5rem;
           }
-          
+
           .rich-text h2 {
             font-size: 2.25rem;
             line-height: 3.25rem;
           }
-          
+
           .rich-text h3 {
             font-size: 2.0rem;
             line-height: 3.0rem;
@@ -139,7 +139,7 @@ export default function ProjectPage(props) {
           .rich-text .media {
             margin: 16px 0;
           }
-          
+
           .rich-text code {
             display: block;
             margin: 16px 0;
@@ -149,6 +149,7 @@ export default function ProjectPage(props) {
             font-size: 1.2rem;
             font-family: "Inconsolata", "Menlo", "Consolas", monospace;
             color: #222;
+            overflow-x: scroll;
           }
 
           .rich-text .caption {
@@ -156,7 +157,7 @@ export default function ProjectPage(props) {
             color: #888;
             margin: 4px 0 0;
           }          
-          
+
           .rich-text .btn-container {
             display: flex;
             
@@ -179,12 +180,22 @@ export default function ProjectPage(props) {
             min-width: 140px;
             max-width: 240px;
             box-sizing: border-box;
+            box-shadow: 0 0 0 0 ${swatch.mainHover0};
+
+            transition: box-shadow 0.3s;
+          }
+          .rich-text .link-btn:hover {
+            box-shadow: 0 0 0 4px ${swatch.mainHover};
           }
 
           .rich-text .link-btn .link-icon {
             margin: 0 8px 0 -8px;
             height: 32px;
             width: 32px;
+          }
+
+          .rich-text .link-btn .link-right-icon {
+            margin: 0 -8px 0 8px;
           }
 
           .rich-text .link-btn .link-title {
@@ -197,132 +208,149 @@ export default function ProjectPage(props) {
             line-height: 32px;
           }
 
+
           .rich-text .link-btn.github {
             background-color: #24292f;
+            box-shadow: 0 0 0 0 rgba(36, 41, 47, 0);
+          }
+          .rich-text .link-btn.github:hover {
+            box-shadow: 0 0 0 4px rgba(36, 41, 47, 0.2);
           }
           .rich-text .link-btn.github .link-title {
             color: #fff;
           }
 
+
           .rich-text .link-btn.google-play {
             background-color: #eee;
+            box-shadow: 0 0 0 0 rgba(65, 229, 98, 0);
+          }
+          .rich-text .link-btn.google-play:hover {
+            box-shadow: 0 0 0 4px rgba(65, 229, 98, 0.4);
           }
           .rich-text .link-btn.google-play .link-title {
             color: #555;
           }
 
+
           .rich-text .link-btn.app-store {
             background-color: #222;
+            box-shadow: 0 0 0 0 rgba(34, 34, 34, 0);
+          }
+          .rich-text .link-btn.app-store:hover {
+            box-shadow: 0 0 0 4px rgba(34, 34, 34, 0.2);
           }
           .rich-text .link-btn.app-store .link-title {
             color: #fff;
           }
-          
+
 
         `}</style>
 
         <style jsx>{`
 
-        .project-container {
-          width: 100%;
-          margin-bottom: 100px;
-        }
-
-        .project {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          /* background-color: #fff; */
-          padding: 24px 16px 48px;
-          border-radius: 16px;
-          
-        }
-
-        .icon {
-          width: 64px;
-          height: 64px;
-          border-radius: 16px;
-          margin-bottom: 12px;
-          box-shadow: 0 0 8px #00000018;
-        }
-
-        .title {
-          font-size: 2.5rem;
-          color: #000;
-          font-weight: 700;
-          margin: 0;
-        }
-
-        .subtitle {
-          font-size: 1.2rem;
-          color: #000;
-          opacity: 0.5;
-          margin: 4px 0 8px;
-
-          
-        }
-        
-        .head {
-          align-items: center;
-          margin-bottom: 32px;
-        }
-
-        
-
-        .link-btn {
-          display: flex;
-          flex-direction: row;
-          height: 50px;
-          background-color: ${swatch.main};
-          border-radius: 12px;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          margin-right: 16px;
-          transition: background-color 0.15s;
-        }
-        .link-btn:last-child {
-          margin-right: 0;
-        }
-
-        .link-btn:hover {
-          background-color: ${swatch.mainHover};
-        }
-
-        .link-icon {
-          width: 24px;
-          height: 24px;
-          margin-right: 8px;
-          margin-left: -16px;
-        }
-
-        .link-title {
-          font-size: 1.3rem;
-          color: ${swatch.textInMain};
-        }
-
-        @media (min-width: 576px){
-
           .project-container {
-            width: 576px;
-          }
-
-          .row {
-            padding: 0 16px;
+            width: 100%;
+            margin-bottom: 100px;
           }
 
           .project {
-            padding: 48px 0 100px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* background-color: #fff; */
+            padding: 24px 16px 48px;
+            border-radius: 16px;
+
           }
 
-          .btn-container {
-            justify-content: flex-end;
+          .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 0 8px #00000018;
           }
+
+          .title {
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: 700;
+            margin: 0;
+          }
+
+          .subtitle {
+            font-size: 1.2rem;
+            color: #000;
+            opacity: 0.5;
+            margin: 4px 0 8px;
+
+
+          }
+
+          .head {
+            align-items: center;
+            margin-bottom: 32px;
+          }
+
+
 
           .link-btn {
-            width: 180px;
+            display: flex;
+            flex-direction: row;
+            height: 50px;
+            background-color: ${swatch.main};
+            border-radius: 12px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: 0 0 0 0 ${swatch.mainHover0};
+
+            transition: background-color 0.15s, box-shadow 0.3s;
           }
-        }
+          .link-btn:last-child {
+            margin-right: 0;
+          }
+
+          .link-btn:hover {
+            box-shadow: 0 0 0 4px ${swatch.mainHover};
+          }
+
+          .link-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            margin-left: -16px;
+          }
+
+          .link-title {
+            font-size: 1.3rem;
+            color: ${swatch.textInMain};
+          }
+
+          @media (min-width: 576px){
+
+            .project-container {
+              width: 576px;
+            }
+
+            .row {
+              padding: 0 16px;
+            }
+
+            .project {
+              padding: 48px 0 100px;
+            }
+
+            .btn-container {
+              justify-content: flex-end;
+            }
+
+            .link-btn {
+              width: 180px;
+            }
+          }
 
         `}</style>
 

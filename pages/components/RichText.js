@@ -189,6 +189,7 @@ function RichText(props) {
             (<a href={link.link} className={classNames("link-btn", link.theme || "default")} key={link.title} target="_blank" rel="noreferrer">
               {link.icon ? <img src={link.icon} className="link-icon" /> : null}
               <p className="link-title">{link.title}</p>
+              {link.rightIcon ? <img src={link.rightIcon} className="link-icon link-right-icon" /> : null}
             </a>))
           }
         </div>);

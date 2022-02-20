@@ -19,7 +19,8 @@ const content = [
                 }, {
                     link: "https://1000cheng.cc/",
                     title: "前往網站",
-                    icon: "",
+                    // icon: "/projects/1000-cheng-icon.jpg",
+                    rightIcon: "/icons/external-link.svg",
                 },]
             },
         }

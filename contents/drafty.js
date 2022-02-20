@@ -26,6 +26,14 @@ const content = [
                 source: "/projects/Drafty-02.png",
                 ratio: 103 / 658,
             },
+            pic3: {
+                contentType: "image",
+                type: "img",
+                source: "/projects/Drafty-03.jpg",
+                link: "https://drafty-xi.vercel.app/",
+                ratio: 9 / 16,
+                caption: "Drafty 的成品頁面。",
+            },
             link: {
                 contentType: "link",
                 links: [{
@@ -37,6 +45,7 @@ const content = [
                     link: "https://drafty-xi.vercel.app/",
                     title: "前往 Drafty",
                     icon: "",
+                    rightIcon: "/icons/external-link.svg",
                 },]
             },
             code1: {
@@ -46,11 +55,13 @@ const content = [
         }
     },
     `
-    Drafty 是個簡單輕量的筆記 Web App，可以對筆記中的內容做簡單的格式化，也能新增多個不同的筆記。
-
     {{cover}}
 
-    製作 Drafty 的緣由，是自己在學習 React 一段時間後，想找些 Side Project 來做，剛好找到六角學院前幾年舉辦的精神時光屋。精神時光屋有十個關卡，我挑選了第九關－筆記軟體來製作。
+    Drafty 是個簡單輕量的筆記 Web App，可以對筆記中的內容做簡單的格式化，也能新增多個不同的筆記。
+
+    {{pic3}}
+    製作 Drafty 的緣由，是自己在學習 React 一段時間後，想找些 Side Project 來做，剛好找到六角學院前幾年舉辦的精神時光屋，他有現成的題目與情境可供練習。
+    精神時光屋有十個關卡，我挑選了第九關－筆記軟體來製作。
 
     ---
 
@@ -91,7 +102,7 @@ const content = [
     {{code1}}
 
     ### 筆記×N
-    如果只有一則筆記，上面的 Rich Text Editor 處理完就結束了，但我們需要能夠編輯多則筆記。
+    如果只有一則筆記，上面的 Rich Text Editor 處理完就結束了，但我們需要編輯多則筆記。
     我將目前筆記的 id 記在 State 中，只要知道目前選擇的筆記，並讓 Rich Text Editor 顯示該筆記內容即可。
     在左方的筆記清單點擊各個筆記，會更動 State 中的當前筆記 id ，並重新渲染 Rich Text Editor 的顯示內容。
     
@@ -115,7 +126,7 @@ const content = [
     {{link}}
     
 
-    ⚠ 這個 Web App 尚未完全支援 Mobile，請使用桌面板瀏覽器瀏覽。
+    ⚠ 由於 Draft.js 尚未完全支援 Mobile，請使用桌面板瀏覽器瀏覽。
     `,
 
 

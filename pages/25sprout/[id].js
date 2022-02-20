@@ -43,7 +43,7 @@ export default function ProjectPage(props) {
             <div className="head">
               <img className="icon" src={icon} />
               <div className="col">
-                <h2 className="title">{title}</h2>
+                <h1 className="title">{title}</h1>
                 {<p className="subtitle">{date || ""}</p>}
               </div>
             </div>
@@ -152,6 +152,7 @@ export default function ProjectPage(props) {
             font-size: 1.2rem;
             font-family: "Inconsolata", "Menlo", "Consolas", monospace;
             color: #222;
+            overflow-x: scroll;
           }
 
           .rich-text .caption {
@@ -182,12 +183,22 @@ export default function ProjectPage(props) {
             min-width: 140px;
             max-width: 240px;
             box-sizing: border-box;
+            box-shadow: 0 0 0 0 ${swatch.mainHover0};
+
+            transition: box-shadow 0.3s;
+          }
+          .rich-text .link-btn:hover {
+            box-shadow: 0 0 0 4px ${swatch.mainHover};
           }
 
           .rich-text .link-btn .link-icon {
             margin: 0 8px 0 -8px;
             height: 32px;
             width: 32px;
+          }
+
+          .rich-text .link-btn .link-right-icon {
+            margin: 0 -8px 0 8px;
           }
 
           .rich-text .link-btn .link-title {
@@ -200,22 +211,37 @@ export default function ProjectPage(props) {
             line-height: 32px;
           }
 
+
           .rich-text .link-btn.github {
             background-color: #24292f;
+            box-shadow: 0 0 0 0 rgba(36, 41, 47, 0);
+          }
+          .rich-text .link-btn.github:hover {
+            box-shadow: 0 0 0 4px rgba(36, 41, 47, 0.2);
           }
           .rich-text .link-btn.github .link-title {
             color: #fff;
           }
 
+
           .rich-text .link-btn.google-play {
             background-color: #eee;
+            box-shadow: 0 0 0 0 rgba(200, 200, 200, 0);
+          }
+          .rich-text .link-btn.google-play:hover {
+            box-shadow: 0 0 0 4px rgba(200, 200, 200, 0.4);
           }
           .rich-text .link-btn.google-play .link-title {
             color: #555;
           }
 
+
           .rich-text .link-btn.app-store {
             background-color: #222;
+            box-shadow: 0 0 0 0 rgba(34, 34, 34, 0);
+          }
+          .rich-text .link-btn.app-store:hover {
+            box-shadow: 0 0 0 4px rgba(34, 34, 34, 0.2);
           }
           .rich-text .link-btn.app-store .link-title {
             color: #fff;
@@ -282,14 +308,16 @@ export default function ProjectPage(props) {
           align-items: center;
           justify-content: center;
           margin-right: 16px;
-          transition: background-color 0.15s;
+          box-shadow: 0 0 0 0 ${swatch.mainHover0};
+
+          transition: background-color 0.15s, box-shadow 0.3s;
         }
         .link-btn:last-child {
           margin-right: 0;
         }
 
         .link-btn:hover {
-          background-color: ${swatch.mainHover};
+          box-shadow: 0 0 0 4px ${swatch.mainHover};
         }
 
         .link-icon {

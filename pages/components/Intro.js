@@ -13,8 +13,8 @@ export default function Intro(props) {
     <div className="intro">
 
       <img className="icon" src={picture} />
-      <h2 className="title">{title}</h2>
-      <h3 className="subtitle">{subtitle}</h3>
+      <h1 className="title">{title}</h1>
+      <p className="subtitle">{subtitle}</p>
 
 
       <div className="info-container">

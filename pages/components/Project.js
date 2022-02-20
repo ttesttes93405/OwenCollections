@@ -71,7 +71,7 @@ export default function Project(props) {
           width: 50px;
           left: 50%;
           border-radius: 9999px;
-          background-color: #bbb; /*${swatch.main};*/
+          background-color: #bbb; 
           opacity: 0.5;
           transform: translateX(-25px);
         }
@@ -128,19 +128,26 @@ export default function Project(props) {
           align-items: center;
           justify-content: center;
           margin-right: 16px;
-          transition: background-color 0.15s;
+          box-shadow: 0 0 0 0 ${swatch.mainHover0};
+
+          transition: box-shadow 0.3s;;
         }
         .link-btn:last-child {
           margin-right: 0;
         }
 
         .link-btn:hover {
-          background-color: ${swatch.mainHover};
+          box-shadow: 0 0 0 4px ${swatch.mainHover};
         }
 
         .link-icon {
           width: 24px;
           height: 24px;
+          transition: transform 0.3s;
+        }
+
+        .link-btn:hover .link-icon {
+          transform: translateX(3px);
         }
 
         .link-icon:first-child {
