@@ -180,7 +180,7 @@ export default function ProjectPage(props) {
             min-width: 140px;
             max-width: 240px;
             box-sizing: border-box;
-            box-shadow: 0 0 0 0 ${swatch.mainHover0};
+            box-shadow: 0 0 0 0 ${swatch.mainHoverAlpha0};
 
             transition: box-shadow 0.3s;
           }
@@ -305,7 +305,7 @@ export default function ProjectPage(props) {
             align-items: center;
             justify-content: center;
             margin-right: 16px;
-            box-shadow: 0 0 0 0 ${swatch.mainHover0};
+            box-shadow: 0 0 0 0 ${swatch.mainHoverAlpha0};
 
             transition: background-color 0.15s, box-shadow 0.3s;
           }
