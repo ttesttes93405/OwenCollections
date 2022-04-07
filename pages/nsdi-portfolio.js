@@ -9,7 +9,7 @@ const config = {
   title : '孫宇作品集',
   rootPath: '/nsdi-portfolio',
   target: '/nsdi',
-  projectType: '25sprout',
+  projectType: 'nsdi',
 };
 
 

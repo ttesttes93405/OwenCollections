@@ -7,6 +7,7 @@ import contentTheHole from './contents/the-hole';
 import contentDroom from './contents/droom';
 import contentBean from './contents/bean';
 import contentDrafty from './contents/drafty';
+import contentSplinePageRemake from './contents/spline-page-remake';
 
 export const typeData = [
     {
@@ -37,6 +38,20 @@ export const introData = {
 };
 
 export const projectData = [
+    {
+        id: "spline-page-remake",
+        title: "Spline 頁面復刻",
+        icon: "/projects/Spline.png",
+        date: "2022/4",
+        subtitle: "嘗試從無到有製作一個現有頁面的復刻(Clone)版本。",
+        types: [/*"front-end"*/,"nsdi",],
+        cover: {
+            type: "img",
+            source: "/projects/spline-cover.jpg",
+            ratio: 9 / 16,
+        },
+        content: contentSplinePageRemake,
+    },
     {
         id: "drafty",
         title: "Drafty 輕量筆記",

@@ -87,8 +87,8 @@ export default function Intro(props) {
 
           .content-container {
             margin: 8px 0 32px 0;
-            padding: 16px;
-            background-color: #f4f4f4;
+            padding: 20px 16px;
+            background-color: #f8f8f8;
             border-radius: 8px;
           }
           
@@ -97,6 +97,7 @@ export default function Intro(props) {
             margin: 0;
             color: #555;
             min-height: 14px;
+            line-height: 2.25rem;
           }
 
           @media (max-width: 576px){
