@@ -36,52 +36,14 @@ export const introData = {
     ]
 };
 
-
-const _25SproutData = [
-    // {
-    //     id: "25Sprout_1000website",
-    //     title: "1000 Cheng 作品集網站",
-    //     icon: "/projects/1000-cheng-icon.jpg",
-    //     date: "2021/8",
-    //     subtitle: "為動態設計師 1000 Cheng 製作的作品集網站。",
-    //     types: ["25sprout",],
-    //     cover: {
-    //         type: "img",
-    //         source: "/projects/1000-cheng.jpg",
-    //         ratio: 9 / 16,
-    //     },
-    //     content: content1000Website,
-    // },
-    // {
-    //     id: "25Sprout_sky-bandit",
-    //     title: "Sky Bandit 天空盜賊團",
-    //     icon: "/projects/SkyBandit.png",
-    //     date: "2019/6 - 2020/12",
-    //     subtitle: "於玩猴遊戲 Macaca Games 參與製作的手機遊戲。",
-    //     types: ["25sprout",],
-    //     cover: {
-    //         type: "img",
-    //         source: "https://i.ytimg.com/vi_webp/Bt4rOBArpHs/sddefault.webp",
-    //         ratio: 9 / 16,
-    //     },
-    //     cover_old: {
-    //         type: "embed",
-    //         source: "https://www.youtube.com/embed/Bt4rOBArpHs",
-    //         ratio: 9 / 16,
-    //     },
-    //     content: contentSkyBandit,
-    // },
-]
-
 export const projectData = [
-    ..._25SproutData,
     {
         id: "drafty",
         title: "Drafty 輕量筆記",
         icon: "/projects/Drafty.svg",
         date: "2022/2",
         subtitle: "Drafty 是個簡單輕量的筆記 Web App，以 React 製作，可以對筆記中的內容做簡單的格式化，也能新增多個不同的筆記。",
-        types: ["front-end", "25sprout",],
+        types: ["front-end", "25sprout", "nsdi",],
         cover: {
             type: "img",
             source: "/projects/Drafty.jpg",
@@ -95,14 +57,14 @@ export const projectData = [
         icon: "/projects/1000-cheng-icon.jpg",
         date: "2021/8",
         subtitle: "為動態設計師 1000 Cheng 製作的作品集網站，以 React + Next.js 製作。",
-        types: ["front-end", "25sprout",],
+        types: ["front-end", "25sprout", "nsdi",],
         cover: {
             type: "img",
             source: "/projects/1000-cheng.jpg",
             ratio: 9 / 16,
         },
         content: content1000Website,
-    },    
+    },
     {
         id: "literary-dessert",
         title: "點心故事 Literary Dessert",
@@ -151,7 +113,7 @@ export const projectData = [
         icon: "/projects/SkyBandit.png",
         date: "2019/6 - 2020/12",
         subtitle: "於玩猴遊戲 Macaca Games 參與製作的手機遊戲。",
-        types: ["game", "25sprout",],
+        types: ["game", "25sprout", "nsdi",],
         cover: {
             type: "img",
             source: "https://i.ytimg.com/vi_webp/Bt4rOBArpHs/sddefault.webp",

@@ -5,7 +5,15 @@ import ProjectList from './components/ProjectList';
 import { introData, } from '../data';
 import HeadMeta from './components/HeadMeta';
 
-function Home25Sprout(props) {
+const config = {
+  title : '孫宇作品集',
+  rootPath: '/nsdi-portfolio',
+  target: '/nsdi',
+  projectType: '25sprout',
+};
+
+
+function Home(props) {
 
   const intro = {
     ...props.introData,
@@ -15,7 +23,7 @@ function Home25Sprout(props) {
       `在遊戲業時，我擔任程式從零開始建構一個遊戲，也有與美術和企劃溝通、制定相關規格的經驗。`,
       `遊戲開發期間也製作一個轉表工具，讓複雜多層的資料，可以用定義好的表格快速輕鬆的填寫。`,
       ``,
-      `因為對於前端很有興趣，想透過實習更了解前端工程師在實務上的各種眉角。`,
+      `因為對於前端很有興趣，所以想轉往前端領域發展。`,
       `過去的程式開發經驗，能幫助我更快的理解前端開發的新知識，希望這些特質也能為你們帶來幫助。`,
     ],
     picture: '/Owen02.jpg',
@@ -28,7 +36,7 @@ function Home25Sprout(props) {
       <Header
         icon='/Owen02.jpg'
         alwaysShowTitle={false}
-        rootPath={'/25sprout-portfolio'}
+        rootPath={config.rootPath}
         isShowType={false}
       />
 
@@ -37,7 +45,7 @@ function Home25Sprout(props) {
         <HeadMeta />
 
         <Head>
-          <title>孫宇 25sprout 作品集 | Owen Sun</title>
+          <title>{config.title} | Owen Sun</title>
           <meta property="og:title" content="Owen Sun" />
           <link rel="icon" href="/favicon.png" />
         </Head>
@@ -49,8 +57,8 @@ function Home25Sprout(props) {
         <ProjectList
           // icon="/icons/code.svg"
           // title="前端"
-          projectType="25sprout"
-          target="/25sprout"
+          projectType={config.projectType}
+          target={config.target}
         />
 
       </div>
@@ -67,4 +75,4 @@ export async function getStaticProps(context) {
   }
 }
 
-export default Home25Sprout;
+export default Home;

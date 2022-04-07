@@ -5,6 +5,11 @@ import HeadMeta from "../components/HeadMeta";
 import ProjectList from "../components/ProjectList";
 import swatch from "../../styles/swatch";
 
+
+const rootPath = '/nsdi-portfolio';
+const includeTag = 'nsdi';
+const mapToProjectPath = (id) => `/nsdi/${id}`;
+
 export default function ProjectPage(props) {
 
   const {
@@ -30,7 +35,7 @@ export default function ProjectPage(props) {
       <Header
         icon='/Owen02.jpg'
         paths={[{ title: title, icon: icon }]}
-        rootPath={'/25sprout-portfolio'}
+        rootPath={rootPath}
         isShowType={false}
       />
 
@@ -53,17 +58,6 @@ export default function ProjectPage(props) {
 
           </div>
         </div>
-
-
-        {/* <ProjectList
-          icon="/icons/notebook.svg"
-          title="其他專案"
-          projectType={type}
-          projectData={projectData}
-          count={3}
-          view="bar"
-        /> */}
-
 
         <style jsx global>{`
 
@@ -371,8 +365,8 @@ export function getStaticProps({ params }) {
 export function getStaticPaths() {
 
   const projectPaths = projectData
-    .filter(p => p.types.includes('25sprout'))
-    .map(p => `/25sprout/${p.id}`);
+    .filter(p => p.types.includes(includeTag))
+    .map(p => mapToProjectPath(p.id));
 
   return {
     paths: projectPaths,
