@@ -8,6 +8,7 @@ import contentDroom from './contents/droom';
 import contentBean from './contents/bean';
 import contentDrafty from './contents/drafty';
 import contentSplinePageRemake from './contents/spline-page-remake';
+import contentCuteEgg from './contents/cute-egg';
 
 export const typeData = [
     {
@@ -44,13 +45,27 @@ export const projectData = [
         icon: "/projects/Spline.png",
         date: "2022/4",
         subtitle: "嘗試從無到有製作一個現有頁面的復刻(Clone)版本。",
-        types: [/*"front-end"*/,"nsdi",],
+        types: [/*"front-end"*/, "nsdi",],
         cover: {
             type: "img",
             source: "/projects/spline-cover.jpg",
             ratio: 9 / 16,
         },
         content: contentSplinePageRemake,
+    },
+    {
+        id: "cute-egg",
+        title: "Cute Egg 生成式圖像荷包蛋",
+        icon: "/projects/CuteEgg.png",
+        date: "2022/1",
+        subtitle: "使用 p5.js 製作的荷包蛋，全部使用程式繪圖，沒有預先製作的圖片。",
+        types: ["nsdi",],
+        cover: {
+            type: "img",
+            source: "/projects/cute-egg-cover.jpg",
+            ratio: 9 / 16,
+        },
+        content: contentCuteEgg,
     },
     {
         id: "drafty",

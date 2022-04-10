@@ -88,7 +88,7 @@ export default function Intro(props) {
           .content-container {
             margin: 8px 0 32px 0;
             padding: 20px 16px;
-            background-color: #f8f8f8;
+            /*background-color: #f8f8f8;*/
             border-radius: 8px;
           }
           

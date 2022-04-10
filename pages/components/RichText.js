@@ -1,4 +1,5 @@
 import ProjectCover from "./ProjectCover";
+import CompareImage from "./CompareImage";
 import swatch from "../../styles/swatch";
 import classNames from "classnames";
 
@@ -223,13 +224,20 @@ const buildMethod = {
     return (<pre key={content}><code>{content}</code></pre>);
   },
   diffImage: function build({ cover1, cover2, style, caption }) {
-    return (<div className="media diff-image" key={cover1.source} style={style || {}}>
-      <ProjectCover cover={cover1} />
-      <div className="cutter">
-        <ProjectCover cover={cover2} />
-      </div>
-      {caption && (<p className="caption">{caption}</p>)}
-    </div>);
+    return (<CompareImage
+      key={cover1.source + cover2.source}
+      cover1={cover1}
+      cover2={cover2}
+      style={style}
+      caption={caption} />);
+  },
+  iframe: function build({ link, width, height, }) {
+    return (<iframe
+      className="iframe"
+      key={link}
+      src={link}
+      style={{ width, height, }}
+    ></iframe>)
   }
 }
 
@@ -444,75 +452,14 @@ function RichText(props) {
         }
 
 
-        .rich-text .diff-image {
-          position: relative;
-        }
-
-        .rich-text .diff-image .cutter {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          overflow: hidden;
-          animation-name: diff-cutter-ani;
-          animation-duration: 5s ;
-          animation-direction: alternate;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-          box-sizing: content-box;
-        }
         
+        .rich-text .iframe {
+          border-style: none;
+          margin: 0 auto;
+          display: flex;
+          border-radius: 8px;
+          background-color: #8882;
 
-        .rich-text .diff-image .cutter .project-img {
-          animation-name: diff-img-ani;
-          animation-duration: 5s ;
-          animation-direction: alternate;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-        }
-
-        .rich-text .diff-image .cutter .project-img::after {
-          position:absolute;
-          content: '';
-          top: 0;
-          right: 0;
-          bottom: 0;
-          width: 1px;
-          background-color: #8888;
-          animation-name: diff-split-ani;
-          animation-duration: 5s ;
-          animation-direction: alternate;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-        }
-
-        @keyframes diff-cutter-ani {
-          from {
-            margin-left: -0% ;
-            margin-right: 0% ;
-          }
-          to {
-            margin-left: -100% ;
-            margin-right: 100% ;
-          }
-        }
-
-        @keyframes diff-img-ani {
-          from {
-            margin-left: 0% ;
-          }
-          to {
-            margin-left: 100% ;
-          }
-        }
-
-        @keyframes diff-split-ani {
-          from {
-            margin-right: 0% ;
-          }
-          to {
-            margin-right: 100% ;
-          }
         }
 
       `}</style>

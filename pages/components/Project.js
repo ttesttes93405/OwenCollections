@@ -108,6 +108,7 @@ export default function Project(props) {
           font-size: 1.3rem;
           color: #666;
           margin: 2px 0;
+          font-weight: 300;
         }
 
         .des {

@@ -1,11 +1,12 @@
 
 
-const mp4Cover = (cover) => {
+const mp4Cover = (cover, style) => {
 
   const { source, ratio, } = cover;
 
   return (<div
     className="project-video"
+    style={style}
   >
     <video
       className="cover"
@@ -41,12 +42,13 @@ const mp4Cover = (cover) => {
   </div>)
 }
 
-const embedCover = (cover) => {
+const embedCover = (cover, style) => {
 
   const { source, ratio, } = cover;
 
   return (<div
     className="project-video"
+    style={style}
   >
     <iframe
       className="cover"
@@ -79,11 +81,11 @@ const embedCover = (cover) => {
   </div>)
 }
 
-const imgCover = (cover) => {
+const imgCover = (cover, style) => {
 
   const { source, ratio, } = cover;
 
-  return (<div className="project-img">
+  return (<div className="project-img" style={style}>
     <div className="cover" />
     <style jsx>{`
 
@@ -113,7 +115,7 @@ const imgCover = (cover) => {
   </div>)
 }
 
-const linkImgCover = (cover) => {
+const linkImgCover = (cover, style) => {
 
   const {
     link,
@@ -121,13 +123,13 @@ const linkImgCover = (cover) => {
   } = cover;
 
   return (
-    <a href={link} rel="noreferrer" target={linkTarget}>
+    <a href={link} rel="noreferrer" target={linkTarget} style={style}>
       {imgCover(cover)}
     </a>
   )
 }
 
-const linkMp4Cover = (cover) => {
+const linkMp4Cover = (cover, style) => {
 
   const {
     link,
@@ -135,13 +137,13 @@ const linkMp4Cover = (cover) => {
   } = cover;
 
   return (
-    <a href={link} rel="noreferrer" target={linkTarget}>
+    <a href={link} rel="noreferrer" target={linkTarget} style={style}>
       {mp4Cover(cover)}
     </a>
   );
 }
 
-export default function ProjectCover({ cover, }) {
+export default function ProjectCover({ cover, style, }) {
 
   if (!cover || !cover.source) {
     return null;
@@ -151,11 +153,11 @@ export default function ProjectCover({ cover, }) {
 
   switch (type) {
     case "mp4":
-      return link ? linkMp4Cover(cover) : mp4Cover(cover);
+      return link ? linkMp4Cover(cover, style) : mp4Cover(cover, style);
     case "img":
-      return link ? linkImgCover(cover) : imgCover(cover);
+      return link ? linkImgCover(cover, style) : imgCover(cover, style);
     case "embed":
-      return embedCover(cover);
+      return embedCover(cover, style);
 
     default:
       return null;
