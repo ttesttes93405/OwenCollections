@@ -59,7 +59,7 @@ export const projectData = [
         icon: "/projects/CuteEgg.png",
         date: "2022/1",
         subtitle: "使用 p5.js 製作的荷包蛋，全部使用程式繪圖，沒有預先製作的圖片。",
-        types: ["nsdi",],
+        types: [/*"nsdi",*/],
         cover: {
             type: "img",
             source: "/projects/cute-egg-cover.jpg",

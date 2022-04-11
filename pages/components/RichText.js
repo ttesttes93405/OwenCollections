@@ -356,7 +356,7 @@ function RichText(props) {
           font-size: 1.2rem;
           font-family: "Inconsolata", "Menlo", "Consolas", monospace;
           color: #222;
-          overflow-x: scroll;
+          overflow-x: auto;
         }
 
         .rich-text .caption {

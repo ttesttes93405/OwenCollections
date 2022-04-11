@@ -65,7 +65,13 @@ export default function CompareImage(props) {
 
   >
     <div className="diff-image"
-        onDragStart={preventDragHandler}>
+      onDragStart={preventDragHandler}
+      onMouseMove={touchMove}
+      onTouchMove={touchMove}
+      onTouchEnd={touchLeave}
+      onMouseUp={touchLeave}
+      onMouseLeave={touchLeave}
+    >
       <ProjectCover cover={cover1} />
       <div className="cutter" style={{
         marginLeft: `-${(1 - compareRatio) * 100}%`,
@@ -89,7 +95,6 @@ export default function CompareImage(props) {
           onTouchMove={touchMove}
           onTouchEnd={touchLeave}
           onMouseUp={touchLeave}
-          onMouseLeave={touchLeave}
         >
           <img src='/icons/col-resize.svg' onDragStart={preventDragHandler} />
         </div>
@@ -146,8 +151,8 @@ export default function CompareImage(props) {
 
         .slider .slider-control img{
           display: flex;
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
           opacity: 0.3;
         }
         .slider .slider-control:hover img{

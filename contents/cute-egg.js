@@ -19,12 +19,28 @@ const content = [
                     rightIcon: "/icons/external-link.svg",
                 },]
             },
-            view: {
-                contentType: "iframe",
-                link: "https://ipfs.io/ipfs/QmNr27izJqXNJ66D93CpTHBFTAMxCFxPsBhSZCUvEp4MpP/?fxhash=ooUm8tNtoga254EGtPkEg2BNxbztq1fi8zL6PVozHbqFa6hJKKH",
-                width: 300,
-                height: 300,
-            }
+            code1:{
+                contentType: "code",
+                content: `const x = cos(i) * r;\nconst y = sin(i) * r`,
+            },
+            'img#1': {
+                contentType: "image",
+                type: "img",
+                source: "/projects/cute-egg/1.png",
+                ratio: 1 / 1,
+            },
+            'img#2': {
+                contentType: "image",
+                type: "img",
+                source: "/projects/cute-egg/2.png",
+                ratio: 1 / 1,
+            },
+            'img#3': {
+                contentType: "image",
+                type: "img",
+                source: "/projects/cute-egg/3.png",
+                ratio: 1 / 1,
+            },
         }
     },
     `
@@ -38,9 +54,17 @@ const content = [
     ---
 
 
-    每個鑄造出來的蛋都擁有不同的背景顏色、獨一無二的蛋白形狀。
+    每個鑄造出來的蛋都擁有不同的背景顏色、獨一無二的蛋白形狀、開心或難過的表情。
 
 
+    ### 蛋白
+    蛋白應該是做起來最麻煩的部分，我使用 p5 的 beginShape/endShape ，繪製指定頂點的多邊形來製作蛋白。    
+    {{code1}}
+    
+
+    {{img#1}}
+    {{img#2}}
+    {{img#3}}
 
 
     `,
