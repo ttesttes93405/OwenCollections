@@ -56,7 +56,7 @@ export default function Project(props) {
           position: relative;
           display: flex;
           flex-direction: column;
-          padding: 48px 8px;
+          padding: 48px 16px;
           border-radius: 0;
           width: 576px;
           max-width: 100vw;
