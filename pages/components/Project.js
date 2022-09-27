@@ -40,12 +40,12 @@ export default function Project(props) {
           </div>
 
 
-          <div className="btn-container">
+          {/* <div className="btn-container">
             <a href={target} className="link-btn" key={btnText} rel="noreferrer">
               <p className="link-title">{btnText}</p>
               <img src="/icons/arrow-right.svg" className="link-icon" />
             </a>
-          </div>
+          </div> */}
 
         </div>
 
@@ -120,7 +120,7 @@ export default function Project(props) {
         
         .head {
           align-items: start;
-          margin-top: 12px;
+          margin-top: 32px;
         }
 
         .btn-container {
@@ -177,13 +177,8 @@ export default function Project(props) {
 
         .link-title {
           font-size: 1.3rem;
-          color: #888;
-          transition: color 0.3s ;
         }
 
-        .link-btn:hover .link-title {
-          color: #444;
-        }
 
         .link-title {
           font-size: 1.3rem;
@@ -194,7 +189,7 @@ export default function Project(props) {
         @media (min-width: 576px){
 
           .project {
-            padding: 0;
+            padding: 8px 8px 32px;
             border-radius: 8px;
           }
 

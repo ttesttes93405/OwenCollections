@@ -28,7 +28,7 @@ export const introData = {
     picture: "Owen01.jpg",
     content: [
         "前端開發者、遊戲開發者。",
-        "喜歡 UI/UX 、遊戲互動、好看的畫面。",
+        "使用 React、Unity，喜歡製作編輯器、遊戲互動、好看的畫面。",
     ],
     info: [
         {
@@ -45,7 +45,7 @@ export const projectData = [
         icon: "/projects/Spline.png",
         date: "2022/4",
         subtitle: "嘗試從無到有製作一個現有頁面的復刻(Clone)版本。",
-        types: [/*"front-end"*/, "nsdi",],
+        types: [/*"front-end"*/,],
         cover: {
             type: "img",
             source: "/projects/spline-cover.jpg",
@@ -55,11 +55,11 @@ export const projectData = [
     },
     {
         id: "cute-egg",
-        title: "Cute Egg 生成式圖像荷包蛋",
+        title: "Cute Egg 演算生成荷包蛋",
         icon: "/projects/CuteEgg.png",
         date: "2022/1",
-        subtitle: "使用 p5.js 製作的荷包蛋，全部使用程式繪圖，沒有預先製作的圖片。",
-        types: [/*"nsdi",*/],
+        subtitle: "使用 p5.js 製作的荷包蛋，沒有預製的圖片，全部使用程式來繪製。",
+        types: [/*"front-end"*/,],
         cover: {
             type: "img",
             source: "/projects/cute-egg-cover.jpg",
@@ -73,7 +73,7 @@ export const projectData = [
         icon: "/projects/Drafty.svg",
         date: "2022/2",
         subtitle: "Drafty 是個簡單輕量的筆記 Web App，以 React 製作，可以對筆記中的內容做簡單的格式化，也能新增多個不同的筆記。",
-        types: ["front-end", "25sprout", "nsdi",],
+        types: [/*"front-end",*/],
         cover: {
             type: "img",
             source: "/projects/Drafty.jpg",
@@ -86,8 +86,8 @@ export const projectData = [
         title: "1000 Cheng 作品集網站",
         icon: "/projects/1000-cheng-icon.jpg",
         date: "2021/8",
-        subtitle: "為動態設計師 1000 Cheng 製作的作品集網站，以 React + Next.js 製作。",
-        types: ["front-end", "25sprout", "nsdi",],
+        subtitle: "為動態設計師 1000 Cheng 製作的作品集網站，以 React 搭配 Next.js 製作。",
+        types: ["front-end",],
         cover: {
             type: "img",
             source: "/projects/1000-cheng.jpg",
@@ -143,7 +143,7 @@ export const projectData = [
         icon: "/projects/SkyBandit.png",
         date: "2019/6 - 2020/12",
         subtitle: "於玩猴遊戲 Macaca Games 參與製作的手機遊戲。",
-        types: ["game", "25sprout", "nsdi",],
+        types: ["game",],
         cover: {
             type: "img",
             source: "https://i.ytimg.com/vi_webp/Bt4rOBArpHs/sddefault.webp",

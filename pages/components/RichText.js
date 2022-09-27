@@ -382,17 +382,19 @@ function RichText(props) {
 
           padding: 8px 16px;
           margin: 8px;
-          background-color: ${swatch.main};
+          background-color: #f4f4f4be;
+          border: 1px solid #00000008;
           border-radius: 12px;
           min-width: 140px;
           max-width: 240px;
           box-sizing: border-box;
-          box-shadow: 0 0 0 0 ${swatch.mainHover0};
+          box-shadow: 0 0 0 0 #42f5b300;
 
-          transition: box-shadow 0.3s;
+          transition: box-shadow 0.3s, background-color 0.3s;
         }
         .rich-text .link-btn:hover {
-          box-shadow: 0 0 0 4px ${swatch.mainHover};
+          background-color: #42f5b380;
+          box-shadow: 0 0 0 4px #42f5b340;
         }
 
         .rich-text .link-btn .link-icon {
@@ -408,7 +410,7 @@ function RichText(props) {
         .rich-text .link-btn .link-title {
           font-size: 1.35rem;
           text-align: center;
-          color: #fff;
+          color: #00000080;
           margin: 0;
           padding: 0;
           height: 32px;

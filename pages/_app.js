@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
         }
 
         ::selection {
-          color: #fff;
+          color: #00000080;
           background: ${swatch.main};
         }
 
