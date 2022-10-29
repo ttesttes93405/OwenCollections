@@ -1,4 +1,87 @@
 
+import { styled } from '../../styles/stitchesStyles';
+
+
+
+
+const IntroWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  paddings: [40, 0, 72],
+  width: '100%',
+  '@s': {},
+  '@l': {
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
+});
+
+const Avatar = styled('img', {
+  size: 80,
+  borderRadius: 9999,
+  marginLeft: 16,
+});
+
+const Title = styled('h1', {
+  fontSize: '2.9rem',
+  color: '#000000',
+  fontWeight: 800,
+  margins: [16, 0, 4, 16],
+  letterSpacing: 4,
+});
+
+const Subtitle = styled('p', {
+  fontSize: '1.5rem',
+  color: '#000000',
+  fontWeight: 400,
+  margin: 0,
+  opacity: 0.7,
+  marginLeft: 16,
+});
+
+
+
+
+const InfoContainer = styled('div', {
+  margins: [8, 0],
+});
+
+const InfoItem = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginLeft: 16,
+
+});
+
+const InfoIcon = styled('img', {
+  size: 20,
+  marginRight: 8,
+  opacity: 0.5,
+});
+
+const InfoText = styled('p', {
+  fontSize: '1.25rem',
+  color: '#808080',
+});
+
+
+
+const ContentContainer = styled('div', {
+  margins: [8, 0, 32],
+  paddings: [20, 16],
+  borderRadius: 8,
+  '& p': {
+    fontSize: '1.35rem',
+    margin: 0,
+    color: '#505050',
+    minHeight: 14,
+    lineHeight: '2.25rem',
+  }
+});
+
+
+
 export default function Intro(props) {
 
   const {
@@ -10,107 +93,24 @@ export default function Intro(props) {
   } = props;
 
   return (
-    <div className="intro">
+    <IntroWrapper>
 
-      <img className="icon" src={picture} />
-      <h1 className="title">{title}</h1>
-      <p className="subtitle">{subtitle}</p>
+      <Avatar src={picture} />
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
 
+      <InfoContainer>
+        {info.map(i => (<InfoItem key={i.content}>
+          <InfoIcon src={i.icon} />
+          <InfoText>{i.content}</InfoText>
+        </InfoItem>))}
+      </InfoContainer>
 
-      <div className="info-container">
-        {info.map(i => (<div className="info" key={i.content}>
-          <img src={i.icon} className="info-icon" />
-          <p className="info-content">{i.content}</p>
-        </div>))}
-      </div>
+      <ContentContainer>
+        {content.map((c, i) => (<p key={i}>{c}</p>))}
+      </ContentContainer>
 
-      <div className="content-container">
-        {content.map((c, i) => (<p className="content" key={i}>{c}</p>))}
-      </div>
-
-      <style jsx>{`
-          
-          .intro {
-            display: flex;
-            flex-direction: column;
-            /* background-color: #fff; */
-            padding: 40px 0 72px;
-            width: 100%;
-          }
-
-          .icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 9999px;
-            margin-left: 16px;
-          }
-
-          .title {
-            font-size: 2.9rem;
-            color: #000;
-            font-weight: 800;
-            margin: 16px 0 4px;
-            margin-left: 16px;
-            letter-spacing: 4px;
-          }
-          .subtitle {
-            font-size: 1.5rem;
-            color: #000;
-            font-weight: 400;
-            margin: 0;
-            opacity: 0.7;
-            margin-left: 16px;
-          }
-
-          .info-container {
-            margin: 8px 0;
-          }
-
-          .info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-left: 16px;
-          }
-
-          .info-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            opacity: 0.5;
-          }
-
-          .info-content {
-            font-size: 1.25rem;
-            color:#888;
-          }
-
-          .content-container {
-            margin: 8px 0 32px 0;
-            padding: 20px 16px;
-            /*background-color: #f8f8f8;*/
-            border-radius: 8px;
-          }
-          
-          .content {
-            font-size: 1.35rem;
-            margin: 0;
-            color: #555;
-            min-height: 14px;
-            line-height: 2.25rem;
-          }
-
-          @media (max-width: 576px){
-
-            .intro {
-              padding-left: 16px;
-              padding-right: 16px; 
-            }
-
-          }
-        
-        `}</style>
-    </div >
+    </IntroWrapper>
   )
 }
 

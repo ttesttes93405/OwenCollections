@@ -2,10 +2,17 @@ import styles from '../styles/main.scss'
 import swatch from '../styles/swatch';
 import HeadGoogleAnalytics from './components/HeadGoogleAnalytics';
 import Background from './components/Background';
+import Head from 'next/head';
+import { getCssText } from '../styles/stitchesStyles';
 
 function MyApp({ Component, pageProps }) {
   return (
     <div className="app">
+
+      <Head>
+        {/* Import stitches styles */}
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+      </Head>
 
       <HeadGoogleAnalytics />
       <Background />

@@ -6,6 +6,120 @@ import { useEffect, useRef, useState } from 'react';
 import { typeData, } from '../../data';
 
 
+import { styled } from '../../styles/stitchesStyles';
+
+
+const HeadWrapper = styled('nav', {
+  position: 'fixed',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  backgroundColor: '#ffffff',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 0,
+  margin: 0,
+  top: 0,
+  zIndex: 10,
+  transition: 'box-shadow 0.3s, height 0.3s, padding-top 0.3s',
+  boxShadow: '1px 2px 18px rgba(0, 0, 0, 10%)',
+  height: 60,
+
+  variants: {
+    isOnTop: {
+      true: {
+        '@l': {
+          boxShadow: '1px 2px 18px rgba(0, 0, 0, 0%)',
+          height: 120,
+          paddingTop: 60,
+        }
+      },
+      false: {
+      }
+    },
+  },
+
+});
+
+const HeadContainer = styled('div', {
+  maxWidth: 576,
+  display: 'flex',
+  flexDirection: 'row',
+  flexGrow: 1,
+  height: '100%',
+  alignItems: 'center',
+});
+
+const TitleContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  maxWidth: 350,
+  opacity: 1,
+});
+
+const TitlePath = styled('a', {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  height: 60,
+  maxWidth: 230,
+  borderRadius: 8,
+  '& .slash': {
+    margins: [0, 8, 0, 2],
+    padding: 0,
+    color: '#a0a0a0',
+  },
+  '& .icon': {
+    size: 30,
+    borderRadius: 9999,
+  },
+  '& .title': {
+    fontSize: '1.35rem',
+    margin: 0,
+    marginLeft: 8,
+    color: 'rgba(0, 0, 0, 0.65)',
+    fontWeight: 500,
+    textOverflow: 'ellipsis',
+    height: 30,
+    lineHeight: '30px',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    display: 'inline-block',
+    flexShrink: 1,
+  },
+  '&:first-child': {
+    maxWidth: 120,
+    cursor: 'pointer',
+    paddings: [4, 8],
+    height: 40,
+    '&:hover': {
+      backgroundColor: '#f4f4f4be',
+    }
+  },
+  '&:last-child': {
+    maxWidth: 300,
+  },
+
+  '@s': {
+    '&:first-child .title': {
+      display: 'none',
+    },
+    '&:last-child .title': {
+      display: 'flex',
+    },
+  }
+
+});
+
+const FlexSpace = styled('span', {
+  flexGrow: 1,
+  minWidth: 30,
+});
+
+
+
+
 function Header(props) {
 
   const {
@@ -13,7 +127,7 @@ function Header(props) {
     title = "OWENSUN.INFO",
     rootPath = "/",
     isShowType = true,
-    alwaysShowTitle = true,
+    onlyShowWhenTop = false,
     paths = [],
   } = props;
 
@@ -22,46 +136,46 @@ function Header(props) {
   const [onTop, UseOnTop] = useState(true);
 
 
-  const isOnTop = () => {
-    return window.scrollY < 30;
-  }
-
   const scrollHandler = () => {
-    UseOnTop(isOnTop());
+    const getIsOnTop = () => window.scrollY < 30;
+    UseOnTop(getIsOnTop());
   }
 
-  const useScroll = useEffect(() => {
+  useEffect(() => {
     const root = window;
     root.addEventListener('scroll', scrollHandler);
     return () => { root.removeEventListener('scroll', scrollHandler); }
   }, [])
 
+
   const router = useRouter();
   const isCurrentRoute = (route) => router.asPath == route;
 
+
   return (
-    <nav className={classNames("header", { 'on-top': onTop, 'always-show-title': alwaysShowTitle })}>
+    <HeadWrapper isOnTop={onTop} >
 
-      <div className="container">
+      <HeadContainer>
 
-        <div className="title-container" >
+        <TitleContainer>
           <Link href={rootPath}>
-            <a className="title-path">
+            <TitlePath>
               <img src={icon} className="icon" />
               <p className="title">{title}</p>
-            </a>
+            </TitlePath>
           </Link>
           {
             paths.map(path => (
-              <div className="title-path" key={path.title}>
+              <TitlePath key={path.title}>
                 <span className='slash'>{'/'}</span>
                 <img src={path.icon} className="icon" />
                 <p className="title">{path.title}</p>
-              </div>
+              </TitlePath>
             ))
           }
-        </div>
-        <div className="flex-space" />
+        </TitleContainer>
+
+        <FlexSpace />
 
         {
           showRouteMenu ? null : (
@@ -72,7 +186,8 @@ function Header(props) {
 
         <div
           className={classNames("route-container", { "show-route": showRouteMenu })}
-          onClick={() => UseShowRouteMenu(!showRouteMenu)}>
+          onClick={() => UseShowRouteMenu(!showRouteMenu)}
+        >
           <Link href={rootPath} key="home">
             <a className={classNames("home", "route", { "route-current": isCurrentRoute("/") })}>
               <img src="/icons/home.svg" className="route-icon" />
@@ -91,123 +206,11 @@ function Header(props) {
             }))
           }
         </div>
-      </div>
+      </HeadContainer>
+
 
       <style jsx>{`
-        
-        .header {
-          position: fixed;
-          height: 60px;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          background-color: #fff;
-          /*border-bottom: 1px rgba(0,0,0,0.1) solid;*/
-          align-items: center;
-          justify-content: center;
-          padding: 0;
-          margin: 0;
-          top: 0;
-          z-index: 10;
-          box-shadow: 1px 2px 18px rgba(0, 0, 0, 10%);
-          transition: box-shadow 0.3s, height 0.3s, padding-top 0.3s;
-          
-        }
-
-        .header.on-top {
-          box-shadow: 1px 2px 18px rgba(0, 0, 0, 0%);
-          height: 120px;
-          padding-top: 60px;
-        }
-
-        .container {
-          max-width: 576px;
-          display: flex;
-          flex-direction: row;
-          flex-grow: 1;
-          height: 100%;
-          align-items: center;
-        }
-        
-        .slash {
-          margin: 0 8px 0 2px;
-          padding: 0;
-          color: #aaa;
-        }
-        
-        .title-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          max-width: 350px;
-          opacity: 1;
-          transition: opacity 0.3s;
-        }
-
-        .title-path {
-          height: 60px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          max-width: 230px;
-        }
-
-
-        .on-top .title-container{
-          opacity: 0;
-        }
-
-        .always-show-title .title-container{
-          opacity: 1;
-        }
-
-        .icon {
-          width: 30px;
-          height: 30px;
-          border-radius: 9999px;
-        }
-
-        .title {
-          font-size: 1.35rem;
-          margin: 0;
-          margin-left: 8px;
-          color: rgba(0, 0, 0, 0.65);
-          font-weight: 500;          
-          text-overflow : ellipsis;
-          flex-shrink: 1;
-          height: 30px;
-          line-height: 30px;
-          overflow: hidden;
-          white-space: nowrap;
-        }
-
-        .title-path:first-child {
-          cursor: pointer;
-          padding: 4px 8px;
-          height: 40px;
-        }
-
-        .title-path:first-child:hover {    
-          border-radius: 8px;
-          background-color: #f4f4f4be;
-        }
-
-        .title-path:first-child .title {            
-          max-width: 60px;
-        }
-
-        .title-path:last-child .title {   
-          display: inline-block;    
-          flex-shrink: 0;
-          overflow: hidden;
-          max-width: 300px;
-        }
-        
-        
-        .flex-space {
-          flex-grow: 1;
-          min-width: 30px;
-        }
+               
         
         .route-menu-btn {
           display: none;
@@ -349,28 +352,22 @@ function Header(props) {
             padding: 20px;
           }
 
-          .title-path:first-child .title {            
-            display: none;
-          }
-
-          .title-path:last-child .title {            
-            display: flex;
-          }
-
           .home {
             display: flex;
           }
         }
 
       `}</style>
-    </nav >
+    </HeadWrapper >
   )
 }
 
 Header.defaultProps = {
   icon: "/Owen01.jpg",
   title: "OWENSUN.INFO",
-  alwaysShowTitle: true,
+  rootPath: "/",
+  isShowType: true,
+  paths: [],
 };
 
 export default Header;

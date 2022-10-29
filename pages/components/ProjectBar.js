@@ -1,6 +1,64 @@
 import swatch from "../../styles/swatch"
 import Link from "next/link"
 
+import { styled } from '../../styles/stitchesStyles';
+
+
+
+const ProjectWrapper = styled('a', {
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  padding: 4,
+  borderRadius: 14,
+  margins: [0, 0, 4, 0],
+  boxSizing: 'border-box',
+  cursor: 'pointer',
+  overflow: 'hidden',
+  '&:hover': {
+    backgroundColor: '#f8f8f8',
+  },
+  '@s': {
+    margins: [0, 12],
+  },
+  '@l': {}
+});
+
+const HeadWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+});
+
+const Icon = styled('img', {
+  size: 52,
+  borderRadius: 12,
+  margin: 4,
+  marginRight: 16,
+  boxShadow: '0 0 8px #00000018',
+});
+
+const TextContainer = styled('div', {
+  maxWidth: 'calc(100% - 90px)',
+  '& .title': {
+    fontSize: '1.6rem',
+    color: '#000000',
+    fontWeight: 600,
+    margin: 0,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  '& .subtitle': {
+    fontSize: '1.2rem',
+    color: '#888888',
+    margin: 0,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    maxWidth: '100%',
+  },
+});
 
 export default function ProjectBar(props) {
 
@@ -16,84 +74,15 @@ export default function ProjectBar(props) {
 
   return (
     <Link href={target} >
-      <a className="project">
-
-        <div className="row head">
-          <img className="icon" src={icon} />
-          <div className="col">
+      <ProjectWrapper>
+        <HeadWrapper>
+          <Icon src={icon} />
+          <TextContainer>
             <h2 className="title">{title}</h2>
             <p className="subtitle">{subtitle}</p>
-          </div>
-        </div>
-
-
-        <style jsx>{`
-                
-        .project {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          /* background-color: #fff; */
-          padding: 4px;
-          border-radius: 14px;
-          /* height: 80px; */
-          margin: 0 0 4px 0;
-          box-sizing: border-box;
-          cursor: pointer;
-          overflow: hidden;
-        }
-
-        .project:hover {
-          background-color: #f8f8f8;
-        }
-
-        .icon {
-          width: 52px;
-          height: 52px;
-          border-radius: 12px;
-          margin: 4px;
-          margin-right: 16px;
-          box-shadow: 0 0 8px #00000018;
-        }
-
-        .title {
-          font-size: 1.6rem;
-          color: #000;
-          font-weight: 600;
-          margin: 0;
-          overflow: hidden;
-          text-overflow : ellipsis;
-          white-space: nowrap;
-        }
-
-        .subtitle {
-          font-size: 1.2rem;
-          color: #888;
-          margin: 0;
-          overflow: hidden;
-          text-overflow : ellipsis;
-          white-space: nowrap;
-          max-width: 100%;
-        }
-        
-        .head {
-          align-items: center;
-        }
-        
-        .head .col {
-          max-width: calc(100% - 90px);
-        }
-
-
-        @media (max-width: 576px){
-          .project {
-            margin: 0 12px;
-          }
-        }
-
-      `}</style>
-
-      </a>
+          </TextContainer>
+        </HeadWrapper>
+      </ProjectWrapper>
     </Link>
   )
 }

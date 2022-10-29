@@ -1,7 +1,47 @@
 import { projectData, } from "../../data"
 
+import { styled } from '../../styles/stitchesStyles';
 
-function seed(a) {
+
+
+const BackgroundWrapper = styled('div', {
+  position: 'fixed',
+  top: 0,
+  bottom: 0,
+  right: 0,
+  left: 0,
+  backgroundColor: '#ffffff',
+  zIndex: -10,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  '@s': {
+    '& .icon': {
+      display: 'none',
+    }
+  },
+  '@l': {},
+
+});
+
+const Blur = styled('div', {
+  position: 'fixed',
+  top: 0,
+  bottom: 0,
+  right: 0,
+  left: 0,
+  backgroundColor: 'rgba(255, 255, 255, 0.85)',
+  zIndex: 0,
+  '@s': {
+    display: 'none',
+  },
+  '@l': {},
+
+});
+
+
+
+const seed = (a) => {
   return function () {
     var t = a += 0x6D2B79F5;
     t = Math.imul(t ^ t >>> 15, t | 1);
@@ -21,14 +61,13 @@ function Background() {
 
   const randomSign = () => random() > 0.5 ? 1 : -1;
 
-  return (<div className="background">
+  return (<BackgroundWrapper>
     {
       data.map((index) => {
 
         const z = random();
         const size = (1 - z) * 40 + 60;
         const alpha = (1 - z) * 1;
-
 
         //const p = viewProjects[parseInt(viewProjects.length * random())];
         const p = viewProjects[index];
@@ -54,48 +93,10 @@ function Background() {
 
       })
     }
-    <div className="blur" />
 
-    <style jsx>{`
-      .background {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: #fff;
-        z-index: -10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    <Blur />
 
-      .blur {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: rgba(255, 255, 255, 0.85);
-        z-index: 0;
-      }
-
-
-
-      @media (max-width: 576px){
-
-        .icon {
-          display: none;
-        }
-
-        .blur {
-          display: none;
-        }
-      }
-
-
-    `}</style>
-  </div>);
+  </BackgroundWrapper>);
 }
 
 export default Background;

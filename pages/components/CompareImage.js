@@ -24,9 +24,6 @@ export default function CompareImage(props) {
     />
     {caption && (<p className="caption">{caption}</p>)}
 
-    <style jsx>{`             
-      
-    `}</style>
     
   </div>);
 
