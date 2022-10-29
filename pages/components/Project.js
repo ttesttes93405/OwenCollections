@@ -62,8 +62,10 @@ export default function Project(props) {
           max-width: 100vw;
           margin-bottom: 70px;
           background-color: #ffffff; 
+          background-color: #fafafa; 
           transition: background-color 0.2s, box-shadow 0.3s;
-          box-shadow: 0 0 0 5px #ffffff;
+          /* box-shadow: 0 0 0 5px #ffffff; */
+          box-shadow: 0 0 0 5px #fafafa;/*, 0 0 0 6px #00000008;*/
         }
         .project:hover {
           background-color: #fafafa; 
