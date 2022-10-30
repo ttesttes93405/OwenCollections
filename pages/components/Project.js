@@ -20,7 +20,7 @@ const ProjectWrapper = styled('a', {
 
   '@s': {
     borderRadius: 0,
-    paddings: [8, 8, 32],
+    paddings: [12, 12, 32],
   },
   '@l': {
     borderRadius: 12,

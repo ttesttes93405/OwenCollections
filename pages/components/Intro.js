@@ -7,26 +7,26 @@ import { styled } from '../../styles/stitchesStyles';
 const IntroWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  paddings: [40, 0, 72],
+  paddings: [40, 16, 72],
   width: '100%',
   '@s': {},
   '@l': {
-    paddingLeft: 8,
-    paddingRight: 8,
+    paddingLeft: 12,
+    paddingRight: 12,
   },
 });
 
 const Avatar = styled('img', {
   size: 80,
   borderRadius: 9999,
-  marginLeft: 16,
+  marginLeft: 4,
 });
 
 const Title = styled('h1', {
   fontSize: '2.9rem',
   color: '#000000',
   fontWeight: 800,
-  margins: [16, 0, 4, 16],
+  margins: [16, 0, 4, 0],
   letterSpacing: 4,
 });
 
@@ -36,7 +36,6 @@ const Subtitle = styled('p', {
   fontWeight: 400,
   margin: 0,
   opacity: 0.7,
-  marginLeft: 16,
 });
 
 
@@ -50,7 +49,6 @@ const InfoItem = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  marginLeft: 16,
 
 });
 
@@ -69,7 +67,7 @@ const InfoText = styled('p', {
 
 const ContentContainer = styled('div', {
   margins: [8, 0, 32],
-  paddings: [20, 16],
+  paddings: [20, 0],
   borderRadius: 8,
   '& p': {
     fontSize: '1.35rem',

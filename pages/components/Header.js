@@ -28,15 +28,21 @@ const HeadWrapper = styled('nav', {
   variants: {
     isOnTop: {
       true: {
+        boxShadow: '1px 2px 18px rgba(0, 0, 0, 0%)',
+        '@s': { },
         '@l': {
-          boxShadow: '1px 2px 18px rgba(0, 0, 0, 0%)',
           height: 120,
           paddingTop: 60,
-        }
+        },
       },
       false: {
       }
     },
+  },
+
+  
+  '@s': { 
+    paddingLeft: 4,
   },
 
 });
@@ -56,6 +62,13 @@ const TitleContainer = styled('div', {
   alignItems: 'center',
   maxWidth: 350,
   opacity: 1,
+
+  variants: {
+    isHide: {
+      true: { opacity: 0, },
+      false: {},
+    }
+  }
 });
 
 const TitlePath = styled('a', {
@@ -108,7 +121,7 @@ const TitlePath = styled('a', {
     '&:last-child .title': {
       display: 'flex',
     },
-  }
+  },
 
 });
 
@@ -127,7 +140,7 @@ function Header(props) {
     title = "OWENSUN.INFO",
     rootPath = "/",
     isShowType = true,
-    onlyShowWhenTop = false,
+    hideTitleWhenTop = false,
     paths = [],
   } = props;
 
@@ -157,7 +170,7 @@ function Header(props) {
 
       <HeadContainer>
 
-        <TitleContainer>
+        <TitleContainer isHide={hideTitleWhenTop && onTop}>
           <Link href={rootPath}>
             <TitlePath>
               <img src={icon} className="icon" />

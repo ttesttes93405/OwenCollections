@@ -9,7 +9,7 @@ function Home(props) {
 
   return (
     <>
-      <Header onlyShowWhenTop={true} />
+      <Header hideTitleWhenTop={true} />
       <div className="home">
 
         <HeadMeta />
