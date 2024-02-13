@@ -10,19 +10,16 @@
   "scripts": {
     "dev": "next dev -p 30678",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export",
-    "執行": "next export"
+    "start": "next start"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
     "classnames": "^2.3.1",
-    "next": "12.1.0",
-    "react": "17.0.2",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
     "react-compare-slider": "^2.2.0",
-    "react-dom": "17.0.2",
-    "react-svg": "^14.0.10",
+    "react-dom": "^18.2.0",
+    "react-svg": "^16.1.33",
     "sass": "^1.38.2"
   },
   "devDependencies": {

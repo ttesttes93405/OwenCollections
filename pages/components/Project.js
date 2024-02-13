@@ -6,7 +6,7 @@ import { styled } from '../../styles/stitchesStyles';
 
 
 
-const ProjectWrapper = styled('a', {
+const ProjectWrapper = styled('div', {
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
@@ -89,13 +89,13 @@ export default function Project(props) {
   };
 
   return (
-    <Link href={target}>
-      <ProjectWrapper className="project">
+    <ProjectWrapper className="project">
 
-        <ProjectCoverWrapper>
-          <ProjectCover cover={forcePathCover} />
-        </ProjectCoverWrapper>
+      <ProjectCoverWrapper>
+        <ProjectCover cover={forcePathCover} />
+      </ProjectCoverWrapper>
 
+      <Link href={target}>
         <HeadWrapper>
           <Icon src={icon} />
           <TextContainer>
@@ -103,9 +103,9 @@ export default function Project(props) {
             {subtitle ? (<p className="subtitle">{subtitle}</p>) : null}
           </TextContainer>
         </HeadWrapper>
+      </Link>
 
-      </ProjectWrapper>
-    </Link>
+    </ProjectWrapper>
   )
 }
 

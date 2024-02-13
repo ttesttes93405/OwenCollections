@@ -71,7 +71,7 @@ const TitleContainer = styled('div', {
   }
 });
 
-const TitlePath = styled('a', {
+const TitlePath = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -202,19 +202,19 @@ function Header(props) {
           onClick={() => UseShowRouteMenu(!showRouteMenu)}
         >
           <Link href={rootPath} key="home">
-            <a className={classNames("home", "route", { "route-current": isCurrentRoute("/") })}>
+            <div className={classNames("home", "route", { "route-current": isCurrentRoute("/") })}>
               <img src="/icons/home.svg" className="route-icon" />
               <p className="route-title">首頁</p>
-            </a>
+            </div>
           </Link>
           {
             isShowType && (typeData.map(r => {
               const path = `/type/${r.id}`;
               return (<Link href={path} key={r.id}>
-                <a className={classNames("route", { "route-current": isCurrentRoute(path) })}>
+                <div className={classNames("route", { "route-current": isCurrentRoute(path) })}>
                   <img src={r.icon} className="route-icon" />
                   <p className="route-title">{r.title}</p>
-                </a>
+                </div>
               </Link>)
             }))
           }

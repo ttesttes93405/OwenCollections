@@ -5,7 +5,7 @@ import { styled } from '../../styles/stitchesStyles';
 
 
 
-const ProjectWrapper = styled('a', {
+const ProjectWrapper = styled('div', {
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
